@@ -37,6 +37,7 @@ less 551-3
 libtool 2.4.6+42+gb88cebd5-13
 lightdm 1:1.30.0-3
 lightdm-gtk-greeter 1:2.0.8-1
+lightdm-webkit2-greeter 2.2.5-3
 linux 5.7.9.arch1-1
 linux-firmware 20200519.8ba6fa6-1
 logrotate 3.16.0-1
