@@ -121,6 +121,8 @@ cl() {
 ##########
 
 # In case you type a command not installed but present in the official arch repos
+# IMPORTANT: Install 'pkgfile' and run 'sudo pkgfile -u' to sync the database
+# To make the update dayly enable the service 'pkgfile-update.timer'
 source /usr/share/doc/pkgfile/command-not-found.bash
 # Automatically prepend cd when entering just a path in the shell
 shopt -s autocd

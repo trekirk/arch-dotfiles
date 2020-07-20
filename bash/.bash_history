@@ -1,257 +1,3 @@
-vim .Xresources 
-fc-list | grep "DejaVu Sans"
-vim .Xresources 
-xrdb ~/.Xresources 
-xinput list
-vim .Xresources 
-xrdb ~/.Xresources 
-xinput list
-echo -e "\u2693"
-echo -e "\u2693"
-sudo libinput list-devices
-vim .Xresources 
-xrdb ~/.Xresources 
-sudo libinput list-devices
-sudo libinput list-devices
-xinput list
-xinput list-props 15
-xinput set-prop 15 314 (1,1,1)
-xinput set-prop 15 314 1,1,1
-xinput set-prop 15 314 1 1 1
-sudo xinput set-prop 15 314 1 1 1
-sudo xinput set-prop 15 315 0 0 1
-xinput list-props 15
-xrdb ~/.Xresources 
-reboot
-xinput list-props 15
-xinput --list
-sudo xinput set-prop 15 315 1 1 1
-sudo xinput set-prop 15 315 0 0 1
-sudo xinput set-prop 15 315 0 1 1
-xinput list-props 15
-sudo xinput set-prop 15 169 0
-sudo xinput set-prop 15 169 1
-vim .Xresources 
-xrdb ~/.Xresources 
-reboot
-dkdsalak
-asdasda
-dadsd
-pacman -Qqen
-pacman -Qqen >> .pacman_list
-vim .pacman_list 
-pacman -Qqem >> .aur_list
-pacman -Qqem
-yay -h
-yay --builddir
-s
-ls
-ls -la
-ls .xinitrc 
-cat .xinitrc 
-vim .bashrc 
-figlet "Tu novio es un Hackerman de la vida"
-vim
-vim .Xresources 
-xrdb ~/.Xresources 
-neofetch
-neofetch
-neofetch
-figlet "Tu novio es Jesú, no te lies, Xary"
-figlet "Tu novio es Jesu, no te lies, Xary"
-figlet "Tu novio es Jesu, no te lies, Xary"
-neofetch
-sudo xinput set-prop 15 169 0
-xinput list
-cd Source/
-git clone https://github.com/dracula/xresources.git
-ls
-cd xresources/
-ls
-sudo pacman -S
-sudo pacman -S ranger
-sudo pacman -Syu
-yay -Syu
-cat Xresources 
-cd
-vim .Xresources 
-cd xresources/
-xrdb ~/.Xresources 
-cd xresources/
-vim .Xresources 
-xrdb ~/.Xresources 
-vim .Xresources 
-vim .Xresources 
-xrdb ~/.Xresources 
-shutdown now
-neofetch
-mv .Xresources .Xtupadre
-ls
-ls -la
-reboot
-mv .Xtupadre .Xresources
-xrdb ~/.Xresources 
-vim .Xresources 
-figlet "Mi mama me mima pero es un poco petardilla"
-figlet "Mi mama me mima pero es un poco petardilla"
-figlet "Mi mama me mima"
-figlet "Mi mama me mima pero"
-figlet "Mi mama me mima pero es"
-figlet "Mi mama me mima pero es un"
-shutdown now
-cat /sys/class/power_supply/BAT0/capacity
-cat /sys/class/power_supply/BAT1/capacity
-cat /sys/class/power_supply/BAT0/capacity
-figlet "Mi mama me mima pero es un"
-figlet "Mi mama me mima pero es un ewr"
-cim .xmonad/xmonad.hs
-vim .xmonad/xmonad.hs
-cat /sys/class/power_supply/BAT0/capacity
-cat /sys/class/power_supply/BAT1/capacity
-htom
-htop
-sudo pacman -Syu
-sudo pacman -S htop
-htop
-
-cd /sys/class/backlight/
-ls
-cd intel_backlight
-ls
-cat max_brightness 
-cat actual_brightness 
-sudo pacman -S xorxbacklight
-sudo pacman -S xorg-xbacklight
-xbacklight -set 50
-xbacklight -set 100
-cd
-touch .xbindkeysrc
-xbindkeys -d > ~/.xbindkeysrc
-sudo pacman -S xbindkeys
-xbindkeys -d > ~/.xbindkeysrc
-vim .xbindkeysrc 
-urxvt
-htop
-shutdown now
-ranger
-la
-ls
-ls -la
-vim .xinitrc 
-vim /etc/lightdm/
-vim /etc/lightdm/Xsession 
-xbindkeys
-vim /etc/lightdm/Xsession 
-ls /etc/lightdm/Xsession 
-ls /etc/lightdm/
-vim /etc/lightdm/Xsession 
-sudo vim /etc/lightdm/Xsession 
-reboot
-re boot
-reboot
-cat /sys/class/power_supply/BAT1/capacity
-cat /sys/class/power_supply/BAT0/capacity
-sudo vim /etc/lightdm/Xsession 
-
-cd /etc/lightdm/
-ls
-echo $PATH
-ls
-cat keys.conf 
-cat  lightdm.conf 
-sudo vim lightdm.conf 
-sudo vim Xsession 
-reboot
-
-cat .xbindkeysrc 
-vim .xbindkeysrc 
-cat /sys/class/power_supply/BAT0/capacity
-cat /sys/class/power_supply/BAT1/capacity
-cat /sys/class/power_supply/BAT1/capacity
-cat /sys/class/power_supply/BAT1/capacity
-cat /sys/class/power_supply/BAT1/capacity
-cat /sys/class/power_supply/BAT0/capacity
-cat /sys/class/power_supply/BAT1/capacity
-cat /sys/class/power_supply/BAT1/capacity
-cat /sys/class/power_supply/BAT0/capacity
-cat /sys/class/power_supply/BAT0/capacity
-cat /sys/class/power_supply/BAT1/capacity
-shutdown now
-yay
-cat /sys/class/power_supply/BAT1/capacity
-cat /sys/class/power_supply/BAT0/capacity
-cat /sys/class/power_supply/
-
-sudo pacman -S acpi
-cat /sys/class/power_supply/BAT0/energy_now 
-cat /sys/class/power_supply/BAT1/energy_now 
-cat /sys/class/power_supply/BAT1/status
-cat /sys/class/power_supply/BAT1/voltage_now 
-cat /sys/class/power_supply/BAT0/voltage_now 
-cat /sys/class/power_supply/BAT0/voltage_min_design 
-cat /sys/class/power_supply/BAT1/voltage_min_design 
-cat /sys/class/power_supply/BAT1/energy_full
-cat /sys/class/power_supply/BAT1/capacity_level 
-cat /sys/class/power_supply/BAT0/capacity_level 
-acpi
-sudo vim /etc/default/grub 
-grub-mkconfig -o /boot/grub/grub.cfg
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-sudo vim /etc/default/grub 
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-reboot
-sudo vim /etc/default/grub 
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-shutdown now
-cat /sys/class/power_supply/BAT0/capacity_level 
-cat /sys/class/power_supply/BAT1/capacity_level 
-cat /sys/class/power_supply/BAT0/capacity
-cat /sys/class/power_supply/BAT1/capacity
-acpi -i
-su
-acpi -bi
-sudo pacman -S acpi_call
-sudo pacman -S tlp
-sudo pacman -S tp-smapi
-sudo pacman -S tp_smapi
-sudo pacman -R tp_smapi acpi_call
-sudo systemctl start tlp.service
-sudo pacman -S tlpui-git
-yay -S tlpui-git
-cat /sys/class/power_supply/BAT1/capacity
-cat /sys/class/power_supply/BAT0/capacity
-sudo tlp-stat -b
-sudo tlp-stat -b
-tlp recalibrate BAT0
-sudo tlp recalibrate BAT0
-sudo tlp recalibrate BAT1
-sudo tlp recalibrate AC1
-sudo tlp recalibrate AC0
-sudo tlp recalibrate BAT0
-reboot
-sudo tlp recalibrate BAT0
-sudo tlp-stat -b
-sudo tlp-stat -b
-sudo tlp-stat -b
-sudo tlp-stat -b
-shutdown
-shutdown now
-sudo tlp recalibrate BAT0
-cat /sys/class/power_supply/BAT0/capacity
-cat /sys/class/power_supply/BAT1/capacity
-cat /sys/class/power_supply/BAT1/capacity
-sudo pacman -Syu
-cat /sys/class/power_supply/BAT1/capacity
-cat /sys/class/power_supply/BAT0/capacity
-cat /sys/class/power_supply/BAT0/status 
-cat /sys/class/power_supply/BAT1/status 
-cat /sys/class/power_supply/BAT1/
-cat /sys/class/power_supply/BAT1/device
-cat /sys/class/power_supply/BAT1/device/wakeup/wakeup27/wakeup_count 
-cat /sys/class/power_supply/BAT1/device/wakeup/wakeup27/total_time_ms 
-shutdown now
-iwd
-iwctl
 ping google.com
 vim .bashrc
 source .bashrc
@@ -498,3 +244,257 @@ vim /usr/share/applications/nemo.desktop
 reboot
 ln -s /usr/share/applications/nemo.desktop ~/.local/share/applications/nautilus-folder-handler.desktop
 reboot
+sudo systemctl enable pkgfile-update.timer
+neofetch
+sudo pkgefile -u
+sudo pkgfile -u
+ranger
+vim .bashrc
+vim .bashrc
+source .bashrc
+vim .bashrc
+source .bashrc
+vim .bashrc
+pkill vim
+vim .bashrc
+rm PURPLE='\e[0;35m'
+BROWN='\e[0;33m'
+LIGHTGRAY='\e[0;37m'
+DARKGRAY='\e[1;30m'
+LIGHTBLUE='\e[1;34m'
+LIGHTGREEN='\e[1;32m'
+LIGHTCYAN='\e[1;36m'
+LIGHTRED='\e[1;31m'
+LIGHTPURPLE='\e[1;35m'
+YELLOW='\e[1;33m'
+WHITE='\e[1;37m'
+source .bashrc
+vim .bashrc
+rm -rf ~/.cache/vim/swap//%home%trekirk%.bashrc.swp
+vim .bashrc
+source .bashrc
+vim .bashrc
+source .bashrc
+vim .bashrc
+source .bashrc
+vim .bashrc
+source .bashrc
+vim .bashrc
+source .bashrc
+vim .bashrc
+source .bashrc
+vim .bashrc
+source .bashrc
+vim .bashrc
+source .bashrc
+vim .bashrc
+source .bashrc
+vim .bashrc
+source .bashrc
+vim .bashrc
+source .bashrc
+ls
+la
+cd .dotfiles/
+ls
+mv X11 Xorg
+ls
+ranger
+ls
+stow Xorg/
+stow bash
+ranger
+stow xmonad/
+ranger
+cim
+vim
+cd .vim
+ls
+cd .vim
+ls
+cd ..
+cd .vim
+ls
+la
+touch .vimrc
+vim .vimrc 
+ls
+ranger
+cd
+cd .dotfiles/
+git add -A; git commit -m "Initial commit. Set up Medion Akoya files"
+git config --global user.email "juanjogam@gmail.com"
+git config --global user.name "Tu Nombre"
+git config --global user.name "Juanjo Gamboa"
+git add -A; git commit -m "Initial commit. Set up Medion Akoya files"
+git remote add https://github.com/trekirk/arch-dotfiles.git
+git remote add origin https://github.com/trekirk/arch-dotfiles.git
+git push
+git push --set-upstream origin master
+ls
+cd
+cd .config/ranger
+ls
+touch rc.conf
+vim rc.conf 
+ranger --copy-config=all
+ls
+vim rifle.conf 
+vim rc.conf 
+ranger
+cd 
+cd .dotfiles/package_lists/
+ls
+la
+list-pacman > .pacman_list 
+cat .pacman_list 
+list-aur > .aur_list 
+cat .aur_list 
+git status
+git -am "Update package lists"
+git commit  -am "Update package lists"
+git status
+git add -A
+git commit -m "Add ranger file manager configuration file (defaults)"
+git push
+neofetch
+cd
+/etc/
+ls
+cat pacman.conf 
+update
+yay
+cd
+cd .config/ranger/
+vim rc.conf 
+ranger
+neofetch
+cd
+vim .Xresources 
+abiword
+sudo pkgfile -u
+abiword
+vim .bashrc
+source .bashrc
+xrdb .Xresources
+ranger
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+vim .config/ranger/rc.conf 
+ranger
+sudo pacman -S ueberzug
+ranger
+vim .config/ranger/rc.conf 
+sudo pacman -R ranger
+yay ranger-git
+yay -S python3-devel Xext
+yay -S python3-devel
+sudo pacman -S python3-devel
+yay -S ext
+yay -S Xext
+ranger
+yay rxvt-unicode-pixbuf
+urxvt
+ranger
+cd .config/ranger/
+touch shorcuts.conf
+ranger
+yay -S w3m
+yay -S nnn
+ranger
+yay -S nnn
+ranger
+yay -Q ranger
+yay -Q ueberzug
+sudo pacman -R ueberzug
+yay -S ueberzug
+yay -S ueberzug-git
+yay -S ueberzug
+vim rc.conf 
+yay python-ueberzug
+ranger
+sudo pacman -S feh
+ranger
+reboot
+la
+ls
+cd home/
+cd trekirk/
+su
+cd trekirk/
+ls -la
+chmod 750 trekirk
+ls -la
+cd trekirk/
+ls
+cd Downloads/
+ls
+ranger
+touch /home/trekirk/.config/ranger/shortcuts.conf
+ranger
+sudo pacman -Rns $(pacman -Qtdq)
+update
+yay
+vim .xmonad/xmonad.hs
+shutdown now
+ranger
+cd Images/
+ls
+Wallpapers/
+ls
+arch_linux/
+ls
+cd
+cd Images/Wallpapers/
+sudo cp -r arch_linux/ /usr/share/pixmaps/
+cd /usr/share/pixmaps/
+ls
+feh archlinux.png 
+cd /etc/lightdm/
+ls
+sudo vim lightdm-gtk-greeter.conf 
+reboot
+cd /usr/share/pixmaps/arch_linux/
+ls
+ranger
+la
+ranger
+vim .Xresources 
+xrdb .Xresources
+vim .Xresources 
+xrdb .Xresources
+vim .Xresources 
+xrdb .Xresources
+sudo vim lightdm-gtk-greeter.conf 
+sudo vim /etc/lightdm/lightdm-gtk-greeter.conf 
+vim .Xresources 
+cd /usr/share/themes/
+ls
+cd Default/
+ls
+cd gtk-3.0/
+ls
+cd ..
+sudo vim /etc/lightdm/lightdm-gtk-greeter.conf 
+yay
+sudo pacman -S arc-gtk-theme
+yay -S ant-dracula-gtk-theme
+sudo vim /etc/lightdm/lightdm-gtk-greeter.conf 
+cat /sys/class/power_supply/BAT0/status
+cat /sys/class/power_supply/BAT0/capacity
+shutdown now
+neofetch
+cd /etc/lightdm/
+ls
+sudo pacman -S papirus-icon-theme
+sudo vim /etc/lightdm/lightdm-gtk-greeter.conf 
+ls
+echo $XDG_CONFIG_HOME
+cd .config/gtk-3.0/
+ls
+la
+sudo cp /etc/gtk-3.0/settings.ini $HOME/.config/gtk-3.0/settings.ini
+cd /etc/gtk-3.0/
+ls
+cd
+cd .config/gtk-3.0/
+vim settings.ini
