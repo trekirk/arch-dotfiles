@@ -19,6 +19,8 @@ Xft.dpi: 127
 URxvt*imLocale: es_ES.UTF-8
 URxvt*termName: rxvt-unicode-256color
 URxvt*buffered: false
+URxvt*transparent: true
+URxvt*shading: 40
 URxvt.intensityStyles: false
 URxvt.font: xft:CodeNewRoman Nerd Font Mono:size=12, \
             xft:JoyPixels:size=12, \

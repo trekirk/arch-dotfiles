@@ -1,193 +1,3 @@
-ping google.com
-vim .bashrc
-source .bashrc
-shutdown now
-sudo pacman -S pkgfile
-sudo pacman -S shopt
-shopt -s autocd
-/etc
-/etc
-ls
-ranger
-cl ~
-vim .bashrc
-source .bashrc
-abiword
-source /usr/share/doc/pkgfile/command-not-found.bash
-abiword
-la
-ls
-la
-vim .Xresources 
-vim .xbindkeysrc 
-cat /sys/class/power_supply/BAT0/status 
-cat /sys/class/power_supply/BAT0/capacity 
-ls
-cat /sys/class/power_supply/BAT1/capacity 
-shutdown now
-vim .bashrc
-mkdir .dotfiles
-ls
-la
-cd /
-cd /
-grep -rHino pacman.conf
-sudo grep -rHino pacman.conf
-/usr/local/etc/pacman.conf
-/usr/local/etc/
-ls
-sudo vim pacman.conf
-ls
-7etc
-/et
-/etc
-ls
-cat pacman.conf
-sudo vim pacman.conf
-reboot
-sudo pacman -Syu
-ls
-vim .bashrc
-source .bashrc
-la
-ls
-ll
-la
-ls -la
-la
-cat .aur_list 
-mkdir .dotfiles/package_lists .dotfiles/X11 .dotfiles/bash .dotfiles xmonad
-mkdir .dotfiles/vim
-la .config/
-cat .dmrc 
-la
-cd .dotfiles/
-git init
-ls .vim
-ls
-cd ..
-mv xmonad/ .dotfiles/
-ls
-la
-cat .xsession-errors
-cat .xsession-errors.old 
-cat .viminfo 
-cd .vim
-ls
-ls
-vim
-iwctl 
-iwctl 
-:q
-ranger
-shutdown now
-iwctl
-sudo pacman -S stow
-shutdown now
-sudo pacman -Sy
-sudo pacman -Syu
-sudo pacman -S pcmanfm
-vim
-ranger
-cd .local/share/ranger/
-ls
-cd
-sudo pacman -S RIFLE
-sudo pacman -S rifle
-rifle
-sudo pacman -S xdg-utils
-xdg-open
-xdg-mime default pcmanfm.desktop inode/directory
-xdg-mime query default inode/directory
-xdg-mime default pcmanfm.desktop inode/mount-point
-xdg-mime query default inode/mount-point
-pcmanfm 
-reboot
-htop
-pcmanfm --desktop-pref
-pcmanf
-pcmanfm
-cd /tmp/mozilla_trekirk0/arch_linux.zip 
-locate mimeapps.list
-sudo pacman -S locate
-find mimeapps.list
-find mimeapps.list /
-cd .config/
-ls
-cat mimeapps.list 
-cd gtk-3.0/
-ls
-cd /usr/share/dbus-1/services/
-ls
-sudo pacman -R firefox
-sudo pacman -S firefox
-cd
-cd .config/
-ls
-cat mimeapps.list 
-pacman -Q nautilus
-pacman -Qs nautilus
-pacman -Qs nemo
-cat /sys/class/power_supply/BAT0/capacity 
-cat /sys/class/power_supply/BAT0/capacity 
-cat /sys/class/power_supply/BAT0/status
-gio mime inode/directory
-sudo pacman -R ranger
-cd 
-cd .mozilla/firefox/
-ls
-cd ugyvrr7l.default/
-ls
-cat times.json 
-cd ..
-ls
-cat profiles.ini 
-cd ni4oqffj.default-release/
-ls
-cat handlers.json 
-mv handlers.json handlers_backup.json 
-cat handlers
-cat handlers.json 
-sudo pacman -S unzip unrar
-pcmanfm
-sudo pacman -S xorg-xprop
-sudo pacman -S pcmanfm
-sudo pacman -S nemo
-cd
-cd .config/
-ls
-cat mimeapps.list 
-xdg-mime default nemo.desktop inode/mount-point
-cd 
-xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search inode/mount-point application/zip
-cat .config/mimeapps.list 
-xdg-mime -h
-xdg-mime --help
-man xdg-mime
-vim nemo.desktop
-xdg-open ~
-xdg-mime query default inode/directory
-xdg-open ~
-sudo pacman -R pcmanfm
-cat .config/mimeapps.list 
-vim .config/mimeapps.list 
-htop
-sudo vim /usr/share/applications/
-sudo vim /usr/share/applications/mimeinfo.cache 
-pkill -f firefox
-echo $XDG_DATA_HOME
-echo $XDG_DATA_HOME
-cd /usr/share/applications/
-ls
-la
-mkdir ~/.local/share/applications
-cp nemo.desktop ~/.local/share/applications/
-cd ~/.local/share/applications/
-ls
-la
-cat nemo.desktop 
-vim nemo.desktop 
-pkill -f firefox
 firefox
 firefox 
 cd .local/share/applications/
@@ -498,3 +308,193 @@ ls
 cd
 cd .config/gtk-3.0/
 vim settings.ini
+neofetch
+nemo
+cd .dotfiles/
+ls
+mkdir gtk-3.0
+ls
+sl
+ls
+ranger
+ls
+ranger
+cd
+chmod +x Source/
+ls
+la
+cd Desktop/
+cd .cache/
+cd
+vim .dmrc 
+chmod +x Desktop/
+la
+cd Downloads/
+ls
+la
+ranger
+cd
+chmod r+x Downloads/
+chmod +x Downloads/
+la
+chmod +r Downloads/
+la
+mkdir .dotfiles/gtk-3.0/.config/gtk-3.0
+mv .config/gtk-3.0/settings.ini .dotfiles/gtk-3.0/.config/gtk-3.0/
+cd .dotfiles/
+stow gtk-3.0/
+ls
+ranger
+git add -A
+git commit -m "Add gtk3 config files"
+git push
+list-pacman 
+cd package_lists/
+ls
+la
+list-pacman > .pacman_list 
+cat .pacman_list 
+ls
+list-aur > .aur_list 
+cd 
+ranger
+yay -S lightdm-webkit-greeter
+yay -R lightdm-webkit-greeter
+sudo pacman -Rns $(pacman -Qtdq)
+yay -Rs lightdm-webkit-greeter
+sudo pacman -S lightdm-webkit2-greete
+yay -Rs lightdm-webkit-greete
+yay -S archlinux-artwork
+sudo find /usr/share/archlinux/icons -name "*64*" -exec cp {} /usr/share/icons/hicolor/64x64/devices \;
+yay -R archlinux-artwork
+sudo pacman -Rns $(pacman -Qtdq)
+cd /etc/lightdm/lightdm.conf 
+sudo vim /etc/lightdm/lightdm.conf 
+cat /sys/class/power_supply/BAT0/capacity
+htop
+sudo vim /etc/lightdm/lightdm.conf 
+reboot
+sudo vim /etc/lightdm/lightdm-webkit2-greeter.conf 
+sudo pacman -S lightdm-webkit-theme-aether
+yay -S lightdm-webkit-theme-aether
+/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/ranger
+/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/
+ranger
+ls
+cd
+/etc/lightdm/
+ls
+sudo vim lightdm-webkit2-greeter.conf 
+ls
+rm lightdm-webkit2-greeter.conf 
+sudo vim /etc/lightdm/lightdm-webkit2-greeter.conf 
+ranger
+sudo vim /etc/lightdm/lightdm-webkit2-greeter.conf 
+reboot
+yay -R lightdm-webkit-theme-aether
+yay -S lightdm-webkit-theme-aether
+sudo systemctl enable lightdm.service
+sudo vim /etc/lightdm/lightdm-webkit2-greeter.conf 
+sudo systemctl enable lightdm.service
+ranger
+cd /var/lib/AccountsService/icons/
+ls
+la
+cd .
+cd ..
+ls
+cd users/
+ls
+su
+cd
+su
+ranger
+ls
+mv archlinux-icon-tango-64.svg .face
+sudo systemctl enable lightdm.service
+ranger
+cd .dotfiles/
+stow git
+ls
+cd
+ranger
+sudo pacman -S mugshot
+shutdown now
+htop
+yay -S mugshhot
+yay -S mugshot
+ranger
+/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/
+ls
+la
+su
+cd
+ls
+la
+chown trekirk:trekirk .face 
+sudo chown trekirk:trekirk .face 
+la
+cp .face /var/lib/AccountsService/icons/trekirk
+sudo cp .face /var/lib/AccountsService/icons/trekirk
+/var/lib/AccountsService/icons/
+ls
+la
+sudo chmod 644 trekirk 
+ls
+la
+cd ../users/
+su
+sudo systemctl enable lightdm.service
+cd /var/lib/AccountsService/
+su
+cd /var/lib/AccountsService/
+su
+ls
+la
+ranger
+chmod 644 .face
+reboot
+chown root:root .face 
+sudo chown root:root .face 
+reboot
+sudo vim /var/lib/AccountsService/users/trekirk
+sudo rm .face
+reboot
+sudo vim /var/lib/AccountsService/users/trekirk
+sudo systemctl enable lightdm.service
+cd /etc/lightdm/lightdm-webkit2-greeter.conf 
+vim /etc/lightdm/lightdm-webkit2-greeter.conf 
+sudo vim /etc/lightdm/lightdm-webkit2-greeter.conf 
+sudo systemctl enable lightdm.service
+ranger
+sudo vim /etc/lightdm/lightdm-webkit2-greeter.conf 
+reboot
+cd /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/
+ls
+ranger
+ls
+feh --bg-scale /usr/share/pixmaps/arch_linux/dracula_arch.png 
+cd /usr/share/pixmaps/arch_linux/
+ranger
+la
+sudo mv /home/trekirk/Images/Wallpapers/dracula_arch.png /usr/share/pixmaps/arch_linux/
+sudo cp /home/trekirk/Images/Wallpapers/dracula_arch.png /usr/share/pixmaps/arch_linux/
+sudo cp /home/trekirk/Images/Wallpapers/dracula_wp.png /usr/share/pixmaps/arch_linux/
+ls
+vim .Xresources 
+xrdb .Xresources
+vim .Xresources 
+xrdb .Xresources
+vim .Xresources 
+xrdb .Xresources
+vim .Xresources 
+xrdb .Xresources
+vim .Xresources 
+xrdb .Xresources
+xrdb .Xresources
+xrdb .Xresources
+feh --bg-scale /usr/share/pixmaps/arch_linux/dracula_arch.png 
+vim .Xresources 
+reboot
+vim .fehbg 
+reboot
