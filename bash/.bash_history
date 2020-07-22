@@ -1,91 +1,3 @@
-firefox
-firefox 
-cd .local/share/applications/
-mv nemo.desktop nemo_backup.desktop
-ls
-pkill -f firefox
-ls
-sudo pacman -S xmonad-contrib
-nemo
-dolphin
-nautilus
-gnome-fm
-thunar
-vifm
-gvfs
-sudo pacman -R nautilus
-list
-pacman -Qem
-pacman -Qen
-vim ~/.bashrc
-source ~/.bashrc
-list-pacman 
-list-aur
-vim ~/.bashrc
-source ~/.bashrc
-ilist-aur
-list-aur
-list-pacman 
-cd
-ls
-la
-update
-yay
-install
-install --help
-sudo pacman -S ranger
-man pacman
-gio mime inode/directory
-cd /usr/local/share/
-ls
-ls
-cd /usr/share/applications/
-d
-cd
-cd .local/share/gvfs-metadata/
-ls
-cat home
-cat home-493994ef.log 
-ping google.com
-sudo pacman  -R gvfs
-sudo pacman -Rns $(pacman -Qtdq)
-cd
-vim /usr/share/applications/nemo.desktop 
-reboot
-ln -s /usr/share/applications/nemo.desktop ~/.local/share/applications/nautilus-folder-handler.desktop
-reboot
-sudo systemctl enable pkgfile-update.timer
-neofetch
-sudo pkgefile -u
-sudo pkgfile -u
-ranger
-vim .bashrc
-vim .bashrc
-source .bashrc
-vim .bashrc
-source .bashrc
-vim .bashrc
-pkill vim
-vim .bashrc
-rm PURPLE='\e[0;35m'
-BROWN='\e[0;33m'
-LIGHTGRAY='\e[0;37m'
-DARKGRAY='\e[1;30m'
-LIGHTBLUE='\e[1;34m'
-LIGHTGREEN='\e[1;32m'
-LIGHTCYAN='\e[1;36m'
-LIGHTRED='\e[1;31m'
-LIGHTPURPLE='\e[1;35m'
-YELLOW='\e[1;33m'
-WHITE='\e[1;37m'
-source .bashrc
-vim .bashrc
-rm -rf ~/.cache/vim/swap//%home%trekirk%.bashrc.swp
-vim .bashrc
-source .bashrc
-vim .bashrc
-source .bashrc
-vim .bashrc
 source .bashrc
 vim .bashrc
 source .bashrc
@@ -498,3 +410,91 @@ vim .Xresources
 reboot
 vim .fehbg 
 reboot
+cd .dotfiles/
+ls
+git status
+git commit -am "Add transparency to urxvt"
+git push
+git add -A
+git commit -m "Add gitconfig"
+stow -h
+ls
+git status
+mkdir feh
+mv ~/.fehbg feh/
+stow feh
+ls
+cd ..
+ls
+la
+cd /etc/lightdm/
+la
+mkdir ~/.dotfiles/lightdm
+cd ..
+sudo cp lightdm/ ~/.dotfiles/lightdm/
+sudo cp -r lightdm/ ~/.dotfiles/lightdm/
+cd 
+cd .dotfiles/
+ls
+cd lightdm/
+ls
+mv lightdm/ ..
+mv lightdm/ ../lightdm1
+sudo mv lightdm/ ../lightdm1
+rm lightdm
+cd ..
+rm lightdm
+ls
+rm -rf lightdm
+la
+chown trekirk:trekirk lightdm1/
+sudo chown trekirk:trekirk lightdm1/
+mv lightdm1/ lightdm
+ls
+cd lightdm/
+ls
+git status
+cd ..
+git status
+git add feh
+la
+git statu
+git status
+git commit -m "Add feh wallpaper configuration"
+git add -A 
+git commit -m "Add lightdm configuration files"
+git push
+cd package_lists/
+list-aur 
+list-aur > .aur_list 
+list-pacman > .pacman_list 
+cat .pacman_list 
+cat .aur_list 
+cd ..
+git commit -am "Update package lists"
+git push
+la
+reboot
+vim .Xresources 
+xrdb .Xresources
+vim .xmonad/xmonad.hs
+vim .Xresources 
+xrdb .Xresources
+vim .Xresources 
+xrdb .Xresources
+vim .Xresources 
+vim .Xresources 
+xrdb .Xresources
+vim .Xresources 
+xrdb .Xresources
+xrdb -merge .Xresources
+cat .Xresources 
+vim .Xresources 
+xrdb .Xresources
+cat /sys/class/power_supply/BAT0/capacity
+vim xmonad.hs
+vim .Xresources 
+sudo pacman -S picom
+vim /etc/lightdm/
+vim /etc/lightdm/Xsession 
+sudo  vim /etc/lightdm/Xsession 
