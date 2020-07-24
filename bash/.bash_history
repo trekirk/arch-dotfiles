@@ -1,90 +1,3 @@
-stow xmonad/
-ranger
-cim
-vim
-cd .vim
-ls
-cd .vim
-ls
-cd ..
-cd .vim
-ls
-la
-touch .vimrc
-vim .vimrc 
-ls
-ranger
-cd
-cd .dotfiles/
-git add -A; git commit -m "Initial commit. Set up Medion Akoya files"
-git config --global user.email "juanjogam@gmail.com"
-git config --global user.name "Tu Nombre"
-git config --global user.name "Juanjo Gamboa"
-git add -A; git commit -m "Initial commit. Set up Medion Akoya files"
-git remote add https://github.com/trekirk/arch-dotfiles.git
-git remote add origin https://github.com/trekirk/arch-dotfiles.git
-git push
-git push --set-upstream origin master
-ls
-cd
-cd .config/ranger
-ls
-touch rc.conf
-vim rc.conf 
-ranger --copy-config=all
-ls
-vim rifle.conf 
-vim rc.conf 
-ranger
-cd 
-cd .dotfiles/package_lists/
-ls
-la
-list-pacman > .pacman_list 
-cat .pacman_list 
-list-aur > .aur_list 
-cat .aur_list 
-git status
-git -am "Update package lists"
-git commit  -am "Update package lists"
-git status
-git add -A
-git commit -m "Add ranger file manager configuration file (defaults)"
-git push
-neofetch
-cd
-/etc/
-ls
-cat pacman.conf 
-update
-yay
-cd
-cd .config/ranger/
-vim rc.conf 
-ranger
-neofetch
-cd
-vim .Xresources 
-abiword
-sudo pkgfile -u
-abiword
-vim .bashrc
-source .bashrc
-xrdb .Xresources
-ranger
-git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
-vim .config/ranger/rc.conf 
-ranger
-sudo pacman -S ueberzug
-ranger
-vim .config/ranger/rc.conf 
-sudo pacman -R ranger
-yay ranger-git
-yay -S python3-devel Xext
-yay -S python3-devel
-sudo pacman -S python3-devel
-yay -S ext
-yay -S Xext
 ranger
 yay rxvt-unicode-pixbuf
 urxvt
@@ -498,3 +411,90 @@ vim .xmonad/xmonad.hs
 reboot
 vim .xmobarrc 
 cat /sys/class/power_supply/BAT0/capacity
+cd .dotfiles/
+git status
+git log
+git status
+git commit -am "Xmobar up and running" 
+git push
+sudo pacman -S bash-completion
+vim ~/.bashrc
+source ~/.bashrc
+list-pacman > $HOME/.dotfiles/package_lists/.pacman_list; aur-pacman > $HOME/.dotfiles/package_lists/.aur_list
+list-pacman > $HOME/.dotfiles/package_lists/.pacman_list; list-aur > $HOME/.dotfiles/package_lists/.aur_list
+cd xmonad/
+ls
+la
+cd .xmonad/
+ls
+cd .dotfiles/
+git status
+cd
+vim .bashrc 
+source .basshrc
+source .bashrc
+vim .bashrc 
+source .bashrc
+rm .dotfiles/package_lists/*
+rm -rf .dotfiles/package_lists/*
+rm -rf .dotfiles/package_lists/.aur_list 
+rm -rf .dotfiles/package_lists/.pacman_list 
+list-update
+cd .dotfiles/
+ls
+git status
+git add -am "Add bash completition and alias to update the package lists"
+git commit -am "Add bash completition and alias to update the package lists"
+git push
+stow -D vim
+cd vim
+ls
+la
+mkdir .vim
+vim
+mv .vimrc .vim
+ls
+la
+cd .vim/
+ls
+la
+cd ..
+stow vim
+vim
+cd ..
+ls
+cd .vim/
+ls
+la
+vim
+cd 
+cd .dotfiles/vim/.vim/
+ls
+mv .vimrc vimrc
+cd ..
+stow -D vim
+stow vim
+vim
+stow -D vim
+vim
+vim ~/.bashrc
+stow vim
+vim ~/.bashrc
+cd ..
+ls
+la
+vim .xmonad/xmonad.hs 
+mkdir -p .dotfiles/xmobar/.config/xmobar
+mv .xmobarrc .dotfiles/xmobar/.config/xmobar/
+cd .dotfiles/
+stow xmobar
+reboot
+mv .dotfiles/xmobar/.config/xmobar/.xmobarrc .dotfiles/xmobar/.config/xmobar/xmobarrc 
+reboot
+ping google.es
+neofetch
+xlsfonts
+vim .bashrc 
+vim .bashrc
+vim .xmonad/xmonad.hs
+vim .config/xmobar/xmobarrc 
