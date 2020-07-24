@@ -1,31 +1,3 @@
-source .bashrc
-vim .bashrc
-source .bashrc
-vim .bashrc
-source .bashrc
-vim .bashrc
-source .bashrc
-vim .bashrc
-source .bashrc
-vim .bashrc
-source .bashrc
-vim .bashrc
-source .bashrc
-vim .bashrc
-source .bashrc
-vim .bashrc
-source .bashrc
-ls
-la
-cd .dotfiles/
-ls
-mv X11 Xorg
-ls
-ranger
-ls
-stow Xorg/
-stow bash
-ranger
 stow xmonad/
 ranger
 cim
@@ -498,3 +470,31 @@ sudo pacman -S picom
 vim /etc/lightdm/
 vim /etc/lightdm/Xsession 
 sudo  vim /etc/lightdm/Xsession 
+cd .dotfiles/xmonad/.xmonad/
+ls
+rm xmonadbu.hs 
+git status
+git add -am "Update xmonad config with startup hooks"
+git commit -am "Update xmonad config with startup hooks"
+git push
+sudo find / -iname xmobar
+cd /usr/share/licenses/xmobar
+ls
+cd
+/usr/lib/ghc-8.10.1/site-local/xmobar-0.35/Xmobar
+ls
+cd Config/
+ls
+cd ..
+xft:Bitstream Vera Sans Mono
+cd
+vim .xmonad/xmonad.hs
+htop
+vim .xmobarrc
+cat .xmobarrc 
+vim .Xresources 
+vim .xmobarrc 
+vim .xmonad/xmonad.hs
+reboot
+vim .xmobarrc 
+cat /sys/class/power_supply/BAT0/capacity
