@@ -59,7 +59,7 @@ alias pgg='ps -Af | grep'           # requires an argument
 alias ..='cd ..'
 alias list-pacman='pacman -Qen'
 alias list-aur='pacman -Qem'
-
+alias list-update='list-pacman > $HOME/.dotfiles/package_lists/.pacman_list; list-aur > $HOME/.dotfiles/package_lists/.aur_list'
 # Privileged access
 if (( UID != 0 )); then
     alias sudo='sudo '
@@ -128,3 +128,12 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 shopt -s autocd
 # Line wrap on window resize
 shopt -s checkwinsize
+
+# Enable bash completion
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
+fi

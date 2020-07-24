@@ -4,6 +4,7 @@ arc-gtk-theme 20200513-1
 autoconf 2.69-7
 automake 1.16.2-3
 base 2-2
+bash-completion 2.10-2
 binutils 2.34-5
 bison 3.6.4-1
 cmake 3.18.0-2
@@ -58,6 +59,7 @@ papirus-icon-theme 20200702-1
 patch 2.7.6-8
 pavucontrol 1:4.0-2
 perl 5.32.0-1
+picom 8-2
 pkgconf 1.7.3-1
 pkgfile 21-2
 pulseaudio 13.0-3
