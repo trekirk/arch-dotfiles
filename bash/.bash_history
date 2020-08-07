@@ -1,143 +1,3 @@
-ranger
-yay rxvt-unicode-pixbuf
-urxvt
-ranger
-cd .config/ranger/
-touch shorcuts.conf
-ranger
-yay -S w3m
-yay -S nnn
-ranger
-yay -S nnn
-ranger
-yay -Q ranger
-yay -Q ueberzug
-sudo pacman -R ueberzug
-yay -S ueberzug
-yay -S ueberzug-git
-yay -S ueberzug
-vim rc.conf 
-yay python-ueberzug
-ranger
-sudo pacman -S feh
-ranger
-reboot
-la
-ls
-cd home/
-cd trekirk/
-su
-cd trekirk/
-ls -la
-chmod 750 trekirk
-ls -la
-cd trekirk/
-ls
-cd Downloads/
-ls
-ranger
-touch /home/trekirk/.config/ranger/shortcuts.conf
-ranger
-sudo pacman -Rns $(pacman -Qtdq)
-update
-yay
-vim .xmonad/xmonad.hs
-shutdown now
-ranger
-cd Images/
-ls
-Wallpapers/
-ls
-arch_linux/
-ls
-cd
-cd Images/Wallpapers/
-sudo cp -r arch_linux/ /usr/share/pixmaps/
-cd /usr/share/pixmaps/
-ls
-feh archlinux.png 
-cd /etc/lightdm/
-ls
-sudo vim lightdm-gtk-greeter.conf 
-reboot
-cd /usr/share/pixmaps/arch_linux/
-ls
-ranger
-la
-ranger
-vim .Xresources 
-xrdb .Xresources
-vim .Xresources 
-xrdb .Xresources
-vim .Xresources 
-xrdb .Xresources
-sudo vim lightdm-gtk-greeter.conf 
-sudo vim /etc/lightdm/lightdm-gtk-greeter.conf 
-vim .Xresources 
-cd /usr/share/themes/
-ls
-cd Default/
-ls
-cd gtk-3.0/
-ls
-cd ..
-sudo vim /etc/lightdm/lightdm-gtk-greeter.conf 
-yay
-sudo pacman -S arc-gtk-theme
-yay -S ant-dracula-gtk-theme
-sudo vim /etc/lightdm/lightdm-gtk-greeter.conf 
-cat /sys/class/power_supply/BAT0/status
-cat /sys/class/power_supply/BAT0/capacity
-shutdown now
-neofetch
-cd /etc/lightdm/
-ls
-sudo pacman -S papirus-icon-theme
-sudo vim /etc/lightdm/lightdm-gtk-greeter.conf 
-ls
-echo $XDG_CONFIG_HOME
-cd .config/gtk-3.0/
-ls
-la
-sudo cp /etc/gtk-3.0/settings.ini $HOME/.config/gtk-3.0/settings.ini
-cd /etc/gtk-3.0/
-ls
-cd
-cd .config/gtk-3.0/
-vim settings.ini
-neofetch
-nemo
-cd .dotfiles/
-ls
-mkdir gtk-3.0
-ls
-sl
-ls
-ranger
-ls
-ranger
-cd
-chmod +x Source/
-ls
-la
-cd Desktop/
-cd .cache/
-cd
-vim .dmrc 
-chmod +x Desktop/
-la
-cd Downloads/
-ls
-la
-ranger
-cd
-chmod r+x Downloads/
-chmod +x Downloads/
-la
-chmod +r Downloads/
-la
-mkdir .dotfiles/gtk-3.0/.config/gtk-3.0
-mv .config/gtk-3.0/settings.ini .dotfiles/gtk-3.0/.config/gtk-3.0/
 cd .dotfiles/
 stow gtk-3.0/
 ls
@@ -498,3 +358,143 @@ vim .bashrc
 vim .bashrc
 vim .xmonad/xmonad.hs
 vim .config/xmobar/xmobarrc 
+cd .dotfiles/
+git status
+git add vim
+git status
+git diff xmonad/.xmonad/xmonad.hs
+git commit -m "Relocate vim folder"
+git push
+git add -A 
+git commit -m "Add xmobarrc file with weather report from Barajas"
+git pushh
+git push
+list-update 
+git status
+git push
+fc-list
+fc-list | grep Mononoki
+fc-list | grep "Mononoki"
+fc-list | grep "Mononoki*"
+fc-list | grep Nerd
+fc-list | grep Mono
+fc-list | grep Mononoki
+fc-list | grep mononoki
+vim .config/xmobar/xmobarrc 
+cd
+vim .config/xmobar/xmobarrc 
+fc-list | grep roboto
+fc-list | grep Roboto
+fc-list | grep -i Roboto
+fc-list | grep -i roboto
+vim .config/xmobar/xmobarrc 
+fc-list | grep -i garamond
+yay -S urw-garamond
+fc-list | grep -i garamond
+fc-cache
+fc-list | grep -i garamond
+fc-list | grep -i urw
+yay -S ebgaramond-otf
+vimtutor
+ranger
+yay
+cfdisk
+sudo cfdisk
+cfdisk /dev/mmcblk1p1 
+sudo cfdisk /dev/mmcblk1p1 
+sudo nemo
+sudo cfdisk /dev/
+sudo cfdisk /dev/mmcblk1 
+sudo shred -v /dev/mmcblk1
+neofetch
+cd /usr/share/themes/
+ls
+cd Ant-Dracula/
+ls
+cd
+cd Downloads/
+unzip gtk-master.zip 
+ls
+sudo mv -r gtk-master /usr/share/themes/Dracula
+sudo mv -p gtk-master /usr/share/themes/Dracula
+sudo mv gtk-master /usr/share/themes/Dracula
+cd /usr/share/themes/
+ls
+cd Dracula/
+ls
+cd ..
+la
+sudo chown root:root Dracula/
+la
+cd Dracula/
+la
+sudo chown -r root:root *
+sudo chown -R  root:root *
+la
+cd src/
+la
+cd ..
+cd
+cd .config/gtk-3.0/
+vim settings.ini 
+vim .config/gtk-3.0/settings.ini 
+cd .dotfiles/
+ls
+git status
+stow -D gtk-3.0/
+cd
+cd .config/gtk-3.0/
+ls
+reboot
+cd .config/gtk-3.0/
+cd
+cd .dotfiles/
+stow gtk-3.0/
+cd /etc/lightdm/
+ls
+neofetch
+vim Xsession 
+sudo systemctl disable lightdm.service 
+reboot
+sudo systemctl enable lightdm.service 
+sudo systemctl start lightdm.service 
+yay
+yay -Syu
+reboot
+cd /etc/X11/
+ls
+vim xinit/
+cd xinit/
+ls
+cd
+cd .dotfiles/
+ls
+cd lightdm/
+ls
+cd
+cd /etc/lightdm/
+ls
+sudo vim lightdm.conf 
+ls
+reboot
+cd /etc/lightdm/
+ls
+vim lightdm.conf 
+
+vim lightdm.conf 
+sudo vim lightdm.conf 
+ls
+neofetch
+cd .config/gtk-3.0/
+ls
+vim settings.ini 
+neofetch
+nemo
+fonts
+fc-list
+vim .bashrc 
+source .bashrc
+list-fonts 
+list-update 
+vim .gtkrc-2.0
+vim .config/gtk-3.0/settings.ini 

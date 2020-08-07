@@ -60,6 +60,7 @@ alias ..='cd ..'
 alias list-pacman='pacman -Qen'
 alias list-aur='pacman -Qem'
 alias list-update='list-pacman > $HOME/.dotfiles/package_lists/.pacman_list; list-aur > $HOME/.dotfiles/package_lists/.aur_list'
+alias list-fonts='fc-list'
 # Privileged access
 if (( UID != 0 )); then
     alias sudo='sudo '
