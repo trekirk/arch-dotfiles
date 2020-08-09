@@ -4,10 +4,6 @@
 
 echo "Running X session wrapper"
 
-# Load Xbindkeys for mapping the light and volume buttons
-xbindkeys
-~/.fehbg &
-
 # Load profile
 for file in "/etc/profile" "$HOME/.profile" "/etc/xprofile" "$HOME/.xprofile"; do
     if [ -f "$file" ]; then

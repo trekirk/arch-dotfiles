@@ -1,116 +1,3 @@
-cd .dotfiles/
-stow gtk-3.0/
-ls
-ranger
-git add -A
-git commit -m "Add gtk3 config files"
-git push
-list-pacman 
-cd package_lists/
-ls
-la
-list-pacman > .pacman_list 
-cat .pacman_list 
-ls
-list-aur > .aur_list 
-cd 
-ranger
-yay -S lightdm-webkit-greeter
-yay -R lightdm-webkit-greeter
-sudo pacman -Rns $(pacman -Qtdq)
-yay -Rs lightdm-webkit-greeter
-sudo pacman -S lightdm-webkit2-greete
-yay -Rs lightdm-webkit-greete
-yay -S archlinux-artwork
-sudo find /usr/share/archlinux/icons -name "*64*" -exec cp {} /usr/share/icons/hicolor/64x64/devices \;
-yay -R archlinux-artwork
-sudo pacman -Rns $(pacman -Qtdq)
-cd /etc/lightdm/lightdm.conf 
-sudo vim /etc/lightdm/lightdm.conf 
-cat /sys/class/power_supply/BAT0/capacity
-htop
-sudo vim /etc/lightdm/lightdm.conf 
-reboot
-sudo vim /etc/lightdm/lightdm-webkit2-greeter.conf 
-sudo pacman -S lightdm-webkit-theme-aether
-yay -S lightdm-webkit-theme-aether
-/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/ranger
-/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/
-ranger
-ls
-cd
-/etc/lightdm/
-ls
-sudo vim lightdm-webkit2-greeter.conf 
-ls
-rm lightdm-webkit2-greeter.conf 
-sudo vim /etc/lightdm/lightdm-webkit2-greeter.conf 
-ranger
-sudo vim /etc/lightdm/lightdm-webkit2-greeter.conf 
-reboot
-yay -R lightdm-webkit-theme-aether
-yay -S lightdm-webkit-theme-aether
-sudo systemctl enable lightdm.service
-sudo vim /etc/lightdm/lightdm-webkit2-greeter.conf 
-sudo systemctl enable lightdm.service
-ranger
-cd /var/lib/AccountsService/icons/
-ls
-la
-cd .
-cd ..
-ls
-cd users/
-ls
-su
-cd
-su
-ranger
-ls
-mv archlinux-icon-tango-64.svg .face
-sudo systemctl enable lightdm.service
-ranger
-cd .dotfiles/
-stow git
-ls
-cd
-ranger
-sudo pacman -S mugshot
-shutdown now
-htop
-yay -S mugshhot
-yay -S mugshot
-ranger
-/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/
-ls
-la
-su
-cd
-ls
-la
-chown trekirk:trekirk .face 
-sudo chown trekirk:trekirk .face 
-la
-cp .face /var/lib/AccountsService/icons/trekirk
-sudo cp .face /var/lib/AccountsService/icons/trekirk
-/var/lib/AccountsService/icons/
-ls
-la
-sudo chmod 644 trekirk 
-ls
-la
-cd ../users/
-su
-sudo systemctl enable lightdm.service
-cd /var/lib/AccountsService/
-su
-cd /var/lib/AccountsService/
-su
-ls
-la
-ranger
-chmod 644 .face
-reboot
 chown root:root .face 
 sudo chown root:root .face 
 reboot
@@ -498,3 +385,116 @@ list-fonts
 list-update 
 vim .gtkrc-2.0
 vim .config/gtk-3.0/settings.ini 
+neofetch
+sl
+ls
+la
+cd .dotfiles/
+ls
+mkdir gtk-2.0/
+mv ~/.gtkrc-2.0 gtk-2.0/
+stow gtk-2.0/
+cd .
+cd ..
+ls
+la
+cd .dotfiles/
+ls
+git status
+diff xmobar/.config/xmobar/xmobarrc 
+git diff xmobar/.config/xmobar/xmobarrc 
+git add xmobar/.config/xmobar/xmobarrc 
+git status
+git -am "Change xmobar font"
+git commit -am "Change xmobar font"
+pacman -Qet
+pacman -Qe
+pacman -Qqe
+pacman -Qe
+pacman -Qqe
+pacman -Qqem
+pacman -Qqen
+pacman -Qqetn
+pacman -Qqen
+cd
+vim .bashrc 
+list-pacman 
+source .bashrc
+list-pacman 
+list-update 
+cd .dotfiles/
+git status
+cd ..
+git status
+cd .dotfiles/
+git status
+git log
+git commit -am "Add and update bash aliases"
+git status
+git add -A; git commit -m "Add gtk-2.0 config file"
+cd gtk-3.0/.config/gtk-3.0/
+vim settings.ini 
+cd
+fdisk /dev/mmcblk1 
+sudo fdisk /dev/mmcblk1 
+sudo mkfs.vfat /dev/mmcblk1
+sudo mkfs.vfat /dev/mmcblk1p1
+sudo mkfs.ext4 /dev/mmcblk1p2
+mkdir ALARM
+cd ALARM/
+mkdir root boot
+sudo mount /dev/mmcblkp1 boot
+sudo mount /dev/mmcblk1p1 boot
+sudo mount /dev/mmcblk1p2 root
+su
+sudo pacman -S wget
+su
+sudo pacman -S bdstar
+sudo pacman -S bsdtar
+bdstar
+su
+cd /etc/
+vim locale.conf
+vim /etc/vconsole.conf 
+shutdown now
+cd /mnt/
+ls
+cd
+pacman -Qs font
+pacman -Qsq font
+pacman -Qsqm font
+pacman -Qsqn font
+pacman -Qqn font
+pacman -Qqs font
+pacman --help
+pacman -Q --help
+pacman -S --help
+pacman -Qqs font
+mount /dev/mmcblk1 /mnt/
+sudo mount /dev/mmcblk1 /mnt/
+ranger
+ls /
+ls bin
+ls /bin
+cd /bin
+ñs
+ls
+udisks
+cd /run/media/trekirk/
+ls
+cd /run/media/trekirk/
+l
+ls
+reboot
+cd /run/mount/
+ls
+cd ..
+cd media/
+ls
+cd
+pacman -Qsq papirus
+shutdown now
+nemo
+sudo pacman -S ntfs-3g
+shutdown
+shutdown now
