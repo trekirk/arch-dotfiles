@@ -40,7 +40,6 @@ PS1='\[$YELLOW\]\u\[$MAGENTA\]@\[$CYAN\]\h \[$BLUE\]\w\[$GREEN\] \$\[$WHITE\] '
 #######################
 
 ## If you feel playful <3
-alias please='sudo !!'
 alias yeet='rm -rf'
 
 ## Modified commands
