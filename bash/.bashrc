@@ -39,6 +39,10 @@ PS1='\[$YELLOW\]\u\[$MAGENTA\]@\[$CYAN\]\h \[$BLUE\]\w\[$GREEN\] \$\[$WHITE\] '
 # Some useful aliases #
 #######################
 
+## If you feel playful <3
+alias please='sudo !!'
+alias yeet='rm -rf'
+
 ## Modified commands
 alias diff='colordiff'              # requires colordiff package
 alias grep='grep --color=auto'
@@ -57,10 +61,17 @@ alias hist='history | grep'         # requires an argument
 alias openports='ss --all --numeric --processes --ipv4 --ipv6'
 alias pgg='ps -Af | grep'           # requires an argument
 alias ..='cd ..'
+alias list-fonts='fc-list'
+
+## pacman & yay
+alias pacsyu='sudo pacman -Syyu'
+alias pacleanup='sudo pacman -Rns $(pacman -Qtdq)'
+alias pacunlock='sudo rm /var/lib/pacman/db.lck'
+alias yaysua='yay -Sua --noconfirm'
+alias yaysyu='yay -Syu --noconfirm'
 alias list-pacman='pacman -Qqen'
 alias list-aur='pacman -Qqem'
 alias list-update='list-pacman > $HOME/.dotfiles/package_lists/.pacman_list; list-aur > $HOME/.dotfiles/package_lists/.aur_list'
-alias list-fonts='fc-list'
 # Privileged access
 if (( UID != 0 )); then
     alias sudo='sudo '
