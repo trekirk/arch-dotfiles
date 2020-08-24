@@ -130,7 +130,7 @@ shopt -s autocd
 # Line wrap on window resize
 shopt -s checkwinsize
 
-# Enable bash completion
+# Enable bash completion (need to install bash-completion)
 if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
         . /usr/share/bash-completion/bash_completion
