@@ -68,6 +68,7 @@ alias pacleanup='sudo pacman -Rns $(pacman -Qtdq)'
 alias pacunlock='sudo rm /var/lib/pacman/db.lck'
 alias yaysua='yay -Sua --noconfirm'
 alias yaysyu='yay -Syu --noconfirm'
+alias yaycache='yay -Scc'
 alias list-pacman='pacman -Qqen'
 alias list-aur='pacman -Qqem'
 alias list-update='list-pacman > $HOME/.dotfiles/package_lists/.pacman_list; list-aur > $HOME/.dotfiles/package_lists/.aur_list'
@@ -148,3 +149,5 @@ if ! shopt -oq posix; then
         . /etc/bash_completion
     fi
 fi
+
+neofetch
