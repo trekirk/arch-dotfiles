@@ -295,6 +295,7 @@ myLogHook = return ()
 -- hook by combining it with ewmhDesktopsStartup.
 --
 myStartupHook = do
+        spawnOnce "setxkbmap -layout es"
         spawnOnce "xbindkeys"
         spawnOnce "~/.fehbg &"
 
