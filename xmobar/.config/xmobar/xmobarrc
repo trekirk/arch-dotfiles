@@ -1,7 +1,7 @@
 Config { 
 
    -- appearance
-     font =         "xft:CodeNewRoman Nerd Font:size=10:bold:antialias=true"
+     font =         "xft:RobotoMono Nerd Font:size=10:bold:antialias=true"
    , bgColor =      "black"
    , fgColor =      "#646464"
    , position =     Top
@@ -11,7 +11,7 @@ Config {
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
-   , template = "%battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ %LEMD% | %date% || %kbd% "
+   , template = "%battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ %default:Master% | %bright% | %date% || %kbd% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -96,11 +96,24 @@ Config {
 
         -- time and date indicator 
         --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-        , Run Date           "<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
+        , Run Date           "<fc=#ABABAB>%F (%a) %H:%M</fc>" "date" 10
 
         -- keyboard layout indicator
         , Run Kbd            [ ("es(dvorak)" , "<fc=#00008B>DV</fc>")
-                             , ("es"         , "<fc=#8B0000>US</fc>")
+                             , ("es"         , "<fc=#8B0000>ES</fc>")
                              ]
+
+ 
+        -- brightness indicator
+        , Run Brightness     [ "--template", "Br: <bar>", 
+                               "--" -- brightness specific options
+                                       , "-D", "intel_backlight" 
+                             ] 1
+        
+        -- volume control
+        , Run Volume "default" "Master" ["-t", "<status>"
+                                         , "--"
+                                                , "--on", "<volume>"
+                                        ] 5
         ]
-   }
+           }
