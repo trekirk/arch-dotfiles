@@ -157,7 +157,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
 
     -- Restart xmonad
-    , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
+    , ((modm              , xK_q     ), spawn "pkill xmobar; xmonad --recompile; xmonad --restart")
     ]
     ++
 
@@ -307,6 +307,7 @@ myStartupHook = do
 main = do
   xmproc <- spawnPipe "xmobar $HOME/.config/xmobar/xmobarrc" 
   xmonad $ docks defaults
+  --  xmonad <=< xmobar $ defaults
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
