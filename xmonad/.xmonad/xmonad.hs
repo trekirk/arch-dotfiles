@@ -19,8 +19,12 @@ import XMonad
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
+import XMonad.Util.EZConfig (additionalKeysP)
+import Graphics.X11.ExtraTypes.XF86
+
 import Data.Monoid
 import Data.Monoid
+
 import System.Exit
 
 import qualified XMonad.StackSet as W
@@ -158,7 +162,24 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Restart xmonad
     , ((modm              , xK_q     ), spawn "pkill xmobar; xmonad --recompile; xmonad --restart")
+    
+    -- Multimedia Keys
+    -- , ("<XF86AudioPlay>", spawn "cmus toggle")
+    -- , ("<XF86AudioPrev>", spawn "cmus prev")
+    -- , ("<XF86AudioNext>", spawn "cmus next")
+    , ((0, xF86XK_AudioMute),   spawn "pactl set-sink-mute 0 toggle")  -- Bug prevents amixer it from toggling correctly in 12.04 but with pactl is solved.
+    , ((0, xF86XK_AudioLowerVolume), spawn "amixer sset Master 5%-")
+    , ((0, xF86XK_AudioRaiseVolume), spawn "amixer sset Master 5%+")
+    , ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 10")
+    , ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 10")
+    -- , ("<XF86HomePage>", spawn "firefox")
+    -- , ("<XF86Search>", safeSpawn "firefox" ["https://www.google.com/"])
+    -- , ("<XF86Mail>", runOrRaise "geary" (resource =? "thunderbird"))
+    -- , ("<XF86Calculator>", runOrRaise "gcalctool" (resource =? "gcalctool"))
+    -- , ("<XF86Eject>", spawn "toggleeject")
+    -- , ("<Print>", spawn "scrotd 0")
     ]
+   
     ++
 
     --
@@ -296,7 +317,7 @@ myLogHook = return ()
 --
 myStartupHook = do
         spawnOnce "setxkbmap -layout es"
-        spawnOnce "xbindkeys"
+        -- spawnOnce "xbindkeys"
         spawnOnce "~/.fehbg &"
 
 ------------------------------------------------------------------------
