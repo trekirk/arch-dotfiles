@@ -16,10 +16,21 @@
 --
 
 import XMonad
+
+-- Hooks
 import XMonad.Hooks.ManageDocks
+
+-- Utils
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 import XMonad.Util.EZConfig (additionalKeysP)
+
+-- Layouts
+import XMonad.Layout.Gaps
+import XMonad.Layout.Spacing
+import XMonad.Layout.NoBorders
+
+-- Function Keys
 import Graphics.X11.ExtraTypes.XF86
 
 import Data.Monoid
@@ -155,7 +166,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
     -- See also the statusBar function from Hooks.DynamicLog.
     --
-    -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
+    , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -238,7 +249,13 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
+
+defaultGapSize = 5 
+defaultGaps = gaps [(U,defaultGapSize), (R,defaultGapSize), (D, defaultGapSize), (L, defaultGapSize)]
+defaultSpaces = spacingRaw True (Border 5 5 5 5) True (Border 5 5 5 5) True
+spacesAndGaps = defaultSpaces -- . defaultGaps -- Uncomment "defaultGaps" to add gaps wrt the screen borders
+
+myLayout =      smartBorders . avoidStruts $ spacesAndGaps $ tiled ||| Mirror tiled ||| Full
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled   = Tall nmaster delta ratio
