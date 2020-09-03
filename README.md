@@ -4,7 +4,6 @@ These are the configuration files to set up Arch Linux in my main production mac
 - **root**: System-related configuration files. To install them, first, change the owner of the folder using `sudo chown -R root:root root`. Next proceed to symlink the files contained in the folder using GNU stow. 
   1. Remove the files carefully.
   1. Use the commannd  `stow` with sudo privileges setting root as the target directory `stow -t / -S <folder>`. **Important:** Revise the changes between files (old and new) before replacing root files. 
-- **scripts:** This folder contains scripts to configure the system perform some testing.
 - **pacman:** Package lists to be installed using `pacman`. To install the `pacman` list use `sudo pacman -S --needed - < pacman-list.txt`. To update the list use
 	`pacman -Qqen > pacman-list.txt`
 	for official packages, and
