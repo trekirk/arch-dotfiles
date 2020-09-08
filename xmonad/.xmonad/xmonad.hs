@@ -19,6 +19,7 @@ import XMonad
 
 -- Hooks
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.DynamicLog
 
 -- Utils
 import XMonad.Util.Run
@@ -166,7 +167,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
     -- See also the statusBar function from Hooks.DynamicLog.
     --
-    , ((modm              , xK_b     ), sendMessage ToggleStruts)
+    --, ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -338,14 +339,25 @@ myStartupHook = do
         spawnOnce "~/.fehbg &"
 
 ------------------------------------------------------------------------
+--Command to launch the bar
+myBar = "xmobar $HOME/.config/xmobar/xmobarrc"
+
+-- Custom PP, configure it as you like. It determines what is being written in the bar.
+myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "|" "|" }
+
+-- Key binding to toggle the gap for the bar
+toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
+
+------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main = do
-  xmproc <- spawnPipe "xmobar $HOME/.config/xmobar/xmobarrc" 
-  xmonad $ docks defaults
-  --  xmonad <=< xmobar $ defaults
+main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
+--main = do
+--  xmproc <- spawnPipe "xmobar $HOME/.config/xmobar/xmobarrc" 
+--  xmonad $ docks defaults
+-- --  xmonad <=< xmobar $ defaults
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
