@@ -99,7 +99,7 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
+myFocusedBorderColor = "#ff79c6"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -343,7 +343,7 @@ myStartupHook = do
 myBar = "xmobar $HOME/.config/xmobar/xmobarrc"
 
 -- Custom PP, configure it as you like. It determines what is being written in the bar.
-myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "|" "|" }
+myPP = xmobarPP { ppCurrent = xmobarColor "#ff79c6" "" . wrap "<" ">" }
 
 -- Key binding to toggle the gap for the bar
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)

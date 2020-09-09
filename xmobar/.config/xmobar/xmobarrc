@@ -2,8 +2,10 @@ Config {
 
    -- appearance
      font =         "xft:FiraMono Nerd Font:size=9:bold:antialias=true"
-   , bgColor =      "black"
-   , fgColor =      "#646464"
+   , additionalFonts = ["xft:JoyPixels:size=9",
+                       "xft:Font Awesome 5 Free Solid:style=solid,size=11"]
+   , bgColor =      "#282A36"
+   , fgColor =      "#F8F8F2"
    , position =     Top
    , border =       BottomB
    , borderColor =  "#646464"
@@ -12,7 +14,7 @@ Config {
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
    -- , template = " %StdinReader% | %battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ <action=pavucontrol>%alsa:default:Master%</action> | %bright% | %date% || %kbd% "
-   , template = " %StdinReader% }{ <action=pavucontrol>%alsa:default:Master%</action> | %bright% | %battery% | %dynnetwork% | %date% || %kbd% "
+   , template = " %StdinReader% }{ %dynnetwork% | <action=pavucontrol>%alsa:default:Master%</action> | %bright% | %battery% | %date% || %kbd% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -82,7 +84,7 @@ Config {
                              ] 10
 
         -- battery monitor
-        , Run Battery        [ "--template" , "Batt: <acstatus>"
+        , Run Battery        [ "--template" , "  <acstatus>"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
                              , "--low"      , "darkred"
@@ -109,20 +111,20 @@ Config {
 
  
         -- brightness indicator
-        , Run Brightness     [ "--template", "Br: <fc=#dAA520><bar></fc>", 
+        , Run Brightness     [ "--template", "  <fc=#dAA520><bar></fc>", 
                                "--" -- brightness specific options
                                        , "-D", "intel_backlight" 
                              ] 1
         
         -- volume control
-        , Run Volume "default" "Master" ["-t", "Vol: <status>"
+        , Run Volume "default" "Master" ["-t", "  <status>"
                                          , "--"
                                          , "--on", "<fc=#859900><volume>%</fc>"
                                          , "--off", "MUTE"
                                          , "--offc", "#dc322f"
                                         ] 5
         -- alternative volume controls using alsactl
-        , Run Alsa "default" "Master"   ["--template", "Vol: <status>"
+        , Run Alsa "default" "Master"   ["--template", "  <status>"
                                          , "--"
                                          , "--on", "<fc=#859900><volume>%</fc>"
                                          , "--off", "MUTE"
