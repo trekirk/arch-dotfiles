@@ -75,9 +75,9 @@ Config {
         , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
                              , "--Low"      , "1000"       -- units: B/s
                              , "--High"     , "5000"       -- units: B/s
-                             , "--low"      , "darkgreen"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkred"
+                             , "--low"      , "#50FA7B"
+                             , "--normal"   , "#FFB86C"
+                             , "--high"     , "#FF5555"
                              ] 10
 
         -- cpu activity monitor
@@ -124,7 +124,7 @@ Config {
                                        -- discharging status
                                        , "-o"	, "<left>% (<timeleft>)"
                                        -- AC "on" status
-                                       , "-O"	, "\xf0e7 <fc=#dAA520>Charging</fc>"
+                                       , "-O"	, "\xf0e7 <fc=#FFB86C>Charging</fc>"
                                        -- charged status
                                        , "-i"	, "<fc=#006000>Charged</fc>"
                                        -- The icon change depending on the status of the battery
@@ -144,7 +144,7 @@ Config {
 
  
         -- brightness indicator
-        , Run Brightness     [ "--template", " <fc=#dAA520><bar></fc>", 
+        , Run Brightness     [ "--template", " <fc=#FFB86C><bar></fc>", 
                                "--" -- brightness specific options
                                        , "-D", "intel_backlight" 
                              ] 1
