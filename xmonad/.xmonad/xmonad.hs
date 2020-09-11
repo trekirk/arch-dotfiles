@@ -112,6 +112,8 @@ myModMask       = mod4Mask
 -- myNumlockMask   = mod2Mask -- deprecated in xmonad-0.9.1
 ------------------------------------------------------------
 
+windowCount :: X (Maybe String)
+windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
 -- The default number of workspaces (virtual screens) and their names.
 -- By default we use numeric strings, but any string may be used as a
@@ -125,7 +127,7 @@ myModMask       = mod4Mask
 --Reference: 
 -- > workspaces = ["terminal", "browser", "code", "fmanager", "multimedia", "messages", "gaming" ] ++ map show [4..9]
 
-myWorkspaces    = ["\xf120","\xe007","\xf121","\xf07c","\xf025","\xf3fe","\xf1b6","8","9"]
+myWorkspaces    = ["\xf120","\xe007","\xf121","\xf07c","\xf025","\xf3fe","\xf1b6"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -435,7 +437,16 @@ myStartupHook = do
 myBar = "xmobar $HOME/.config/xmobar/xmobarrc"
 
 -- Custom PP, configure it as you like. It determines what is being written in the bar.
-myPP = xmobarPP { ppCurrent = xmobarColor "#ff79c6" "" . wrap "" "" }
+myPP = xmobarPP { ppCurrent = xmobarColor "#F8F8F2" "#6272a4" . wrap " " " "
+                , ppVisible = xmobarColor "#F8F8F2" "#6272a4"  -- Visible but not current workspace (Xinerama)
+                , ppHidden = xmobarColor "#FF79C6" "" . wrap "*" ""   -- Hidden workspaces in xmobar
+                , ppHiddenNoWindows = xmobarColor "#8BE9FD" ""        -- Hidden workspaces (no windows)
+                , ppTitle = xmobarColor "#50fa7b" "" . shorten 40     -- Title of active window in xmobar
+                , ppSep =  "<fc=#6272a4> | </fc>"          -- Separators in xmobar
+                , ppUrgent = xmobarColor "#FFB86C" "" . wrap "!" "!"  -- Urgent workspace
+                , ppExtras  = [windowCount]                           -- # of windows current workspace
+                , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]          
+                }
 
 -- Key binding to toggle the gap for the bar
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
