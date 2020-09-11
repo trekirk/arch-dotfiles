@@ -1,9 +1,33 @@
+-- Dracula color palette
+--Background
+--#282A36
+--Foreground
+--#F8F8F2
+--Selection
+--#44475A
+--Comment
+--#6272A4
+--Red
+--#FF5555
+--Orange
+--#FFB86C
+--Yellow
+--#F1FA8C
+--Green
+--#50FA7B
+--Purple
+--#BD93F9
+--Cyan
+--#8BE9FD
+--Pink
+--#FF79C6
+ 
+
 Config { 
 
    -- appearance
-     font =         "xft:FiraMono Nerd Font:size=9:bold:antialias=true"
-   , additionalFonts = ["xft:JoyPixels:size=9",
-                       "xft:Font Awesome 5 Free Solid:style=solid,size=11"]
+     font =         "xft:Font Awesome 5 Free Solid:size=10,Font Awesome 5 Brands Regular:size=10, Noto Sans Mono:size=9:bold:antialias=true"
+   , additionalFonts = ["xft:JoyPixels:size=9"]
    , bgColor =      "#282A36"
    , fgColor =      "#F8F8F2"
    , position =     Top
@@ -14,7 +38,7 @@ Config {
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
    -- , template = " %StdinReader% | %battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ <action=pavucontrol>%alsa:default:Master%</action> | %bright% | %date% || %kbd% "
-   , template = " %StdinReader% }{ %dynnetwork% | <action=pavucontrol>%alsa:default:Master%</action> | %bright% | %battery% | %date% || %kbd% "
+   , template = " %StdinReader% }{ %dynnetwork% <fc=#6272A4>|</fc> <action=pavucontrol>%alsa:default:Master%</action> <fc=#6272A4>|</fc> %bright% <fc=#6272A4>|</fc> %battery% <fc=#6272A4>|</fc> %date% <fc=#6272A4>||</fc> %kbd% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -84,47 +108,56 @@ Config {
                              ] 10
 
         -- battery monitor
-        , Run Battery        [ "--template" , "  <acstatus>"
-                             , "--Low"      , "10"        -- units: %
-                             , "--High"     , "80"        -- units: %
-                             , "--low"      , "darkred"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkgreen"
+        , Run BatteryP       ["BAT0"] 
+                             [ "--template" , "<acstatus>"
+                             -- This flags set the thresholds for the colors
+                             , "-L"      , "20"        -- units: %
+                             , "-H"      , "80"        -- units: %
+                             , "--low"      , "#FF5555"
+                             , "--normal"   , "#FFB86C"
+                             , "--high"     , "#50FA7B"
 
                              , "--" -- battery specific options
+                                       -- Here you have to redefine the flags to be interpreted by the --lows, etc. options
+                                       , "-L"   , "20"   -- units: %
+                                       , "-H"   , "80"   -- units: %
                                        -- discharging status
                                        , "-o"	, "<left>% (<timeleft>)"
                                        -- AC "on" status
-                                       , "-O"	, "<fc=#dAA520>Charging</fc>"
+                                       , "-O"	, "\xf0e7 <fc=#dAA520>Charging</fc>"
                                        -- charged status
                                        , "-i"	, "<fc=#006000>Charged</fc>"
+                                       -- The icon change depending on the status of the battery
+                                       , "--lows", "<fc=#F8F8F2>\xf243</fc> "
+                                       , "--mediums", "<fc=#F8F8F2>\xf242</fc> "
+                                       , "--highs", "<fc=#F8F8F2>\xf240</fc> "
                              ] 50
 
         -- time and date indicator 
         --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-        , Run Date           "<fc=#ABABAB>%F (%a) %H:%M</fc>" "date" 10
+        , Run Date           "\xf133 %F (%a) \xf017 %H:%M" "date" 10
 
         -- keyboard layout indicator
         , Run Kbd            [ ("es(dvorak)" , "<fc=#00008B>DV</fc>")
-                             , ("es"         , "<fc=#8B0000>ES</fc>")
+                             , ("es"         , "\xf0ac <fc=#FF5555>ES</fc>")
                              ]
 
  
         -- brightness indicator
-        , Run Brightness     [ "--template", "  <fc=#dAA520><bar></fc>", 
+        , Run Brightness     [ "--template", " <fc=#dAA520><bar></fc>", 
                                "--" -- brightness specific options
                                        , "-D", "intel_backlight" 
                              ] 1
         
         -- volume control
-        , Run Volume "default" "Master" ["-t", "  <status>"
+        , Run Volume "default" "Master" ["-t", " <status>"
                                          , "--"
                                          , "--on", "<fc=#859900><volume>%</fc>"
                                          , "--off", "MUTE"
                                          , "--offc", "#dc322f"
                                         ] 5
         -- alternative volume controls using alsactl
-        , Run Alsa "default" "Master"   ["--template", "  <status>"
+        , Run Alsa "default" "Master"   ["--template", " <status>"
                                          , "--"
                                          , "--on", "<fc=#859900><volume>%</fc>"
                                          , "--off", "MUTE"
