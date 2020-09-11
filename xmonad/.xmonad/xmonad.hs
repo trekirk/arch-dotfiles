@@ -17,30 +17,58 @@
 
 import XMonad
 
+-- Actions
+import XMonad.Actions.MouseResize
+
+-- Data
+import Data.Monoid
+import Data.Monoid
+
+-- Function Keys
+import Graphics.X11.ExtraTypes.XF86
+
 -- Hooks
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
+
+-- Layouts
+import XMonad.Layout.GridVariants (Grid(Grid))
+import XMonad.Layout.SimplestFloat
+import XMonad.Layout.Spiral
+import XMonad.Layout.ResizableTile
+import XMonad.Layout.Tabbed
+import XMonad.Layout.ThreeColumns
+
+--Layout Modifiers
+--import XMonad.Layout.Gaps
+import XMonad.Layout.LayoutModifier
+import XMonad.Layout.LimitWindows (limitWindows, increaseLimit, decreaseLimit)
+import XMonad.Layout.Magnifier
+import XMonad.Layout.MultiToggle (mkToggle, single, EOT(EOT), (??))
+import XMonad.Layout.MultiToggle.Instances (StdTransformers(NBFULL, MIRROR, NOBORDERS))
+import XMonad.Layout.NoBorders
+import XMonad.Layout.Renamed
+import XMonad.Layout.Spacing
+import XMonad.Layout.WindowArranger (windowArrange, WindowArrangerMsg(..))
+import qualified XMonad.Layout.ToggleLayouts as T (toggleLayouts, ToggleLayout(Toggle))
+import qualified XMonad.Layout.MultiToggle as MT (Toggle(..))
 
 -- Utils
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 import XMonad.Util.EZConfig (additionalKeysP)
 
--- Layouts
-import XMonad.Layout.Gaps
-import XMonad.Layout.Spacing
-import XMonad.Layout.NoBorders
-
--- Function Keys
-import Graphics.X11.ExtraTypes.XF86
-
-import Data.Monoid
-import Data.Monoid
 
 import System.Exit
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
+
+myFont :: String
+myFont = "xft:CodeNewRoman Nerd Font Mono:size=9:antialias=true:hinting=true"
+-- Preferred font for the tabbed layout (use pixelsize instead of size to shrink it)
+myTabFont :: String
+myTabFont = "xft:CodeNewRoman Nerd Font Mono:size=10"
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -174,12 +202,15 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Restart xmonad
     , ((modm              , xK_q     ), spawn "pkill xmobar; xmonad --recompile; xmonad --restart")
-    
+    ]
+
+    ++
+
     -- Multimedia Keys
     -- , ("<XF86AudioPlay>", spawn "cmus toggle")
     -- , ("<XF86AudioPrev>", spawn "cmus prev")
     -- , ("<XF86AudioNext>", spawn "cmus next")
-    , ((0, xF86XK_AudioMute),   spawn "pactl set-sink-mute 0 toggle")  -- Bug prevents amixer it from toggling correctly in 12.04 but with pactl is solved.
+    [ ((0, xF86XK_AudioMute),   spawn "pactl set-sink-mute 0 toggle")  -- Bug prevents amixer it from toggling correctly in 12.04 but with pactl is solved.
     , ((0, xF86XK_AudioLowerVolume), spawn "amixer sset Master 5%-")
     , ((0, xF86XK_AudioRaiseVolume), spawn "amixer sset Master 5%+")
     , ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 10")
@@ -251,25 +282,83 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- which denotes layout choice.
 --
 
-defaultGapSize = 5 
-defaultGaps = gaps [(U,defaultGapSize), (R,defaultGapSize), (D, defaultGapSize), (L, defaultGapSize)]
-defaultSpaces = spacingRaw True (Border 5 5 5 5) True (Border 5 5 5 5) True
-spacesAndGaps = defaultSpaces -- . defaultGaps -- Uncomment "defaultGaps" to add gaps wrt the screen borders
+-- defaultGapSize = 5 
+-- defaultGaps = gaps [(U,defaultGapSize), (R,defaultGapSize), (D, defaultGapSize), (L, defaultGapSize)]
+-- defaultSpaces = spacingRaw True (Border 5 5 5 5) True (Border 5 5 5 5) True
+-- spacesAndGaps = defaultSpaces . defaultGaps
 
-myLayout =      smartBorders . avoidStruts $ spacesAndGaps $ tiled ||| Mirror tiled ||| Full
-  where
+-- myLayout =      smartBorders . avoidStruts $ spacesAndGaps $ tiled ||| Mirror tiled ||| Full
+  -- where
     -- default tiling algorithm partitions the screen into two panes
-    tiled   = Tall nmaster delta ratio
+    -- tiled   = Tall nmaster delta ratio
 
     -- The default number of windows in the master pane
-    nmaster = 1
+    -- nmaster = 1
 
     -- Default proportion of screen occupied by master pane
-    ratio   = 1/2
+    -- ratio   = 1/2
 
     -- Percent of screen to increment by when resizing panes
-    delta   = 3/100
+    -- delta   = 3/100
 
+mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
+mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True
+
+-- Below is a variation of the above except no borders are applied
+-- if fewer than two windows. So a single window has no gaps.
+mySpacing' :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
+mySpacing' i = spacingRaw True (Border i i i i) True (Border i i i i) True
+
+-- Defining a bunch of layouts, many that I don't use.
+tall     = renamed [Replace "tall"]
+           $ limitWindows 12
+           $ mySpacing' 8 
+           $ ResizableTall 1 (3/100) (1/2) []
+magnify  = renamed [Replace "magnify"]
+           $ magnifier
+           $ limitWindows 12
+           $ mySpacing 8
+           $ ResizableTall 1 (3/100) (1/2) []
+monocle  = renamed [Replace "monocle"]
+           $ limitWindows 20 Full
+floats   = renamed [Replace "floats"]
+           $ limitWindows 20 simplestFloat
+grid     = renamed [Replace "grid"]
+           $ limitWindows 12
+           $ mySpacing' 8
+           $ mkToggle (single MIRROR)
+           $ Grid (16/10)
+spirals  = renamed [Replace "spirals"]
+           $ mySpacing' 8
+           $ spiral (6/7)
+tabs     = renamed [Replace "tabs"]
+           -- I cannot add spacing to this layout because it will
+           -- add spacing between window and tabs which looks bad.
+           $ tabbed shrinkText myTabConfig
+  where
+    myTabConfig = def { fontName            = myTabFont
+                      , activeColor         = "#292d3e"
+                      , inactiveColor       = "#3e445e"
+                      , activeBorderColor   = "#292d3e"
+                      , inactiveBorderColor = "#292d3e"
+                      , activeTextColor     = "#ffffff"
+                      , inactiveTextColor   = "#d0d0d0"
+                      }
+
+-- The layout hook
+myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts floats $
+               mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
+             where
+               -- I've commented out the layouts I don't use.
+               myDefaultLayout =     smartBorders $ tall
+                                 ||| magnify
+                                 ||| monocle
+                                 ||| floats
+                                 ||| grid
+                                 ||| noBorders tabs
+                                 ||| spirals
+                                 -- ||| threeCol
+                                 -- ||| threeRow
 ------------------------------------------------------------------------
 -- Window rules:
 
@@ -383,7 +472,7 @@ defaults = defaultConfig {
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
-        layoutHook         = myLayout,
+        layoutHook         = myLayoutHook,
         manageHook         = myManageHook,
         handleEventHook    = myEventHook,
         logHook            = myLogHook,
