@@ -333,7 +333,7 @@ grid     = renamed [Replace "grid"]
            $ mySpacing' 8
            $ mkToggle (single MIRROR)
            $ Grid (16/10)
-spirals  = renamed [Replace "spirals"]
+fibb     = renamed [Replace "fibb"]
            $ mySpacing' 8
            $ spiral (6/7)
 tabs     = renamed [Replace "tabs"]
@@ -361,7 +361,7 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
                                  ||| floats
                                  ||| grid
                                  ||| noBorders tabs
-                                 ||| spirals
+                                 ||| fibb
                                  -- ||| threeCol
                                  -- ||| threeRow
 ------------------------------------------------------------------------
@@ -439,8 +439,8 @@ myBar = "xmobar $HOME/.config/xmobar/xmobarrc"
 -- Custom PP, configure it as you like. It determines what is being written in the bar.
 myPP = xmobarPP { ppCurrent = xmobarColor "#F8F8F2" "#6272a4" . wrap " " " "
                 , ppVisible = xmobarColor "#F8F8F2" "#6272a4"  -- Visible but not current workspace (Xinerama)
-                , ppHidden = xmobarColor "#FF79C6" "" . wrap "*" ""   -- Hidden workspaces in xmobar
-                , ppHiddenNoWindows = xmobarColor "#8BE9FD" ""        -- Hidden workspaces (no windows)
+                , ppHidden = xmobarColor "#FF79C6" "" . wrap "*" " "   -- Hidden workspaces in xmobar
+                , ppHiddenNoWindows = xmobarColor "#8BE9FD" "" . wrap " " " "        -- Hidden workspaces (no windows)
                 , ppTitle = xmobarColor "#50fa7b" "" . shorten 40     -- Title of active window in xmobar
                 , ppSep =  "<fc=#6272a4> | </fc>"          -- Separators in xmobar
                 , ppUrgent = xmobarColor "#FFB86C" "" . wrap "!" "!"  -- Urgent workspace
