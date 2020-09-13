@@ -127,7 +127,7 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 --Reference: 
 -- > workspaces = ["terminal", "browser", "code", "fmanager", "multimedia", "messages", "gaming" ] ++ map show [4..9]
 
-myWorkspaces    = ["\xf120","\xe007","\xf121","\xf07c","\xf025","\xf3fe","\xf1b6"]
+myWorkspaces    = ["\xf120","\xe007","\xf121","\xf187","\xf025","\xf3fe","\xf1b6"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
