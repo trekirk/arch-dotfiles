@@ -18,6 +18,7 @@
 import XMonad
 
 -- Actions
+import XMonad.Actions.DynamicProjects
 import XMonad.Actions.MouseResize
 
 -- Data
@@ -60,6 +61,7 @@ import XMonad.Util.EZConfig (additionalKeysP)
 
 
 import System.Exit
+import System.IO (hPutStrLn)
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -114,6 +116,37 @@ myModMask       = mod4Mask
 
 windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
+
+-- Inspired by TopicSpace, DynamicWorkspaces, and WorkspaceDir, DynamicProjects
+-- treats workspaces as projects while maintaining compatibility with all
+-- existing workspace-related functionality in XMonad.
+-- Instead of using generic workspace names such as 3 or work,
+-- DynamicProjects allows you to dedicate workspaces to specific projects
+-- and then switch between projects easily.
+-- A project is made up of a name, working directory, and a start-up hook.
+-- When you switch to a workspace, DynamicProjects changes the working directory
+-- to the one configured for the matching project. If the workspace
+-- doesn't have any windows, the project's start-up hook is executed.
+
+myProjects :: [Project]
+myProjects =
+  [ Project { projectName      = "\xf120"
+            , projectDirectory = "~/"
+            , projectStartHook = Just $ do spawn myTerminal
+            }
+  , Project { projectName      = "\xe007"
+            , projectDirectory = "~/Downloads"
+            , projectStartHook = Just $ do spawn "firefox"
+            }
+  , Project { projectName      = "\xf121"
+            , projectDirectory = "~/"
+            , projectStartHook = Just $ do spawn "code"
+            }
+  , Project { projectName      = "\xf187"
+            , projectDirectory = "~/"
+            , projectStartHook = Just $ do spawn "pcmanfm"
+            }
+  ]
 
 -- The default number of workspaces (virtual screens) and their names.
 -- By default we use numeric strings, but any string may be used as a
@@ -411,7 +444,26 @@ myEventHook = mempty
 -- It will add EWMH logHook actions to your custom log hook by
 -- combining it with ewmhDesktopsLogHook.
 --
-myLogHook = return ()
+-- Command to launch the bar
+myBar = "xmobar $HOME/.config/xmobar/xmobarrc"
+
+-- Custom PP, configure it as you like. It determines what is being written in the bar.
+myPP h = xmobarPP { ppOutput = hPutStrLn h
+                , ppCurrent = xmobarColor "#F8F8F2" "#6272a4" . wrap " " " "
+                , ppVisible = xmobarColor "#F8F8F2" "#6272a4"  -- Visible but not current workspace (Xinerama)
+                , ppHidden = xmobarColor "#FF79C6" "" . wrap "*" " "   -- Hidden workspaces in xmobar
+                , ppHiddenNoWindows = xmobarColor "#8BE9FD" "" . wrap " " " "        -- Hidden workspaces (no windows)
+                , ppTitle = xmobarColor "#50fa7b" "" . shorten 30     -- Title of active window in xmobar
+                , ppSep =  "<fc=#6272a4> | </fc>"          -- Separators in xmobar
+                , ppUrgent = xmobarColor "#FFB86C" "" . wrap "!" "!"  -- Urgent workspace
+                , ppExtras  = [windowCount]                           -- # of windows current workspace
+                , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]          
+                }
+
+-- -- -- Key binding to toggle the gap for the bar
+toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
+
+myLogHook h = dynamicLogWithPP $ myPP h
 
 ------------------------------------------------------------------------
 -- Startup hook
@@ -432,34 +484,19 @@ myStartupHook = do
         -- spawnOnce "xbindkeys"
         spawnOnce "~/.fehbg &"
 
-------------------------------------------------------------------------
---Command to launch the bar
-myBar = "xmobar $HOME/.config/xmobar/xmobarrc"
-
--- Custom PP, configure it as you like. It determines what is being written in the bar.
-myPP = xmobarPP { ppCurrent = xmobarColor "#F8F8F2" "#6272a4" . wrap " " " "
-                , ppVisible = xmobarColor "#F8F8F2" "#6272a4"  -- Visible but not current workspace (Xinerama)
-                , ppHidden = xmobarColor "#FF79C6" "" . wrap "*" " "   -- Hidden workspaces in xmobar
-                , ppHiddenNoWindows = xmobarColor "#8BE9FD" "" . wrap " " " "        -- Hidden workspaces (no windows)
-                , ppTitle = xmobarColor "#50fa7b" "" . shorten 30     -- Title of active window in xmobar
-                , ppSep =  "<fc=#6272a4> | </fc>"          -- Separators in xmobar
-                , ppUrgent = xmobarColor "#FFB86C" "" . wrap "!" "!"  -- Urgent workspace
-                , ppExtras  = [windowCount]                           -- # of windows current workspace
-                , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]          
-                }
-
--- Key binding to toggle the gap for the bar
-toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
---main = do
---  xmproc <- spawnPipe "xmobar $HOME/.config/xmobar/xmobarrc" 
---  xmonad $ docks defaults
+-- main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
+main = do
+        xmproc <- spawnPipe myBar 
+        xmonad 
+            $ dynamicProjects myProjects
+            $ docks 
+            $ defaults xmproc
 -- --  xmonad <=< xmobar $ defaults
 
 -- A structure containing your configuration settings, overriding
@@ -468,7 +505,7 @@ main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
 --
 -- No need to modify this.
 --
-defaults = defaultConfig {
+defaults h = defaultConfig {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
@@ -489,6 +526,6 @@ defaults = defaultConfig {
         layoutHook         = myLayoutHook,
         manageHook         = myManageHook,
         handleEventHook    = myEventHook,
-        logHook            = myLogHook,
+        logHook            = myLogHook h,
         startupHook        = myStartupHook
     }
