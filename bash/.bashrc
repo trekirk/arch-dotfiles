@@ -150,4 +150,16 @@ if ! shopt -oq posix; then
     fi
 fi
 
+#######
+# ROS #
+#######
+
+source /opt/ros/melodic/setup.bash
+source ~/Projects/ros/catkin_ws/setup.bash
+export ROS_WORKSPACE=~/Projects/ros/catkin_ws
+
+###########
+# Startup #
+###########
+
 neofetch
