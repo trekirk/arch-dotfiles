@@ -146,6 +146,10 @@ myProjects =
             , projectDirectory = "~/"
             , projectStartHook = Just $ do spawn "pcmanfm"
             }
+  , Project { projectName      = "\xf025"
+            , projectDirectory = "~/"
+            , projectStartHook = Just $ do spawn "spotify"
+            }
   ]
 
 -- The default number of workspaces (virtual screens) and their names.
