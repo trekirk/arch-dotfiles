@@ -154,8 +154,8 @@ fi
 # ROS #
 #######
 
-source /opt/ros/melodic/setup.bash
-source ~/Projects/ros/catkin_ws/setup.bash
+source /opt/ros/melodic/setup.bash > /dev/null
+source ~/Projects/ros/catkin_ws/devel/setup.bash > /dev/null
 export ROS_WORKSPACE=~/Projects/ros/catkin_ws
 
 ###########
