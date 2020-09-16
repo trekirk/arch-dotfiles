@@ -75,6 +75,7 @@ myTabFont = "xft:CodeNewRoman Nerd Font Mono:size=10"
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
+myTerminal :: String
 myTerminal      = "urxvt"
 
 -- Whether focus follows the mouse pointer.
@@ -83,6 +84,7 @@ myFocusFollowsMouse = True
 
 -- Width of the window border in pixels.
 --
+myBorderWidth :: Dimension
 myBorderWidth   = 2
 
 -- modMask lets you specify which modkey you want to use. The default
@@ -90,7 +92,17 @@ myBorderWidth   = 2
 -- ("right alt"), which does not conflict with emacs keybindings. The
 -- "windows key" is usually mod4Mask.
 --
+myModMask :: KeyMask
 myModMask       = mod4Mask
+
+myBrowser :: String
+myBrowser       = "firefox"
+
+myFileManager :: String
+myFileManager   = "pcmanfm"
+
+myTextEditor :: String
+myTextEditor    = "code"
 
 -- NOTE: from 0.9.1 on numlock mask is set automatically. The numlockMask
 -- setting should be removed from configs.
@@ -136,15 +148,15 @@ myProjects =
             }
   , Project { projectName      = "\xe007"
             , projectDirectory = "~/Downloads"
-            , projectStartHook = Just $ do spawn "firefox"
+            , projectStartHook = Just $ do spawn myBrowser
             }
   , Project { projectName      = "\xf121"
             , projectDirectory = "~/"
-            , projectStartHook = Just $ do spawn "code"
+            , projectStartHook = Just $ do spawn myTextEditor
             }
   , Project { projectName      = "\xf187"
             , projectDirectory = "~/"
-            , projectStartHook = Just $ do spawn "pcmanfm"
+            , projectStartHook = Just $ do spawn myFileManager
             }
   , Project { projectName      = "\xf025"
             , projectDirectory = "~/"
