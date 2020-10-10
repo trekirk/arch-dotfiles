@@ -70,9 +70,9 @@ alias yaysua='yay -Sua --noconfirm'
 alias yaysyu='yay -Syu --noconfirm'
 alias yaycache='yay -Scc'
 alias keyupdate='pacman-key --refresh-keys'
-alias list-pacman='pacman -Qqen'
-alias list-aur='pacman -Qqem'
-alias list-update='list-pacman > $HOME/.dotfiles/package_lists/.pacman_list; list-aur > $HOME/.dotfiles/package_lists/.aur_list'
+alias paclist='pacman -Qqen'
+alias yaylist='pacman -Qqem'
+alias list-update='paclist > $HOME/.dotfiles/pacman/package_lists/xiaomi-mi-air/pacman_list.txt; yaylist > $HOME/.dotfiles/pacman/package_lists/xiaomi-mi-air/aur_list.txt'
 # Privileged access
 if (( UID != 0 )); then
     alias sudo='sudo '
