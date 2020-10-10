@@ -11,6 +11,7 @@ code
 dhcpcd
 dmenu
 efibootmgr
+evince
 fakeroot
 feh
 file
@@ -37,6 +38,7 @@ lightdm
 lightdm-webkit2-greeter
 linux
 linux-firmware
+luit
 m4
 make
 man-db
@@ -64,6 +66,7 @@ stow
 sudo
 telegram-desktop
 texinfo
+thunderbird
 ttf-dejavu
 ttf-fira-code
 ttf-font-awesome
@@ -75,7 +78,9 @@ ttf-ubuntu-font-family
 unrar
 unzip
 urxvt-perls
+vifm
 which
+xarchiver
 xbindkeys
 xdg-user-dirs
 xf86-input-libinput
@@ -91,7 +96,6 @@ xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-fonts-encodings
 xorg-iceauth
-xorg-luit
 xorg-mkfontscale
 xorg-server
 xorg-server-common
