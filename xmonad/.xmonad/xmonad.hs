@@ -18,6 +18,7 @@
 import XMonad
 
 -- Actions
+import XMonad.Actions.CycleWS
 import XMonad.Actions.DynamicProjects
 import XMonad.Actions.MouseResize
 
@@ -98,6 +99,9 @@ myModMask       = mod4Mask
 myBrowser :: String
 myBrowser       = "firefox"
 
+myMailClient :: String
+myMailClient    = "thunderbird"
+
 myFileManager :: String
 myFileManager   = "pcmanfm"
 
@@ -158,6 +162,10 @@ myProjects =
             , projectDirectory = "~/"
             , projectStartHook = Just $ do spawn myFileManager
             }
+  , Project { projectName      = "\xf3fe"
+            , projectDirectory = "~/"
+            , projectStartHook = Just $ do spawn myMailClient
+            }
   , Project { projectName      = "\xf025"
             , projectDirectory = "~/"
             , projectStartHook = Just $ do spawn "spotify"
@@ -174,9 +182,9 @@ myProjects =
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
 --Reference: 
--- > workspaces = ["terminal", "browser", "code", "fmanager", "multimedia", "messages", "gaming" ] ++ map show [4..9]
+-- > workspaces = ["home", "terminal", "browser", "code", "messages", "multimedia", "gaming" ] ++ map show [4..9]
 
-myWorkspaces    = ["\xf120","\xe007","\xf121","\xf187","\xf025","\xf3fe","\xf1b6"]
+myWorkspaces    = ["\xf015", "\xf120","\xe007","\xf121","\xf3fe","\xf025","\xf1b6"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -210,7 +218,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_n     ), refresh)
 
     -- Move focus to the next window
-    , ((modm,               xK_Tab   ), windows W.focusDown)
+    --, ((modm,               xK_Tab   ), windows W.focusDown)
 
     -- Move focus to the next window
     , ((modm,               xK_j     ), windows W.focusDown)
@@ -260,6 +268,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     ++
 
+    -- My programs shorcuts
+    [ ((modm .|. shiftMask, xK_b     ), spawn myBrowser)
+    , ((modm .|. shiftMask, xK_f     ), spawn myFileManager)
+    ]
+
+    ++
+
     -- Multimedia Keys
     -- , ("<XF86AudioPlay>", spawn "cmus toggle")
     -- , ("<XF86AudioPrev>", spawn "cmus prev")
@@ -279,15 +294,25 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
    
     ++
 
-    --
+    -- Workspace keybindings
     -- mod-[1..9], Switch to workspace N
     --
     -- mod-[1..9], Switch to workspace N
     -- mod-shift-[1..9], Move client to workspace N
     --
-    [((m .|. modm, k), windows $ f i)
+    [ ((m .|. modm, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-        , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
+    , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]
+    ]
+
+    ++
+
+    [ ((modm,               xK_Right),  nextWS)
+    , ((modm,               xK_Left),   prevWS)
+    , ((modm,               xK_Tab),    toggleWS)
+    , ((modm .|. shiftMask, xK_Right),  shiftToNext >> nextWS)
+    , ((modm .|. shiftMask, xK_Left),   shiftToPrev >> prevWS)]
+    
     ++
 
     --
@@ -477,7 +502,7 @@ myPP h = xmobarPP { ppOutput = hPutStrLn h
                 }
 
 -- -- -- Key binding to toggle the gap for the bar
-toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
+-- toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 myLogHook h = dynamicLogWithPP $ myPP h
 
