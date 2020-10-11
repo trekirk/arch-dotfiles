@@ -2,5 +2,6 @@ grub2-theme-archlinux
 lightdm-webkit-theme-aether
 nerd-fonts-complete
 python-catkin-tools-git
+spotify
 urxvt-resize-font-git
 yay

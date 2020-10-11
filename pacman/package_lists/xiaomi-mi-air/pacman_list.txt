@@ -42,6 +42,7 @@ luit
 m4
 make
 man-db
+mc
 nano
 neofetch
 net-tools
