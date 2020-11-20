@@ -20,6 +20,7 @@ firefox
 flex
 gawk
 gcc
+gdb
 gettext
 ghc-static
 git
@@ -33,6 +34,8 @@ gzip
 htop
 imagemagick
 iwd
+kitty
+libreoffice-fresh
 libtool
 lightdm
 lightdm-webkit2-greeter
@@ -59,6 +62,7 @@ pcmanfm
 pkgconf
 pkgfile
 pulseaudio
+qtcreator
 rofimoji
 ros-melodic-desktop
 rxvt-unicode
@@ -79,6 +83,7 @@ ttf-ubuntu-font-family
 unrar
 unzip
 urxvt-perls
+vi
 vifm
 which
 xarchiver
