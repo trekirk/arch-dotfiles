@@ -28,7 +28,7 @@ URxvt.font: xft:CodeNewRoman Nerd Font Mono:size=12, \
 URxvt.saveLines: 2000
 URxvt.scrollBar: false
 URxvt.cursorColor: white
-! URxvt.letterSpace: 2
+URxvt.letterSpace: -1 
 
 !! Extensions
 URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select,clipboard
