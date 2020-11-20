@@ -1,7 +1,9 @@
+fontpreview
 grub2-theme-archlinux
 lightdm-webkit-theme-aether
 nerd-fonts-complete
 python-catkin-tools-git
 spotify
+ttf-oswald
 urxvt-resize-font-git
 yay
