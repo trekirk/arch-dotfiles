@@ -77,7 +77,7 @@ myTabFont = "xft:CodeNewRoman Nerd Font Mono:size=10"
 -- certain contrib modules.
 --
 myTerminal :: String
-myTerminal      = "urxvt"
+myTerminal      = "kitty"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -271,6 +271,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- My programs shorcuts
     [ ((modm .|. shiftMask, xK_b     ), spawn myBrowser)
     , ((modm .|. shiftMask, xK_f     ), spawn myFileManager)
+    , ((modm .|. shiftMask, xK_m     ), spawn myMailClient)
     ]
 
     ++
