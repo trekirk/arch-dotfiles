@@ -525,6 +525,7 @@ myStartupHook = do
         spawnOnce "setxkbmap -layout es"
         -- spawnOnce "xbindkeys"
         spawnOnce "~/.fehbg &"
+        spawnOnce "autorandr --change"
 
 
 ------------------------------------------------------------------------
