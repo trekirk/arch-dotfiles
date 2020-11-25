@@ -50,7 +50,9 @@ mc
 nano
 neofetch
 net-tools
+network-manager-applet
 networkmanager
+nm-connection-editor
 noto-fonts
 ntfs-3g
 os-prober
