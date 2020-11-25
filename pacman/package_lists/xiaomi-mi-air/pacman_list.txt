@@ -68,7 +68,6 @@ pkgfile
 pulseaudio
 qtcreator
 rofimoji
-ros-melodic-desktop
 rxvt-unicode
 sed
 stow
