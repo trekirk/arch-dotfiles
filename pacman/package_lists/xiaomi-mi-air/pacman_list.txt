@@ -2,6 +2,7 @@ alsa-utils
 autoconf
 automake
 autorandr
+baobab
 base
 bash-completion
 bbswitch
