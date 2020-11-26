@@ -2,6 +2,7 @@ alsa-utils
 autoconf
 automake
 autorandr
+avidemux-qt
 baobab
 base
 bash-completion
@@ -36,6 +37,7 @@ gzip
 htop
 imagemagick
 iwd
+kdenlive
 kitty
 libreoffice-fresh
 libtool
@@ -56,6 +58,7 @@ networkmanager
 nm-connection-editor
 noto-fonts
 ntfs-3g
+obs-studio
 os-prober
 p7zip
 pacman
@@ -68,6 +71,7 @@ pkgfile
 pulseaudio
 qtcreator
 rofimoji
+ros-melodic-desktop
 rxvt-unicode
 sed
 stow
@@ -76,6 +80,7 @@ telegram-desktop
 texinfo
 thunderbird
 ttf-dejavu
+ttf-fantasque-sans-mono
 ttf-fira-code
 ttf-font-awesome
 ttf-inconsolata
@@ -88,6 +93,7 @@ unzip
 urxvt-perls
 vi
 vifm
+vlc
 which
 xarchiver
 xbindkeys
