@@ -26,7 +26,7 @@
 Config { 
 
    -- appearance
-     font =         "xft:Font Awesome 5 Free Solid:size=10,Font Awesome 5 Brands Regular:size=10, InconsolataLGC Nerd Font Mono:size=9:bold:antialias=true"
+     font =         "xft:Font Awesome 5 Free Solid:size=10,Font Awesome 5 Brands Regular:size=10, Fantasque Sans Mono:size=10.5:bold:antialias=true"
    , additionalFonts = ["xft:JoyPixels:size=9"]
    , bgColor =      "#44475A"
    , fgColor =      "#F8F8F2"
