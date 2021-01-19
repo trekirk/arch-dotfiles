@@ -253,6 +253,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Deincrement the number of windows in the master area
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
 
+    -- Screen capture
+    , ((0, xK_Print), spawn "scrot -m -e 'mv $f ~/Pictures/'")
+    -- Screen capture + display using ImgMagick
+    , ((shiftMask, xK_Print), spawn "scrot -m -e 'mv $f ~/Pictures/;display -size 1024x768 ~/Pictures/$f'")
+
     -- Toggle the status bar gap
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
     -- See also the statusBar function from Hooks.DynamicLog.
