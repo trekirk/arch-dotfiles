@@ -1,3 +1,4 @@
+balena-etcher
 fontpreview
 grub2-theme-archlinux
 lightdm-webkit-theme-aether
