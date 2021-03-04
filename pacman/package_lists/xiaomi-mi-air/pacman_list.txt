@@ -59,10 +59,12 @@ neofetch
 net-tools
 network-manager-applet
 networkmanager
+networkmanager-openvpn
 nm-connection-editor
 noto-fonts
 ntfs-3g
 obs-studio
+openvpn
 os-prober
 p7zip
 pacman

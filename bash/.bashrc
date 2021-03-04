@@ -139,6 +139,8 @@ alias openports='ss --all --numeric --processes --ipv4 --ipv6'
 alias pgg='ps -Af | grep'           # requires an argument
 alias ..='cd ..'
 alias list-fonts='fc-list'
+alias vpn-uc3m='nmcli connection up UC3M_CON_CA'
+alias vpn-uc3m-down='nmcli connection down UC3M_CON_CA'
 
 ## pacman & yay
 alias pacsyu='sudo pacman -Syyu'
