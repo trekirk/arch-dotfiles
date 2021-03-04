@@ -117,6 +117,11 @@ shopt -s checkwinsize
 # Some useful aliases #
 #######################
 
+## Load bash aliases file if exists
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi
+
 ## If you feel playful <3
 alias yeet='rm -rf'
 
@@ -153,8 +158,8 @@ alias keyupdate='sudo pacman-key --refresh-keys'
 alias paclist='pacman -Qqen'
 alias yaylist='pacman -Qqem'
 alias list-update-xiaomi='rm -rf $HOME/.dotfiles/pacman/package_lists/xiaomi-mi-air/*; paclist > $HOME/.dotfiles/pacman/package_lists/xiaomi-mi-air/pacman_list.txt; yaylist > $HOME/.dotfiles/pacman/package_lists/xiaomi-mi-air/aur_list.txt'
-# Privileged access
 
+# Privileged access
 if (( UID != 0 )); then
     alias sudo='sudo '
     alias scat='sudo cat'
