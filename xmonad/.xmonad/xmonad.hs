@@ -277,6 +277,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_b     ), spawn myBrowser)
     , ((modm .|. shiftMask, xK_f     ), spawn myFileManager)
     , ((modm .|. shiftMask, xK_m     ), spawn myMailClient)
+    , ((modm .|. shiftMask, xK_l     ), spawn "xscreensaver-command -lock")
     ]
 
     ++
@@ -528,7 +529,7 @@ myLogHook h = dynamicLogWithPP $ myPP h
 --
 myStartupHook = do
         spawnOnce "setxkbmap -layout es"
-        -- spawnOnce "xbindkeys"
+        spawnOnce "xscreensaver -no-splash &"
         spawnOnce "~/.fehbg &"
         spawnOnce "autorandr --change"
 
