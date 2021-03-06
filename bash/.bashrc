@@ -157,7 +157,7 @@ alias yaycache='yay -Scc'
 alias keyupdate='sudo pacman-key --refresh-keys'
 alias paclist='pacman -Qqen'
 alias yaylist='pacman -Qqem'
-alias list-update-xiaomi='rm -rf $HOME/.dotfiles/pacman/package_lists/xiaomi-mi-air/*; paclist > $HOME/.dotfiles/pacman/package_lists/xiaomi-mi-air/pacman_list.txt; yaylist > $HOME/.dotfiles/pacman/package_lists/xiaomi-mi-air/aur_list.txt'
+alias update-package-list-xiaomi='rm -rf $HOME/.dotfiles/pacman/package_lists/xiaomi-mi-air/*; paclist > $HOME/.dotfiles/pacman/package_lists/xiaomi-mi-air/pacman_list.txt; yaylist > $HOME/.dotfiles/pacman/package_lists/xiaomi-mi-air/aur_list.txt'
 
 # Privileged access
 if (( UID != 0 )); then
