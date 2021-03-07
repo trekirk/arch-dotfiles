@@ -46,6 +46,7 @@ kitty
 libreoffice-fresh
 libtool
 libunrar
+light-locker
 lightdm
 lightdm-webkit2-greeter
 linux
