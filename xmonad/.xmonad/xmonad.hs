@@ -170,6 +170,10 @@ myProjects =
             , projectDirectory = "~/"
             , projectStartHook = Just $ do spawn "spotify"
             }
+  , Project { projectName      = "\xe066"
+            , projectDirectory = "~/"
+            , projectStartHook = Just $ do spawn "remmina"
+            }
   ]
 
 -- The default number of workspaces (virtual screens) and their names.
@@ -184,7 +188,7 @@ myProjects =
 --Reference: 
 -- > workspaces = ["home", "terminal", "browser", "code", "messages", "multimedia", "gaming" ] ++ map show [4..9]
 
-myWorkspaces    = ["\xf015", "\xf120","\xe007","\xf121","\xf3fe","\xf025","\xf1b6"]
+myWorkspaces    = ["\xf015", "\xf120","\xe007","\xf121","\xf3fe","\xf025","\xe066"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --

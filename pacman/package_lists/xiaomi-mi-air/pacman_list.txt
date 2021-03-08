@@ -46,6 +46,7 @@ kitty
 libreoffice-fresh
 libtool
 libunrar
+libvncserver
 light-locker
 lightdm
 lightdm-webkit2-greeter
@@ -80,6 +81,7 @@ pulseaudio
 python-pip
 python2-pip
 qtcreator
+remmina
 rofimoji
 ros-melodic-desktop
 rxvt-unicode
@@ -90,6 +92,7 @@ sudo
 telegram-desktop
 texinfo
 thunderbird
+tigervnc
 ttf-dejavu
 ttf-fantasque-sans-mono
 ttf-fira-code
