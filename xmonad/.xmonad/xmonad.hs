@@ -15,7 +15,7 @@
 -- http://www.haskell.org/haskellwiki/Xmonad/Notable_changes_since_0.8
 --
 
-import XMonad
+import XMonad hiding ( (|||) )
 
 -- Actions
 import XMonad.Actions.CycleWS
@@ -35,6 +35,7 @@ import XMonad.Hooks.DynamicLog
 
 -- Layouts
 import XMonad.Layout.GridVariants (Grid(Grid))
+import XMonad.Layout.LayoutCombinators
 import XMonad.Layout.SimplestFloat
 import XMonad.Layout.Spiral
 import XMonad.Layout.ResizableTile
@@ -172,7 +173,9 @@ myProjects =
             }
   , Project { projectName      = "\xe066"
             , projectDirectory = "~/"
-            , projectStartHook = Just $ do spawn "remmina"
+            , projectStartHook = Just $ do sequence_ [sendMessage $ SetStruts [] [minBound .. maxBound]  -- Hide bar
+                                                    , sendMessage $ JumpToLayout "monocle"  -- Change layout
+                                                    , spawn "remmina"]  -- Spawn VNC Viewer
             }
   ]
 
