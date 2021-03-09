@@ -59,7 +59,7 @@ if [ -x "$script" -a ! -d "$script" ]; then
     . "$script"
 fi
 
-light-locker &
+light-locker --no-lock-on-lid --no-late-locking &
 
 echo "X session wrapper complete, running session $@"
 
