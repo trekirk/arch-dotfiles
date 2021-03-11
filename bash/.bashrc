@@ -69,7 +69,6 @@ plugins=(
   bashmarks
 )
 
-source $OSH/oh-my-bash.sh
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -113,6 +112,8 @@ shopt -s histappend
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+source $OSH/oh-my-bash.sh
+
 #######################
 # Some useful aliases #
 #######################
@@ -146,6 +147,7 @@ alias ..='cd ..'
 alias list-fonts='fc-list'
 alias vpn-uc3m='nmcli connection up UC3M_CON_CA'
 alias vpn-uc3m-down='nmcli connection down UC3M_CON_CA'
+alias journalctl-simple='journalctl -p5 -n 300 --no-pager'
 
 ## pacman & yay
 alias pacsyu='sudo pacman -Syyu'
@@ -257,3 +259,5 @@ export EDITOR=vim
 ###########
 
 neofetch
+#source $OSH/oh-my-bash.sh
+
