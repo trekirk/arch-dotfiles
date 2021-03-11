@@ -72,7 +72,25 @@ Config {
         , Run StdinReader
 
         -- network activity monitor (dynamic interface resolution)
-        , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+        , Run Network "wlan0" [ "--template" , "\xf1eb <tx>kB/s|<rx>kB/s"
+                             , "--Low"      , "1000"       -- units: B/s
+                             , "--High"     , "5000"       -- units: B/s
+                             , "--low"      , "#50FA7B"
+                             , "--normal"   , "#FFB86C"
+                             , "--high"     , "#FF5555"
+                             ] 10
+
+        -- network activity monitor (dynamic interface resolution)
+        , Run Network "enp0s20f0u1u1" [ "--template" , "\xf796 <tx>kB/s|<rx>kB/s"
+                             , "--Low"      , "1000"       -- units: B/s
+                             , "--High"     , "5000"       -- units: B/s
+                             , "--low"      , "#50FA7B"
+                             , "--normal"   , "#FFB86C"
+                             , "--high"     , "#FF5555"
+                             ] 10
+                             
+        -- network activity monitor (dynamic interface resolution)
+        , Run DynNetwork     [ "--template" , "\xf6ff <tx>kB/s|<rx>kB/s"
                              , "--Low"      , "1000"       -- units: B/s
                              , "--High"     , "5000"       -- units: B/s
                              , "--low"      , "#50FA7B"
