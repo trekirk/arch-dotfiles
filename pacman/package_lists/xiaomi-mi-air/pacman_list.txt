@@ -75,6 +75,7 @@ nm-connection-editor
 noto-fonts
 ntfs-3g
 obs-studio
+openssh
 openvpn
 os-prober
 p7zip
