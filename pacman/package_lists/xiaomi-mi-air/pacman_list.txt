@@ -29,7 +29,9 @@ gdb
 gettext
 ghc-static
 git
+gn-m85
 gnu-free-fonts
+gperf
 grep
 groff
 grub
@@ -39,10 +41,13 @@ gzip
 htop
 imagemagick
 iwd
+java-runtime-common
+jre-openjdk-headless
 jupyter-notebook
 jupyterlab
 kdenlive
 kitty
+libnet
 libreoffice-fresh
 libtool
 libunrar
@@ -52,6 +57,8 @@ lightdm
 lightdm-webkit2-greeter
 linux
 linux-firmware
+lld
+llvm
 luit
 m4
 make
@@ -63,6 +70,7 @@ net-tools
 network-manager-applet
 networkmanager
 networkmanager-openvpn
+ninja
 nm-connection-editor
 noto-fonts
 ntfs-3g
@@ -83,7 +91,6 @@ python2-pip
 qtcreator
 remmina
 rofimoji
-ros-melodic-desktop
 rxvt-unicode
 scrot
 sed
@@ -94,6 +101,7 @@ texinfo
 thunderbird
 tigervnc
 ttf-dejavu
+ttf-droid
 ttf-fantasque-sans-mono
 ttf-fira-code
 ttf-font-awesome
@@ -108,6 +116,7 @@ urxvt-perls
 vi
 vifm
 vlc
+wget
 which
 xarchiver
 xbindkeys
@@ -166,4 +175,6 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+yarn
+yasm
 zip
