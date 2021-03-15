@@ -243,8 +243,8 @@ fi
 # ROS #
 #######
 
-source /opt/ros/melodic/setup.bash > /dev/null
-source ~/Projects/ros/catkin_ws/devel/setup.bash > /dev/null
+source '/opt/ros/noetic/setup.bash' > /dev/null
+source '/home/trekirk/Projects/ros/catkin_ws/devel/setup.bash' > /dev/null
 export ROS_WORKSPACE=~/Projects/ros/catkin_ws
 
 #########################

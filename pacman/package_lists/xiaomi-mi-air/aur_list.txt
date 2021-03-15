@@ -1,9 +1,10 @@
-balena-etcher
+etcher-bin
 fontpreview
 grub2-theme-archlinux
 lightdm-webkit-theme-aether
 nerd-fonts-complete
-python-catkin-tools-git
+python-catkin_tools
+ros-noetic-ros-base
 spotify
 ttf-oswald
 urxvt-resize-font-git
