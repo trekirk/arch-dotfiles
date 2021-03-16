@@ -1,6 +1,7 @@
 etcher-bin
 fontpreview
 grub2-theme-archlinux
+light-locker-settings
 lightdm-webkit-theme-aether
 nerd-fonts-complete
 python-catkin_tools

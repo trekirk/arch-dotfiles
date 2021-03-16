@@ -87,6 +87,7 @@ pcmanfm
 pkgconf
 pkgfile
 pulseaudio
+python-gobject
 python-pip
 python2-pip
 qtcreator
