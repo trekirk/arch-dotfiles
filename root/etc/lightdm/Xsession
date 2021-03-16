@@ -60,6 +60,7 @@ if [ -x "$script" -a ! -d "$script" ]; then
 fi
 
 light-locker --no-lock-on-lid --no-late-locking &
+# xscreensaver -no-splash &
 
 echo "X session wrapper complete, running session $@"
 

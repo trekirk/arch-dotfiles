@@ -537,10 +537,10 @@ myLogHook h = dynamicLogWithPP $ myPP h
 --
 myStartupHook = do
         spawnOnce "setxkbmap -layout es"
-        -- spawnOnce "light-locker &"  -- This is now in the Xsession file on /etc/lightdm
+        --spawnOnce "light-locker --no-lock-on-lid --no-late-locking &" -- This is now in the Xsession file on /etc/lightdm
         spawnOnce "~/.fehbg &"
-        spawnOnce "xscreensaver -no-splash &"
         spawnOnce "autorandr --change"
+        -- spawnOnce "xscreensaver -no-splash &"
 
 
 ------------------------------------------------------------------------
