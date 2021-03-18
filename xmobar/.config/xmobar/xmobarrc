@@ -38,7 +38,7 @@ Config {
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
    -- , template = " %StdinReader% | %battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ <action=pavucontrol>%alsa:default:Master%</action> | %bright% | %date% || %kbd% "
-   , template = " <icon=archlinux.xpm/> <fc=#6272A4>|</fc> %StdinReader% }{ %dynnetwork% <fc=#6272A4>|</fc> <action=pavucontrol>%alsa:default:Master%</action> <fc=#6272A4>|</fc> %bright% <fc=#6272A4>|</fc> %battery% <fc=#6272A4>|</fc> %date% <fc=#6272A4>||</fc> %kbd% "
+   , template = " <icon=archlinux.xpm/> <fc=#6272A4>|</fc> %StdinReader% }{ %dynnetwork% <fc=#6272A4>|</fc> <action=pavucontrol>%default:Master%</action> <fc=#6272A4>|</fc> %bright% <fc=#6272A4>|</fc> %battery% <fc=#6272A4>|</fc> %date% <fc=#6272A4>||</fc> %kbd% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -168,11 +168,17 @@ Config {
                              ] 1
         
         -- volume control
-        , Run Volume "default" "Master" ["-t", "\xf028 <status>"
+        , Run Volume "default" "Master" ["-t", "<status>"
                                          , "--"
-                                         , "--on", "<fc=#859900><volume>%</fc>"
-                                         , "--off", "MUTE"
+                                         , "-H", "60"
+                                         , "-L", "1"
+                                         , "--on", ""
+                                         , "--onc", "white"
+                                         , "--off", "\xf6a9 MUTE"
                                          , "--offc", "#dc322f"
+                                         , "--lows", "<fc=#F8F8F2>\xf026</fc> <fc=#FF5555><volume>%</fc>"
+                                         , "--mediums", "<fc=#F8F8F2>\xf027</fc> <fc=#FFB86C><volume>%</fc>"
+                                         , "--highs", "<fc=#F8F8F2>\xf028</fc> <fc=#50FA7B><volume>%</fc>"
                                         ] 5
         -- alternative volume controls using alsactl
         , Run Alsa "default" "Master"   ["--template", "<status>"
