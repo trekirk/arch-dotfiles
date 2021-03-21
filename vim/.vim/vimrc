@@ -32,6 +32,11 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-vinegar'
 Plug 'ap/vim-css-color'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+
+" Language support
+Plug 'wilsaj/chuck.vim'
+
 " Initialize plugin system
 call plug#end()
 
