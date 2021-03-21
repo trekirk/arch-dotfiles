@@ -34,11 +34,30 @@ Plug 'tpope/vim-vinegar'
 Plug 'ap/vim-css-color'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
+" Themes
+Plug 'dracula/vim', { 'as': 'dracula' }
+
 " Language support
 Plug 'wilsaj/chuck.vim'
 
 " Initialize plugin system
 call plug#end()
+
+" Some plugins have specific settings that go here
+
+" dracula theme
+colorscheme dracula
+set termguicolors
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set termencoding=utf-8
+" vim hardcodes background color erase even if the terminfo file does
+" not contain bce (not to mention that libvte based terminals
+" incorrectly contain bce in their terminfo files). This causes
+" incorrect background rendering when using a color theme with a
+" background color.
+let &t_ut=''
 
 "------------------------------------------------------------
 " Features {{{1
