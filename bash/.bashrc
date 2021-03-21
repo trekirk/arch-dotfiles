@@ -259,5 +259,3 @@ export EDITOR=vim
 ###########
 
 neofetch
-#source $OSH/oh-my-bash.sh
-
