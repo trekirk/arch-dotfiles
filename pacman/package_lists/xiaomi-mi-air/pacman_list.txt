@@ -99,6 +99,7 @@ rofimoji
 rxvt-unicode
 scrot
 sed
+sox
 stow
 sudo
 telegram-desktop
