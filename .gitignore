@@ -1,0 +1,4 @@
+# Exclude vimrc files and folders
+autoload
+plugged
+.netrwhist
