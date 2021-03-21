@@ -4,7 +4,7 @@
 "              newbie, basing your first .vimrc on this file is a good choice.
 "              If you're a more advanced user, building your own .vimrc based
 "              on this file is still a good idea.
- 
+
 "------------------------------------------------------------
 " Plugins {{{1
 "
@@ -40,6 +40,11 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 " Language support
 Plug 'wilsaj/chuck.vim'
 
+" Powerline/airline plugins
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'powerline/powerline'
+
 " Initialize plugin system
 call plug#end()
 
@@ -58,6 +63,15 @@ set termencoding=utf-8
 " incorrect background rendering when using a color theme with a
 " background color.
 let &t_ut=''
+
+" air-line
+let g:airline_theme='deus'
+let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'fancy'
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+    endif
 
 "------------------------------------------------------------
 " Features {{{1
@@ -171,7 +185,7 @@ set mouse=a
 set cmdheight=2
  
 " Display line numbers on the left
-set number
+set number relativenumber
  
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
