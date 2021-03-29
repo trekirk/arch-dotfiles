@@ -46,6 +46,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 " Themes
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'arcticicestudio/nord-vim', { 'as': 'nord' }
+Plug 'lifepillar/vim-gruvbox8', { 'as': 'gruvbox' }
 
 " Language support
 Plug 'wilsaj/chuck.vim'
