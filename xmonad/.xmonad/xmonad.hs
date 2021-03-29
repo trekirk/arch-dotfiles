@@ -107,7 +107,7 @@ myFileManager :: String
 myFileManager   = "pcmanfm"
 
 myTextEditor :: String
-myTextEditor    = "code"
+myTextEditor    = myTerminal ++ " vim"
 
 -- NOTE: from 0.9.1 on numlock mask is set automatically. The numlockMask
 -- setting should be removed from configs.
@@ -284,6 +284,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_b     ), spawn myBrowser)
     , ((modm .|. shiftMask, xK_f     ), spawn myFileManager)
     , ((modm .|. shiftMask, xK_m     ), spawn myMailClient)
+    , ((modm .|. shiftMask, xK_t     ), spawn myTextEditor)
     -- , ((modm .|. shiftMask, xK_l     ), spawn "xscreensaver-command -lock")
     , ((modm .|. shiftMask, xK_l     ), spawn "light-locker-command -l")
     ]
