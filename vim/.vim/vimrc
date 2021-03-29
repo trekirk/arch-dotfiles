@@ -78,6 +78,9 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(cache|ros)$',
   \ }
 
+" FZF settings
+let $FZF_DEFAULT_COMMAND='ag --hidden --ignore={.git,.ros,.cache,.stack,.thunderbird} -g ""'
+
 " set the theme here theme (gruvbox has to be named gruvbox8)
 colorscheme dracula
 set termguicolors
