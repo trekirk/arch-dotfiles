@@ -75,11 +75,28 @@ call plug#end()
 " CtrlP settings
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(cache|ros)$',
+  \ 'dir':  '\v[\/]\.(cache|ros|git)$',
   \ }
 
 " FZF settings
 let $FZF_DEFAULT_COMMAND='ag --hidden --ignore={.git,.ros,.cache,.stack,.thunderbird} -g ""'
+
+function! s:list_buffers()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
+
+function! s:delete_buffers(lines)
+  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BD call fzf#run(fzf#wrap({
+  \ 'source': s:list_buffers(),
+  \ 'sink*': { lines -> s:delete_buffers(lines) },
+  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+\ }))
 
 " set the theme here theme (gruvbox has to be named gruvbox8)
 colorscheme dracula
@@ -287,12 +304,14 @@ noremap <C-Right> <C-W>l<C-W><bar>
 " nnoremap <leader>s :<C-u>FZF<CR>
 " Search and switch buffers
 nnoremap <silent> <leader>b :Buffers<cr>
+nnoremap <silent> <leader>d :BD<cr>
 " Find files by name under the current directory
-nnoremap <silent> <leader>s :Files<cr>
+nnoremap <silent> <leader>e :Files<cr>
 " Find files by name under the home directory
 nnoremap <silent> <leader>h :Files ~/<cr>
 " Search content in the current file
 nnoremap <silent> <leader>f :BLines<cr>
 " Search content in the current file and in files under the current directory
-nnoremap <silent> <leader>g :Ag<cr>
+nnoremap <silent> <leader>ag :Ag<cr>
+
 "------------------------------------------------------------
