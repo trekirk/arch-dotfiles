@@ -104,6 +104,7 @@ stow
 sudo
 telegram-desktop
 texinfo
+the_silver_searcher
 thunderbird
 tigervnc
 ttf-dejavu
