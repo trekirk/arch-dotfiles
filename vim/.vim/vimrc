@@ -255,6 +255,17 @@ nnoremap <Leader>l :nohl<CR><C-L>
 " This mapping will make you fly through your buffers!!
 " nnoremap <Leader>b :ls<CR>:b<Space>
 
+" Remaps to control the window navigation more quickly
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-L> <C-W>l
+noremap <C-H> <C-W>h
+
+" This remaps move and increase the size of the window selected
+noremap <C-Left> <C-W>h<C-W>\|
+noremap <C-Down> <C-W>j<C-W>_
+noremap <C-Up> <C-W>k<C-W>_
+noremap <C-Right> <C-W>l<C-W>\|
 
 " FZF remaps
 " nnoremap <leader>s :<C-u>FZF<CR>
