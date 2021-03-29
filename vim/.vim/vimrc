@@ -274,10 +274,11 @@ noremap <C-L> <C-W>l
 noremap <C-H> <C-W>h
 
 " This remaps move and increase the size of the window selected
-noremap <C-Left> <C-W>h<C-W>\|
+noremap <C-Left> <C-W>h<C-W><bar>
 noremap <C-Down> <C-W>j<C-W>_
 noremap <C-Up> <C-W>k<C-W>_
-noremap <C-Right> <C-W>l<C-W>\|
+noremap <C-Right> <C-W>l<C-W><bar>
+
 
 " FZF remaps
 " nnoremap <leader>s :<C-u>FZF<CR>
