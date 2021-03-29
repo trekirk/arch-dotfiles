@@ -44,6 +44,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim'
+Plug 'stsewd/fzf-checkout.vim'
 
 " Fuzzy finders
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -313,5 +314,10 @@ nnoremap <silent> <leader>h :Files ~/<cr>
 nnoremap <silent> <leader>f :BLines<cr>
 " Search content in the current file and in files under the current directory
 nnoremap <silent> <leader>ag :Ag<cr>
+
+" Git remaps
+nnoremap <leader>gb :GBranches<cr>
+nnoremap <leader>gt :GTags<cr>
+nnoremap <leader>gs :G<CR>
 
 "------------------------------------------------------------
