@@ -259,3 +259,9 @@ export EDITOR=vim
 ###########
 
 neofetch
+
+################
+# Fuzzy finder #
+################
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
