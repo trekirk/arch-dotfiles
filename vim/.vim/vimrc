@@ -40,6 +40,11 @@ Plug 'tpope/vim-vinegar'
 " Process control (works w/ ChucK extension)
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
+" Version control
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'junegunn/gv.vim'
+
 " Fuzzy finders
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
