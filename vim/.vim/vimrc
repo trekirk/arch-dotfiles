@@ -33,6 +33,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
 " Netrw buff by tpope
 Plug 'tpope/vim-vinegar'
@@ -74,12 +75,17 @@ call plug#end()
 " Some plugins have specific settings that go here
 
 " CtrlP settings
+""""""""""""""""""
+" CtrlP settings "
+""""""""""""""""""
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(cache|ros|git)$',
   \ }
 
-" FZF settings
+""""""""""""""""
+" FZF settings "
+""""""""""""""""
 let $FZF_DEFAULT_COMMAND='ag --hidden --ignore={.git,.ros,.cache,.stack,.thunderbird} -g ""'
 
 function! s:list_buffers()
@@ -99,7 +105,9 @@ command! BD call fzf#run(fzf#wrap({
   \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
 \ }))
 
-" set the theme here theme (gruvbox has to be named gruvbox8)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set the theme here theme (gruvbox has to be named gruvbox8) "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme dracula
 set termguicolors
 set encoding=utf-8
@@ -113,7 +121,9 @@ set termencoding=utf-8
 " background color.
 let &t_ut=''
 
-" air-line
+""""""""""""
+" air-line "
+""""""""""""
 let g:airline_theme='deus'
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
@@ -289,6 +299,9 @@ nnoremap <Leader>l :nohl<CR><C-L>
 " This mapping will make you fly through your buffers!!
 " nnoremap <Leader>b :ls<CR>:b<Space>
 
+"""""""""""""""
+" Vim windows "
+"""""""""""""""
 " Remaps to control the window navigation more quickly
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
@@ -301,7 +314,9 @@ noremap <C-Down> <C-W>j<C-W>_
 noremap <C-Up> <C-W>k<C-W>_
 noremap <C-Right> <C-W>l<C-W><bar>
 
-" Session management remaps
+"""""""""""""""""""""""""""""
+" Session management remaps "
+"""""""""""""""""""""""""""""
 let g:prosession_dir = '~/.vim/session'
 " session restore remap
 exec 'nnoremap <Leader>sr :so ' . g:prosession_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
@@ -310,7 +325,9 @@ exec 'nnoremap <Leader>ss :Obsession ' . g:prosession_dir . '/*.vim<C-D><BS><BS>
 " for pausing and unpausing our current session if we’re in one
 nnoremap <Leader>sp :Obsession<CR>
 
-" FZF remaps
+""""""""""""""
+" FZF remaps "
+""""""""""""""
 " nnoremap <leader>s :<C-u>FZF<CR>
 " Search and switch buffers
 nnoremap <silent> <leader>b :Buffers<cr>
@@ -324,7 +341,9 @@ nnoremap <silent> <leader>f :BLines<cr>
 " Search content in the current file and in files under the current directory
 nnoremap <silent> <leader>ag :Ag<cr>
 
-" Git remaps
+""""""""""""""
+" Git remaps "
+""""""""""""""
 nnoremap <leader>gb :GBranches<cr>
 nnoremap <leader>gt :GTags<cr>
 nnoremap <leader>gs :G<CR>
