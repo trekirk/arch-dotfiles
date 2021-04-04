@@ -157,7 +157,8 @@ myProjects =
             }
   , Project { projectName      = "\xf121"
             , projectDirectory = "~/"
-            , projectStartHook = Just $ do spawn myTextEditor
+            , projectStartHook = Just $ do sequence_ [sendMessage $ JumpToLayout "fibb"  -- Change to fibb layout
+                                                    , spawn myTextEditor]  -- Spawn Vim
             }
   , Project { projectName      = "\xf187"
             , projectDirectory = "~/"
