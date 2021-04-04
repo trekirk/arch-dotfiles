@@ -366,7 +366,7 @@ nnoremap <silent> <Leader>ag :Ag<CR>
 nnoremap <Leader>gb :GBranches<CR>
 nnoremap <Leader>gt :GTags<CR>
 nnoremap <Leader>gs :G<CR>
-nnoremap <Leader>gp:G push<CR>
+nnoremap <Leader>gp :G push<CR>
 
 """"""""""""""
 " CoC remaps "
