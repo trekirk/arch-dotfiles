@@ -29,7 +29,7 @@ set cursorline
 
 " Avoids line wrapping
 set nowrap
- 
+
 "------------------------------------------------------------
 " Plugins {{{1
 "
@@ -175,6 +175,9 @@ let g:Powerline_symbols = 'fancy'
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
     endif
+
+" Removes the mode at the bottom, showing only the powerline
+set noshowmode
 "------------------------------------------------------------
 " Must have options {{{1
 "
