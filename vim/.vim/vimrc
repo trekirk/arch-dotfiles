@@ -350,11 +350,11 @@ noremap <C-Right> <C-W>l<C-W><bar>
 """""""""""""""""""""""""""""
 " Session management remaps "
 """""""""""""""""""""""""""""
-let g:prosession_dir = '~/.vim/session'
-" session restore remap
-exec 'nnoremap <Leader>sr :so ' . g:prosession_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+let g:obsession_dir = '~/.vim/session'
 " session save remap
-exec 'nnoremap <Leader>ss :Obsession ' . g:prosession_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+exec 'nnoremap <Leader>ss :Obsession ' . g:obsession_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+" session restore remap
+exec 'nnoremap <Leader>sr :so ' . g:obsession_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
 " for pausing and unpausing our current session if we’re in one
 nnoremap <Leader>sp :Obsession<CR>
 
