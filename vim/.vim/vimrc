@@ -97,6 +97,10 @@ Plug 'powerline/powerline'
 " Development plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Snippets support
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 " Initialize plugin system
 call plug#end()
 
@@ -118,6 +122,13 @@ set shortmess+=c
 
 " always show signcolumns
 set signcolumn=yes
+
+"""""""""""""""""""""
+" Snippets settings "
+"""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<f5>"
+let g:UltiSnipsJumpForwardTrigger="<f6>"
+let g:UltiSnipsJumpBackwardTrigger="<f4>"
 
 """"""""""""""""""
 " CtrlP settings "
