@@ -86,10 +86,6 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'arcticicestudio/nord-vim', { 'as': 'nord' }
 Plug 'lifepillar/vim-gruvbox8', { 'as': 'gruvbox' }
 
-" Language support and better syntax highlighting
-Plug 'sheerun/vim-polyglot'
-Plug 'wilsaj/chuck.vim'
-
 " Powerline/airline plugins
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -97,6 +93,11 @@ Plug 'powerline/powerline'
 
 " Development plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
+
+" Language support and better syntax highlighting
+Plug 'sheerun/vim-polyglot'
+Plug 'wilsaj/chuck.vim'
 
 " Snippets support
 Plug 'SirVer/ultisnips'
@@ -123,6 +124,38 @@ set shortmess+=c
 
 " always show signcolumns
 set signcolumn=yes
+
+" Add paths to CoC python extersions
+let python_path = $PYTHONPATH
+call coc#config("jedi.workspace.extraPaths", [python_path])
+call coc#config("python.analysis.extraPaths", [python_path])
+
+" Let the diagnostics to ALE (asynchronous)
+call coc#config("diagnostic.displayByAle", 'true')
+
+""""""""""""""""
+" ALE settings "
+""""""""""""""""
+" declare which linters you want to run
+let g:ale_linters={
+\   'python': ['flake8'],
+\}
+
+" To not intellisense (let it to CoC)
+let g:ale_disable_lsp=1
+let g:ale_echo_cursor = 1
+let g:ale_echo_msg_error_str = 'Error'
+let g:ale_echo_msg_format = '[%linter%] %s'
+let g:ale_echo_msg_warning_str = 'Warning'
+let g:ale_enabled = 1
+let g:ale_keep_list_window_open = 0
+let g:ale_lint_delay = 200
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 1
+
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled=1
 
 """""""""""""""""""""
 " Snippets settings "
@@ -190,6 +223,7 @@ if !exists('g:airline_symbols')
 
 " Removes the mode at the bottom, showing only the powerline
 set noshowmode
+
 "------------------------------------------------------------
 " Must have options {{{1
 "
