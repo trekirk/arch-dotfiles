@@ -28,6 +28,8 @@ set cursorline
 " Avoids line wrapping
 set nowrap
 
+" Change remove command in netrw to allow removing non-empty directories using 'D'
+let g:netrw_localrmdir='rm -r'
 "------------------------------------------------------------
 " Plugins {{{1
 "
