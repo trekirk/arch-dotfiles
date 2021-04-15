@@ -350,7 +350,7 @@ noremap <C-Right> <C-W>l<C-W><bar>
 """""""""""""""""""""""""""""
 " Session management remaps "
 """""""""""""""""""""""""""""
-let g:obsession_dir = '~/.vim/session'
+let g:obsession_dir = '~/.vim/sessions'
 " session save remap
 exec 'nnoremap <Leader>ss :Obsession ' . g:obsession_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
 " session restore remap
