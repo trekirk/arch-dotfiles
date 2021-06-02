@@ -4,23 +4,15 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Projects/ros/catkin_ws/src/federated/data/arff
+cd ~
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 argglobal
 %argdel
-$argadd sound_features_train_1_mics_mock.arff
-edit sound_features_train_1_mics_mock.arff
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
+$argadd Desktop/paper_federated/elsarticle-template/elsarticle-template.tex
+edit Desktop/paper_federated/elsarticle-template/elsarticle-template.tex
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -32,20 +24,24 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 146 - ((45 * winheight(0) + 23) / 47)
+let s:l = 78 - ((21 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 146
-normal! 0
+keepjumps 78
+let s:c = 198 - ((60 * winwidth(0) + 38) / 77)
+if s:c > 0
+  exe 'normal! ' . s:c . '|zs' . 198 . '|'
+else
+  normal! 0198|
+endif
 tabnext 1
-badd +0 sound_features_train_1_mics_mock.arff
+badd +0 Desktop/paper_federated/elsarticle-template/elsarticle-template.tex
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20 shortmess=filnxtToOSAc
-set winminheight=1 winminwidth=1
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)

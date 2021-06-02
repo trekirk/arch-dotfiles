@@ -4,24 +4,16 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Projects/ros/catkin_ws
+cd ~/Projects/ros/catkin_ws/src/federated
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 argglobal
 %argdel
-edit pyrighconfig.json
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
+edit nodes/server.py
 argglobal
-balt src/federated/nodes/scikitclassifier.py
+balt msg/Float2DMatrix.msg
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -32,26 +24,23 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 2 - ((1 * winheight(0) + 23) / 47)
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
-normal! 06|
+keepjumps 1
+normal! 02|
+lcd ~/Projects/ros/catkin_ws/src/federated
 tabnext 1
-badd +18 src/federated/nodes/scikitclassifier.py
-badd +1 pyrighconfig.json
-badd +26 ~/.dotfiles/vim/.vim/coc-settings.json
-badd +1 src/federated/nodes/federated_server.py
-badd +349 ~/.dotfiles/vim/.vim/vimrc
-badd +1 src/federated/nodes/federated_client.py
-badd +1 src/federated/launch/acoustic_touch.launch
+badd +1 ~/Projects/ros/catkin_ws/src/federated/package.xml
+badd +1 ~/Projects/ros/catkin_ws/src/federated/msg/Float2DMatrix.msg
+badd +1 ~/Projects/ros/catkin_ws/src/federated/nodes/server.py
+badd +1 ~/Projects/ros/catkin_ws/src/federated/nodes/client.py
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
-set winheight=1 winwidth=20 shortmess=filnxtToOSc
-set winminheight=1 winminwidth=1
+set winheight=1 winwidth=20 shortmess=filnxtToOSAc
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)

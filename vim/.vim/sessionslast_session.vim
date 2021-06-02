@@ -4,24 +4,15 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Projects/ros/catkin_ws
+cd ~/Projects/ros/catkin_ws/src/federated
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 argglobal
 %argdel
-edit src/federated/config/settings.yaml
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
+edit ~/.dotfiles/vim/.vim/vimrc
 argglobal
-balt src/federated/launch/federated.launch
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -32,28 +23,22 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 47 - ((29 * winheight(0) + 22) / 45)
+let s:l = 387 - ((23 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 47
-normal! 025|
+keepjumps 387
+normal! 039|
+lcd ~/Projects/ros/catkin_ws/src/federated
 tabnext 1
-badd +57 src/federated/nodes/scikitclassifier.py
-badd +132 ~/.dotfiles/vim/.vim/vimrc
-badd +246 ~/.dotfiles/bash/.bashrc
-badd +5 ~/.dotfiles/bash/.profile
-badd +6 src/federated/nodes/federated_server.py
-badd +1 src/federated/nodes/federated_client.py
-badd +18 src/federated/launch/federated.launch
-badd +74 src/federated/src/atrlearning/arff_tools.py
-badd +0 src/federated/config/settings.yaml
+badd +0 ~/Projects/ros/catkin_ws/src/federated/msg/Float2DMatrix.msg
+badd +1 ~/Projects/ros/catkin_ws/src/federated/package.xml
+badd +0 ~/.dotfiles/vim/.vim/vimrc
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20 shortmess=filnxtToOSc
-set winminheight=1 winminwidth=1
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
