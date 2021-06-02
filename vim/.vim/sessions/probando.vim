@@ -13,6 +13,7 @@ argglobal
 %argdel
 edit ~/.dotfiles/vim/.vim/vimrc
 argglobal
+balt msg/Float2DMatrix.msg
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -23,17 +24,18 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 387 - ((23 * winheight(0) + 23) / 47)
+let s:l = 392 - ((28 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 387
-normal! 039|
+keepjumps 392
+normal! 053|
 lcd ~/Projects/ros/catkin_ws/src/federated
 tabnext 1
-badd +0 ~/Projects/ros/catkin_ws/src/federated/msg/Float2DMatrix.msg
-badd +1 ~/Projects/ros/catkin_ws/src/federated/package.xml
 badd +0 ~/.dotfiles/vim/.vim/vimrc
+badd +1 ~/Projects/ros/catkin_ws/src/federated/msg/Float2DMatrix.msg
+badd +1 ~/Projects/ros/catkin_ws/src/federated/package.xml
+badd +1 ~/Projects/ros/catkin_ws/src/federated/nodes/server.py
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -44,6 +46,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

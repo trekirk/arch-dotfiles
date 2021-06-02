@@ -11,27 +11,9 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit nodes/client.py
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe 'vert 1resize ' . ((&columns * 80 + 80) / 160)
-exe 'vert 2resize ' . ((&columns * 79 + 80) / 160)
+edit ~/.dotfiles/vim/.vim/vimrc
 argglobal
-balt nodes/server.py
+balt msg/Float2DMatrix.msg
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -42,49 +24,24 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+let s:l = 392 - ((28 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 392
+normal! 053|
 lcd ~/Projects/ros/catkin_ws/src/federated
-wincmd w
-argglobal
-if bufexists("~/Projects/ros/catkin_ws/src/federated/nodes/server.py") | buffer ~/Projects/ros/catkin_ws/src/federated/nodes/server.py | else | edit ~/Projects/ros/catkin_ws/src/federated/nodes/server.py | endif
-balt ~/Projects/ros/catkin_ws/src/federated/msg/Float2DMatrix.msg
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 23) / 47)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 02|
-lcd ~/Projects/ros/catkin_ws/src/federated
-wincmd w
-exe 'vert 1resize ' . ((&columns * 80 + 80) / 160)
-exe 'vert 2resize ' . ((&columns * 79 + 80) / 160)
 tabnext 1
-badd +1 ~/Projects/ros/catkin_ws/src/federated/nodes/client.py
 badd +1 ~/Projects/ros/catkin_ws/src/federated/nodes/server.py
 badd +1 ~/Projects/ros/catkin_ws/src/federated/msg/Float2DMatrix.msg
+badd +392 ~/.dotfiles/vim/.vim/vimrc
 badd +1 ~/Projects/ros/catkin_ws/src/federated/package.xml
+badd +1 ~/Projects/ros/catkin_ws/src/federated/nodes/client.py
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
-set winheight=1 winwidth=20 shortmess=filnxtToOSAc
-let &winminheight = s:save_winminheight
-let &winminwidth = s:save_winminwidth
+set winheight=1 winwidth=20 shortmess=filnxtToOSc
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
