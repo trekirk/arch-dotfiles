@@ -1,7 +1,7 @@
 " URL: http://vim.wikia.com/wiki/Example_vimrc
 " Authors: Juan José Gamboa
 " Description: A feature rich .vimrc with all the tools needed for developing
-"              in C++ and Python. Based in the example .vimrc posted in the 
+"              in C++ and Python. Based in the example .vimrc posted in the
 "              URL above
 
 "------------------------------------------------------------
@@ -276,7 +276,7 @@ set noshowmode
 " try to quit without saving, and swap files will keep you safe if your computer
 " crashes.
 set hidden
- 
+
 " Note that not everyone likes working this way (with the hidden option).
 " Alternatives include using tabs or split windows instead of re-using the same
 " window as mentioned above, and/or either of the following options:
@@ -289,11 +289,11 @@ set wildmode=full
 
 " Show partial commands in the last line of the screen
 set showcmd
- 
+
 " Highlight searches (use <Leader>l to temporarily turn off highlighting; see the
 " mapping of <Leader>l below)
 set hlsearch
- 
+
 " Modelines have historically been a source of security vulnerabilities. As
 " such, it may be a good idea to disable them and use the securemodelines
 " script, <http://www.vim.org/scripts/script.php?script_id=1876>.
@@ -330,47 +330,47 @@ set ruler
 
 " Always display the status line, even if only one window is displayed
 set laststatus=2
- 
+
 " Instead of failing a command because of unsaved changes, instead raise a
 " dialogue asking if you wish to save changed files.
 set confirm
- 
+
 " Use visual bell instead of beeping when doing something wrong
 set visualbell
- 
+
 " And reset the terminal code for the visual bell. If visualbell is set, and
 " this line is also included, vim will neither flash nor beep. If visualbell
 " is unset, this does nothing.
 set t_vb=
- 
+
 " Enable use of the mouse for all modes
 set mouse=a
- 
+
 " Set the command window height to 2 lines, to avoid many cases of having to
 " "press <Enter> to continue"
 set cmdheight=2
- 
+
 " Display line numbers on the left
 set number relativenumber
- 
+
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
- 
+
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
- 
- 
+
+
 "------------------------------------------------------------
 " Indentation options {{{1
 "
 " Indentation settings according to personal preference.
- 
+
 " Indentation settings for using 4 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
 set shiftwidth=4
 set softtabstop=4
 set expandtab
- 
+
 " Indentation settings for using hard tabs for indent. Display tabs as
 " four characters wide.
 "set shiftwidth=4
@@ -380,7 +380,7 @@ set expandtab
 " Mappings {{{1
 "
 " Useful mappings
- 
+
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 map Y y$
@@ -388,16 +388,19 @@ map Y y$
 " Leader key remappings
 let mapleader=" "
 
-" This will save the file as sudo, avoiding editing it with sudo, thus 
+" This will save the file as sudo, avoiding editing it with sudo, thus
 " loading the vimrc present in 'root'
 noremap <Leader>w :w !sudo tee "%" > /dev/null
- 
+
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <Leader>l :nohl<CR><C-L>
 
 " This mapping will make you fly through your buffers!!
 " nnoremap <Leader>b :ls<CR>:b<Space>
+
+"Remove all trailing whitespace by pressing F5
+nnoremap <Leader><Space> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 """""""""""""""
 " Vim windows "
@@ -449,6 +452,9 @@ nnoremap <Leader>gb :GBranches<CR>
 nnoremap <Leader>gt :GTags<CR>
 nnoremap <Leader>gs :G<CR>
 nnoremap <Leader>gp :G push<CR>
+nnoremap <Leader>gdd :Gvdiffsplit!<CR>
+nnoremap <Leader>gdh :diffget //2<CR>
+nnoremap <Leader>gdl :diffget //3<CR>
 
 """"""""""""""
 " CoC remaps "
