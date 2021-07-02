@@ -22,6 +22,10 @@ filetype indent plugin on
 " Enable syntax highlighting
 syntax on
 
+" Enable folding
+set foldmethod=syntax
+" set foldlevelstart=1
+
 " Highlight the current line
 set cursorline
 
@@ -139,6 +143,12 @@ call coc#config("diagnostic.displayByAle", 'true')
 " declare which linters you want to run
 let g:ale_linters={
 \   'python': ['flake8'],
+\   'cpp': ['ccls'],
+\}
+
+" you can also disable explicitly some linters
+let g:ale_linters_ignore = {
+\   'cpp': ['clazy'],
 \}
 
 " To not intellisense (let it to CoC)
