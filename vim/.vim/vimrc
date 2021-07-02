@@ -24,7 +24,7 @@ syntax on
 
 " Enable folding
 set foldmethod=syntax
-" set foldlevelstart=1
+" set foldlevelstart=1  " A foldlevel of 0 means everything unfolded
 
 " Highlight the current line
 set cursorline
