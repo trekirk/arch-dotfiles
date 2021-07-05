@@ -62,6 +62,9 @@ fi
 light-locker --no-lock-on-lid --no-late-locking &
 # xscreensaver -no-splash &
 
+# To allow executing Java GUI's in tiling WM's
+wmname LG3D
+
 echo "X session wrapper complete, running session $@"
 
 exec $@
