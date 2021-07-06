@@ -24,7 +24,6 @@ import XMonad.Actions.MouseResize
 
 -- Data
 import Data.Monoid
-import Data.Monoid
 
 -- Function Keys
 import Graphics.X11.ExtraTypes.XF86
@@ -189,7 +188,7 @@ myProjects =
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
---Reference: 
+--Reference:
 -- > workspaces = ["home", "terminal", "browser", "code", "messages", "multimedia", "gaming" ] ++ map show [4..9]
 
 myWorkspaces    = ["\xf015", "\xf120","\xe007","\xf121","\xf3fe","\xf025","\xe066"]
@@ -308,7 +307,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- , ("<XF86Eject>", spawn "toggleeject")
     -- , ("<Print>", spawn "scrotd 0")
     ]
-   
+
     ++
 
     -- Workspace keybindings
@@ -329,7 +328,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_Tab),    toggleWS)
     , ((modm .|. shiftMask, xK_Right),  shiftToNext >> nextWS)
     , ((modm .|. shiftMask, xK_Left),   shiftToPrev >> prevWS)]
-    
+
     ++
 
     --
@@ -378,7 +377,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- which denotes layout choice.
 --
 
--- defaultGapSize = 5 
+-- defaultGapSize = 5
 -- defaultGaps = gaps [(U,defaultGapSize), (R,defaultGapSize), (D, defaultGapSize), (L, defaultGapSize)]
 -- defaultSpaces = spacingRaw True (Border 5 5 5 5) True (Border 5 5 5 5) True
 -- spacesAndGaps = defaultSpaces . defaultGaps
@@ -408,7 +407,7 @@ mySpacing' i = spacingRaw True (Border i i i i) True (Border i i i i) True
 -- Defining a bunch of layouts, many that I don't use.
 tall     = renamed [Replace "tall"]
            $ limitWindows 12
-           $ mySpacing' 8 
+           $ mySpacing' 8
            $ ResizableTall 1 (3/100) (1/2) []
 magnify  = renamed [Replace "magnify"]
            $ magnifier
@@ -515,7 +514,7 @@ myPP h = xmobarPP { ppOutput = hPutStrLn h
                 , ppSep =  "<fc=#6272a4> | </fc>"          -- Separators in xmobar
                 , ppUrgent = xmobarColor "#FFB86C" "" . wrap "!" "!"  -- Urgent workspace
                 , ppExtras  = [windowCount]                           -- # of windows current workspace
-                , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]          
+                , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]
                 }
 
 -- -- -- Key binding to toggle the gap for the bar
@@ -552,10 +551,10 @@ myStartupHook = do
 --
 -- main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
 main = do
-        xmproc <- spawnPipe myBar 
-        xmonad 
+        xmproc <- spawnPipe myBar
+        xmonad
             $ dynamicProjects myProjects
-            $ docks 
+            $ docks
             $ defaults xmproc
 -- --  xmonad <=< xmobar $ defaults
 
