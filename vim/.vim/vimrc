@@ -95,25 +95,26 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'powerline/powerline'
 
-" Markdown support
-Plug 'godlygeek/tabular', {'for': 'markdown'}
-Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-
-" Development plugins
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'dense-analysis/ale'
+" Snippets support
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Language support and better syntax highlighting
 Plug 'sheerun/vim-polyglot'
 Plug 'wilsaj/chuck.vim'
 
-" Snippets support
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Development plugins
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
 
-" LaTeX
+" LaTeX support
 Plug 'lervag/vimtex'
+
+" Markdown support
+Plug 'godlygeek/tabular', {'for': 'markdown'}
+Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 " Initialize plugin system
 call plug#end()
 
