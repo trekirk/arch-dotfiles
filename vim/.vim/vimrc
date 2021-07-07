@@ -107,6 +107,8 @@ Plug 'wilsaj/chuck.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+" LaTeX
+Plug 'lervag/vimtex'
 " Initialize plugin system
 call plug#end()
 
