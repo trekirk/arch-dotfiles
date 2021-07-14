@@ -57,6 +57,8 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " Shorthand notation; fetches https://github.com/tpope/vim-sensible
+
+" tpope's classics
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
@@ -66,6 +68,9 @@ Plug 'tpope/vim-commentary'
 
 " Netrw buff by tpope
 Plug 'tpope/vim-vinegar'
+
+" Buffing visual mode search using '*'
+Plug 'bronson/vim-visual-star-search'
 
 " Process control (works w/ ChucK extension)
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
