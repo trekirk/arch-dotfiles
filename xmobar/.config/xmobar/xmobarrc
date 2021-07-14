@@ -17,7 +17,7 @@
 -- #50FA7B
 -- Purple
 -- #BD93F9
---Cyan
+-- Cyan
 -- #8BE9FD
 -- Pink
 -- #FF79C6
@@ -38,7 +38,7 @@ Config {
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
    -- , template = " %StdinReader% | %battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ <action=pavucontrol>%alsa:default:Master%</action> | %bright% | %date% || %kbd% "
-   , template = " <icon=archlinux.xpm/> <fc=#6272A4>|</fc> %StdinReader% }{ %dynnetwork% <fc=#6272A4>|</fc> <action=pavucontrol>%default:Master%</action> <fc=#6272A4>|</fc> %bright% <fc=#6272A4>|</fc> %battery% <fc=#6272A4>|</fc> %date% <fc=#6272A4>||</fc> %kbd% "
+   , template = " <icon=archlinux.xpm/> <fc=#6272A4>|</fc> %StdinReader% }{ <action=nm-connection-editor>%dynnetwork%</action> <fc=#6272A4>|</fc> <action=pavucontrol>%default:Master%</action> <fc=#6272A4>|</fc> %bright% <fc=#6272A4>|</fc> %battery% <fc=#6272A4>|</fc> %date% <fc=#6272A4>||</fc> %kbd% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
