@@ -480,13 +480,21 @@ nnoremap <silent> <Leader>ag :Ag<CR>
 """"""""""""""
 " Git remaps "
 """"""""""""""
+" Basic Git tools
 nnoremap <Leader>gb :GBranches<CR>
 nnoremap <Leader>gt :GTags<CR>
-nnoremap <Leader>gs :G<CR>
+nnoremap <Leader>gs :vertical G<CR>
 nnoremap <Leader>gp :G push<CR>
-nnoremap <Leader>gdd :Gvdiffsplit!<CR>
-nnoremap <Leader>gdh :diffget //2<CR>
-nnoremap <Leader>gdl :diffget //3<CR>
+" Git graph
+nnoremap <Leader>gg :GV<CR>
+" Diff management
+nnoremap <Leader>gd :Gvdiffsplit!<CR>
+nnoremap <Leader>dh :diffget //2<CR>
+nnoremap <Leader>dl :diffget //3<CR>
+vnoremap <Leader>dp :diffput<CR>
+vnoremap <Leader>dg :diffget<CR>
+nnoremap <Leader>dp :diffput<CR>
+nnoremap <Leader>dg :diffget<CR>
 
 """"""""""""""
 " CoC remaps "
