@@ -410,6 +410,13 @@ set expandtab
 " which is the default
 map Y y$
 
+" This is useful to close the the whole layout instead of the windows
+" one by one ('ZZ' behavior)
+nnoremap ZA :wqa<CR>
+
+" To escape insert mode quickly without leaving the home row
+inoremap jk <Esc>
+
 " Leader key remappings
 let mapleader=" "
 
