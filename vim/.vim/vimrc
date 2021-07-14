@@ -104,9 +104,10 @@ Plug 'powerline/powerline'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-" Language support and better syntax highlighting
+" Language support/tools and better syntax highlighting
 Plug 'sheerun/vim-polyglot'
 Plug 'wilsaj/chuck.vim'
+Plug 'neovimhaskell/haskell-vim'
 
 " Development plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -157,6 +158,7 @@ call coc#config("diagnostic.displayByAle", 'true')
 let g:ale_linters={
 \   'python': ['flake8'],
 \   'cpp': ['ccls'],
+\   'haskell': ['hlint'],
 \}
 
 " you can also disable explicitly some linters
