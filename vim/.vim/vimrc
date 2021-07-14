@@ -107,6 +107,8 @@ Plug 'honza/vim-snippets'
 " Language support/tools and better syntax highlighting
 Plug 'sheerun/vim-polyglot'
 Plug 'wilsaj/chuck.vim'
+Plug 'tmhedberg/SimpylFold'
+Plug 'Konfekt/FastFold'
 Plug 'neovimhaskell/haskell-vim'
 
 " Development plugins
@@ -467,13 +469,13 @@ nnoremap <Leader>sp :Obsession<CR>
 " nnoremap <Leader>s :<C-u>FZF<CR>
 " Search and switch buffers
 nnoremap <silent> <Leader>b :Buffers<CR>
-nnoremap <silent> <Leader>d :BD<CR>
+nnoremap <silent> <Leader>db :BD<CR>
 " Find files by name under the current directory
 nnoremap <silent> <Leader>e :Files<CR>
 " Find files by name under the home directory
 nnoremap <silent> <Leader>h :Files ~/<CR>
 " Search content in the current file
-nnoremap <silent> <Leader>f :BLines<CR>
+nnoremap <silent> <Leader>/ :BLines<CR>
 " Search content in the current file and in files under the current directory
 nnoremap <silent> <Leader>ag :Ag<CR>
 
