@@ -1,5 +1,5 @@
 # Exclude vimrc files and folders
 autoload
 plugged
-sessions/*
+vim/.vim/sessions/
 .netrwhist
