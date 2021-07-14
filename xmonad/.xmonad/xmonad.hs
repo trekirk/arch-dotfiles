@@ -287,6 +287,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_t     ), spawn myTextEditor)
     -- , ((modm .|. shiftMask, xK_l     ), spawn "xscreensaver-command -lock")
     , ((modm .|. shiftMask, xK_l     ), spawn "light-locker-command -l")
+    , ((modm .|. shiftMask, xK_s     ), spawn "systemctl suspend")
+    , ((modm .|. shiftMask, xK_x     ), spawn "poweroff")  -- For this commands to work, remember to edit sudoers file
+    , ((modm .|. shiftMask, xK_r     ), spawn "reboot")  -- Same as above
     ]
 
     ++
