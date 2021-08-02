@@ -128,6 +128,14 @@ call plug#end()
 
 " Some plugins have specific settings that go here
 
+""""""""""""""""""""
+" Vinegar settings "
+""""""""""""""""""""
+
+" To close netrw after opening a file (this solves a very annoying bug)
+autocmd FileType netrw setl bufhidden=wipe
+let g:netrw_fastbrowse = 0
+
 """"""""""""""""
 " CoC settings "
 """"""""""""""""
