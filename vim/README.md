@@ -6,4 +6,4 @@ Here's the list of the necesary dependencies to properly install my Vim setup:
 * the_silver_searcher - To work in conjunction with fzf
 * nodejs - for CoC
 * npm - nodejs' package manager (for CoC)
-* the gruvbox theme for airline is missing but can be found in the gruvbox repo
+* Pip dependencies: flake8, pylint, pydocstyle, bandit, black, isort, autopep8
