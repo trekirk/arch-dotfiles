@@ -499,6 +499,12 @@ nnoremap <Leader>dp :diffput<CR>
 nnoremap <Leader>dg :diffget<CR>
 
 """"""""""""""
+" ALE remaps "
+""""""""""""""
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>
+
+""""""""""""""
 " CoC remaps "
 """"""""""""""
 " Use tab for trigger completion with characters ahead and navigate.
