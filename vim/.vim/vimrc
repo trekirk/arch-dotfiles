@@ -424,7 +424,7 @@ let mapleader=" "
 
 " This will save the file as sudo, avoiding editing it with sudo, thus
 " loading the vimrc present in 'root'
-noremap <Leader>w :w !sudo tee "%" > /dev/null
+noremap <Leader>W :w !sudo tee "%" > /dev/null
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
@@ -444,6 +444,9 @@ noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
 noremap <C-L> <C-W>l
 noremap <C-H> <C-W>h
+
+" More natural movement of the hand
+nnoremap <Leader>w <C-W>
 
 " This remaps move and increase the size of the window selected
 noremap <C-Left> <C-W>h<C-W><bar>
