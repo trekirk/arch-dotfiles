@@ -487,6 +487,7 @@ nnoremap <Leader>gb :GBranches<CR>
 nnoremap <Leader>gt :GTags<CR>
 nnoremap <Leader>gs :vertical G<CR>
 nnoremap <Leader>gp :G push<CR>
+nnoremap <Leader>gc :Git commit<CR>
 " Git graph
 nnoremap <Leader>gg :GV<CR>
 " Diff management
