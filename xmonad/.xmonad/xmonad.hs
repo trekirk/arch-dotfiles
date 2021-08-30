@@ -88,6 +88,12 @@ myFocusFollowsMouse = True
 myBorderWidth :: Dimension
 myBorderWidth   = 2
 
+-- Border colors for unfocused and focused windows, respectively.
+--
+myNormalBorderColor  = "#dddddd"
+-- myFocusedBorderColor = "#ff79c6" (pink dracula)
+myFocusedBorderColor = "#FF5555"
+
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
 -- ("right alt"), which does not conflict with emacs keybindings. The
@@ -192,11 +198,6 @@ myProjects =
 -- > workspaces = ["home", "terminal", "browser", "code", "messages", "multimedia", "gaming" ] ++ map show [4..9]
 
 myWorkspaces    = ["\xf015", "\xf120","\xe007","\xf121","\xf3fe","\xf025","\xe066"]
-
--- Border colors for unfocused and focused windows, respectively.
---
-myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff79c6"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
