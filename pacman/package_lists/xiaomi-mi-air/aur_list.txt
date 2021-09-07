@@ -1,3 +1,5 @@
+boost1.69
+brave-bin
 etcher-bin
 fontpreview
 grub2-theme-archlinux
@@ -7,6 +9,7 @@ nerd-fonts-complete
 otf-powerline-symbols-git
 powerline-fonts-git
 python-catkin_tools
+ros-noetic-audio-common
 ros-noetic-ros-base
 spotify
 ttf-oswald
