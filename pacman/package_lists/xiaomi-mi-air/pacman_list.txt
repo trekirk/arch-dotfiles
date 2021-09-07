@@ -169,7 +169,6 @@ xf86-input-libinput
 xf86-video-intel
 xf86-video-vesa
 xfce4-settings
-xfce4-terminal
 xmobar
 xmonad
 xmonad-contrib
