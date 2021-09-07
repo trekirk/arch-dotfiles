@@ -109,7 +109,7 @@ myMailClient :: String
 myMailClient    = "thunderbird"
 
 myFileManager :: String
-myFileManager   = "pcmanfm"
+myFileManager   = "thunar"
 
 myTextEditor :: String
 myTextEditor    = myTerminal ++ " vim"
