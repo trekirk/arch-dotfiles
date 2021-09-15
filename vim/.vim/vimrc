@@ -170,6 +170,7 @@ let g:ale_linters={
 \   'python': ['flake8', 'pydocstyle', 'bandit', 'pylint'],
 \   'cpp': ['ccls'],
 \   'haskell': ['hlint'],
+\   'latex': ['proselint', 'lacheck', 'chktex'],
 \}
 
 " you can also disable explicitly some linters

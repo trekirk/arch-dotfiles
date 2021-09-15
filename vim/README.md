@@ -6,4 +6,4 @@ Here's the list of the necesary dependencies to properly install my Vim setup:
 * the_silver_searcher - To work in conjunction with fzf
 * nodejs - for CoC
 * npm - nodejs' package manager (for CoC)
-* Pip dependencies: flake8, pylint, pydocstyle, bandit, black, isort, autopep8
+* Pip dependencies: flake8, pylint, pydocstyle, bandit, black, isort, autopep8, proselint
