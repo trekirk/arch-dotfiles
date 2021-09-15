@@ -30,7 +30,7 @@ set foldlevelstart=3  " A higher value implies more open folds
 set cursorline
 
 " Avoids line wrapping
-set nowrap
+" set nowrap
 
 " Change remove command in netrw to allow removing non-empty directories using 'D'
 let g:netrw_localrmdir='rm -r'
