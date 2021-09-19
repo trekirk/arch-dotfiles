@@ -162,6 +162,18 @@ call coc#config("python.analysis.extraPaths", [python_path])
 " Let the diagnostics to ALE (asynchronous)
 call coc#config("diagnostic.displayByAle", 'true')
 
+" The extensions go here (useful for exporting)
+let g:coc_global_extensions = [
+      \'coc-diagnostic',
+      \'coc-highlight',
+      \'coc-jedi',
+      \'coc-json', 
+      \'coc-lists',
+      \'coc-markdownlint',
+      \'coc-pyright',
+      \'coc-snippets',
+      \'coc-vimtex',
+      \]
 """"""""""""""""
 " ALE settings "
 """"""""""""""""
