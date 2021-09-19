@@ -1,2 +1,5 @@
 # Exclude vimrc files and folders
 .netrwhist
+autoload
+plugged
+sessions
