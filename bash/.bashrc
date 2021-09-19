@@ -243,8 +243,13 @@ fi
 # ROS #
 #######
 
-source '/opt/ros/noetic/setup.bash' > /dev/null
-source '/home/trekirk/Projects/ros/catkin_ws/devel/setup.bash' > /dev/null
+# Only sources the files if they exist
+if [ -f /opt/ros/noetic/setup.bash ]; then
+    source '/opt/ros/noetic/setup.bash' > /dev/null
+    if [ -f /home/trekirk/Projects/ros/catkin_ws/devel/setup.bash ]; then
+        source '/home/trekirk/Projects/ros/catkin_ws/devel/setup.bash' > /dev/null
+    fi
+fi
 export ROS_WORKSPACE=~/Projects/ros/catkin_ws
 
 #########################
