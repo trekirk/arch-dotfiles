@@ -1,0 +1,42 @@
+{
+    "pyright.enable": false,
+    "pyright.disableLanguageServices": true,
+    "python.analysis.autoImportCompletions": false,
+    "pyright.completion.snippetSupport": true,
+
+    "jedi.enable": true,
+    "jedi.startupMessage": false,
+    "jedi.markupKindPreferred": "plaintext",
+    "jedi.executable.command": "jedi-language-server",
+
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "c",
+                "cpp",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".catkin_workspace",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        },
+        "haskell": {
+            "command": "haskell-language-server-wrapper",
+            "args": ["--lsp"],
+            "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
+            "filetypes": ["haskell", "lhaskell"]
+        }
+    }
+}
