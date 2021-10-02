@@ -174,6 +174,21 @@ let g:coc_global_extensions = [
       \'coc-snippets',
       \'coc-vimtex',
       \]
+
+" Syntax highlighting settings
+
+" Make sure all types of requirements.txt files get syntax highlighting.
+autocmd BufNewFile,BufRead requirements*.txt set ft=python
+
+" Make sure .aliases, .bash_aliases and similar files get syntax highlighting.
+autocmd BufNewFile,BufRead .*aliases* set ft=sh
+
+" Make sure xmobar files get syntax highlighting but disable CoC to avoid
+" syntax error.
+autocmd BufNewFile,BufRead *xmobarrc* set ft=haskell
+autocmd BufNew,BufEnter *xmobarrc* execute "silent! CocDisable"
+autocmd BufLeave *xmobarrc* execute "silent! CocEnable"
+
 """"""""""""""""
 " ALE settings "
 """"""""""""""""
@@ -309,6 +324,7 @@ if !exists('g:airline_symbols')
 " let g:airline_symbols.branch = ''
 " let g:airline_symbols.readonly = ''
 " let g:airline_symbols.linenr = ''
+  " let g:airline_symbols.columnr = ''
 
 " Removes the mode at the bottom, showing only the powerline
 set noshowmode
