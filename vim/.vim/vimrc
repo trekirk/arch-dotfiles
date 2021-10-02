@@ -487,6 +487,13 @@ nnoremap <Leader>l :nohl<CR><C-L>
 "Remove all trailing whitespace by pressing leader nd space
 nnoremap <Leader><Space> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
+" Toggle spell check.
+map <F5> :setlocal spell!<CR>
+
+" Prevent x from overriding what's in the clipboard.
+noremap x "_x
+noremap X "_x
+
 """""""""""""""
 " Vim windows "
 """""""""""""""
