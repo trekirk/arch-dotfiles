@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+
+# Updates pacman keys
+sudo pacman -Sy --noconfirm archlinux-keyring
+sudo pacman-key --refresh-keys
+
+# Packages full update (yay dependant)
+yay -Syyu --noconfirm
+# Sync pacman database for autocomplete
+sudo pkgfile -u
+
+# Updates xmonad (in case it is installed in the system)
+if command -v xmonad &> /dev/null
+then
+    xmonad --recompile
+fi
+
+# Finally, updates its corresponding package lists
+if [[ "$(hostname)" == "Zarathustra" ]]; then
+    echo "This is Zarathustra, updating package lists"
+    rm -rf $HOME/.dotfiles/pacman/package_lists/xiaomi-mi-air/*
+    pacman -Qqen > $HOME/.dotfiles/pacman/package_lists/xiaomi-mi-air/pacman_list.txt
+    pacman -Qqem > $HOME/.dotfiles/pacman/package_lists/xiaomi-mi-air/aur_list.txt
+elif [[ "$(hostname)" == "Trinidad" ]]; then
+    echo "This is Trinidad, updating package lists"
+    rm -rf $HOME/.dotfiles/pacman/package_lists/medion-p2213t/*
+    pacman -Qqen > $HOME/.dotfiles/pacman/package_lists/medion-p2213t/pacman_list.txt
+    pacman -Qqem > $HOME/.dotfiles/pacman/package_lists/medion-p2213t/aur_list.txt
+else
+    echo "This is not Zarathustra, nor Trinidad"
+fi
+
