@@ -684,3 +684,11 @@ nnoremap <silent> <Leader>ck  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <Leader>cp  :<C-u>CocListResume<CR>
 "------------------------------------------------------------
+
+"""""""""""""""""
+" VimTeX remaps "
+"""""""""""""""""
+
+" Toggle VimTeX compilation
+map <leader>vco :VimtexCompile<CR>
+map <leader>vcl :VimtexClean<CR>
