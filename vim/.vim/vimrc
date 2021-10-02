@@ -29,8 +29,15 @@ set foldlevelstart=3  " A higher value implies more open folds
 " Highlight the current line
 set cursorline
 
-" Avoids line wrapping
+" Line wrapping settings
 " set nowrap
+" set textwidth=80
+" set colorcolumn=80
+au BufRead,BufNewFile *.md setlocal textwidth=80
+" au BufRead,BufNewFile *.{md,tex} setlocal textwidth=80
+au BufRead,BufNewFile *.md setlocal colorcolumn=80
+" au BufRead,BufNewFile *.{md,tex} setlocal colorcolumn=80
+
 
 " Change remove command in netrw to allow removing non-empty directories using 'D'
 let g:netrw_localrmdir='rm -r'
