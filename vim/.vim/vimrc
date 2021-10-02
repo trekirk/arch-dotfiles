@@ -127,9 +127,11 @@ Plug 'dense-analysis/ale'
 Plug 'lervag/vimtex'
 
 " Markdown support
-Plug 'godlygeek/tabular', {'for': 'markdown'}
-Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'godlygeek/tabular', {'for': ['markdown', 'pandoc']}
+Plug 'plasticboy/vim-markdown', {'for': ['markdown', 'pandoc']}
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for': ['markdown', 'pandoc', 'vim-plug']}
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " Initialize plugin system
 call plug#end()
@@ -199,6 +201,9 @@ autocmd BufLeave *xmobarrc* execute "silent! CocEnable"
 """"""""""""""""
 " ALE settings "
 """"""""""""""""
+" Pandoc = markdown, so enable the linters for this filetype as well
+let g:ale_linter_aliases = {'pandoc': ['markdown']}
+
 " declare which linters you want to run
 let g:ale_linters={
 \   'python': ['flake8', 'pydocstyle', 'bandit', 'pylint'],
