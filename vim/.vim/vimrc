@@ -371,6 +371,14 @@ set hlsearch
 " script, <http://www.vim.org/scripts/script.php?script_id=1876>.
 " set nomodeline
 
+" -----------------------------------------------------------------------------
+" Basic autocommands {{{1
+"
+" Auto-resize splits when Vim gets resized.
+autocmd VimResized * wincmd =
+
+" Update a buffer's contents on focus if it changed outside of Vim.
+au FocusGained,BufEnter * :checktime
 
 "------------------------------------------------------------
 " Usability options {{{1
@@ -431,8 +439,6 @@ set notimeout ttimeout ttimeoutlen=200
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
-
-"------------------------------------------------------------
 " Indentation options {{{1
 "
 " Indentation settings according to personal preference.
@@ -478,7 +484,7 @@ nnoremap <Leader>l :nohl<CR><C-L>
 " This mapping will make you fly through your buffers!!
 " nnoremap <Leader>b :ls<CR>:b<Space>
 
-"Remove all trailing whitespace by pressing F5
+"Remove all trailing whitespace by pressing leader nd space
 nnoremap <Leader><Space> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 """""""""""""""
