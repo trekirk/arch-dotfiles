@@ -48,6 +48,7 @@ gzip
 haskell-language-server
 htop
 imagemagick
+inetutils
 iwd
 java-runtime-common
 jdk11-openjdk
@@ -85,6 +86,7 @@ ninja
 nm-connection-editor
 noto-fonts
 ntfs-3g
+ntp
 obs-studio
 openssh
 openvpn
@@ -92,6 +94,7 @@ os-prober
 p7zip
 pacman
 pacman-contrib
+pandoc
 papirus-icon-theme
 patch
 pavucontrol
@@ -118,6 +121,7 @@ sox
 stack
 stow
 sudo
+sweethome3d
 telegram-desktop
 texinfo
 texlive-bibtexextra
@@ -138,11 +142,14 @@ texlive-pictures
 texlive-pstricks
 texlive-publishers
 texlive-science
+texstudio
 the_silver_searcher
 thunar
 thunderbird
 tigervnc
 tinyxml
+tor
+torbrowser-launcher
 ttf-dejavu
 ttf-droid
 ttf-fantasque-sans-mono
