@@ -1,4 +1,8 @@
 {
+    "session.saveOnVimLeave": false,
+    "session.directory": "~/.vim/session",
+    "list.source.grep.command": "ag",
+
     "pyright.enable": false,
     "pyright.disableLanguageServices": true,
     "python.analysis.autoImportCompletions": false,

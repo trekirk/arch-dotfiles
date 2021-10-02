@@ -167,7 +167,7 @@ let g:coc_global_extensions = [
       \'coc-diagnostic',
       \'coc-highlight',
       \'coc-jedi',
-      \'coc-json', 
+      \'coc-json',
       \'coc-lists',
       \'coc-markdownlint',
       \'coc-pyright',
@@ -508,12 +508,14 @@ noremap <C-Right> <C-W>l<C-W><bar>
 """""""""""""""""""""""""""""
 " Session management remaps "
 """""""""""""""""""""""""""""
-let g:obsession_dir = '~/.vim/sessions/'
-let g:prosession_dir = '~/.vim/sessions/'
+let g:obsession_dir = '~/.vim/session/'
+let g:prosession_dir = '~/.vim/session/'
 " session save remap
 exec 'nnoremap <Leader>ss :Obsession ' . g:obsession_dir . '*.vim<C-D><BS><BS><BS><BS><BS>'
+" exec 'nnoremap <Leader>ss :CocCommand session.save '
 " session restore remap
 exec 'nnoremap <Leader>sr :so ' . g:obsession_dir . '*.vim<C-D><BS><BS><BS><BS><BS>'
+" exec 'nnoremap <Leader>sr  :CocCommand session.load<CR>'
 " for pausing and unpausing our current session if we’re in one
 nnoremap <Leader>sp :Obsession<CR>
 
