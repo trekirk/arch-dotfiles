@@ -243,10 +243,12 @@ let g:airline#extensions#ale#enabled=1
 """""""""""""""""""""
 " Snippets settings "
 """""""""""""""""""""
-let g:UltiSnipsExpandTrigger="<f5>"
-let g:UltiSnipsJumpForwardTrigger="<f6>"
-let g:UltiSnipsJumpBackwardTrigger="<f4>"
+let g:UltiSnipsExpandTrigger = '<nop>'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+let g:UltiSnipsRemoveSelectModeMappings = 0
 
+nnoremap <leader>se :UltiSnipsEdit!<cr>
 """"""""""""""""""
 " CtrlP settings "
 """"""""""""""""""
