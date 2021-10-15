@@ -721,7 +721,7 @@ nnoremap <silent> <Leader>cp  :<C-u>CocListResume<CR>
 """""""""""""""""
 
 " Toggle VimTeX compilation
-map <leader>vct :VimtexCompile<CR>
+map <leader>lct :VimtexCompile<CR>
 " Single shot compilation
-map <leader>vco :VimtexCompileSS<CR>
-map <leader>vcl :VimtexClean<CR>
+map <leader>lco :VimtexCompileSS<CR>
+map <leader>lcl :VimtexClean<CR>
