@@ -266,11 +266,16 @@ fi
 # Only sources the files if they exist
 if [ -f /opt/ros/noetic/setup.bash ]; then
     source '/opt/ros/noetic/setup.bash' > /dev/null
+    # Custom acoustic touch recognition workspace
+    if [ -f /home/trekirk/Projects/ros/atr_ws/devel/setup.bash ]; then
+        source '/home/trekirk/Projects/ros/atr_ws/devel/setup.bash' > /dev/null
+    fi
+    # Classic catkin ws
     if [ -f /home/trekirk/Projects/ros/catkin_ws/devel/setup.bash ]; then
         source '/home/trekirk/Projects/ros/catkin_ws/devel/setup.bash' > /dev/null
+        export ROS_WORKSPACE="$HOME/Projects/ros/catkin_ws"
     fi
 fi
-export ROS_WORKSPACE=~/Projects/ros/catkin_ws
 
 #########################
 # ENVIRONMENT VARIABLES #
