@@ -38,10 +38,6 @@ au BufRead,BufNewFile *.md setlocal textwidth=80
 au BufRead,BufNewFile *.md setlocal colorcolumn=80
 " au BufRead,BufNewFile *.{md,tex} setlocal colorcolumn=80
 
-
-" Change remove command in netrw to allow removing non-empty directories using 'D'
-let g:netrw_localrmdir='rm -r'
-
 "------------------------------------------------------------
 " Plugins {{{1
 "
@@ -138,9 +134,12 @@ call plug#end()
 
 " Some plugins have specific settings that go here
 
-""""""""""""""""""""
-" Vinegar settings "
-""""""""""""""""""""
+""""""""""""""""""""""""""""
+" Vinegar (netrw) settings "
+""""""""""""""""""""""""""""
+
+" Change remove command in netrw to allow removing non-empty directories using 'D'
+let g:netrw_localrmdir='rm -r'
 
 " To close netrw after opening a file (this solves a very annoying bug)
 autocmd FileType netrw setl bufhidden=wipe
@@ -546,6 +545,50 @@ noremap <C-Left> <C-W>h<C-W><bar>
 noremap <C-Down> <C-W>j<C-W>_
 noremap <C-Up> <C-W>k<C-W>_
 noremap <C-Right> <C-W>l<C-W><bar>
+
+"""""""""
+" Netrw "
+"""""""""
+" Unfortunately we don't have a direct way to assign a keymap in Netrw.
+" What we are going to do is place our keymaps inside a function and
+" create an autocommand that calls it everytime vim opens a filetype netrw.
+function! NetrwMapping()
+endfunction
+
+augroup netrw_mapping
+    autocmd!
+    autocmd filetype netrw call NetrwMapping()
+augroup END
+
+function! NetrwMapping()
+    " Will 'go up' a directory.
+    nmap <buffer> h -^
+    " Will open a directory or a file.
+    nmap <buffer> l <CR>
+
+    " Will toggle the dotfiles.
+    nmap <buffer> <C-H> gh
+    " " Will close the preview window.
+    " nmap <buffer> P <C-w>z
+
+    " " Will open a file and close Netrw.
+    " nmap <buffer> L <CR>:Lexplore<CR>
+    " " Will just close Netrw.
+    " nmap <buffer> <Leader>dd :Lexplore<CR>
+
+    " Toggles the mark on a file or directory
+    nmap <buffer> <TAB> mfj
+    vmap <buffer> <TAB> :normal mfj<CR>
+    " For the sake of coherence, the previous mapping should work with 'mj'
+    vmap <buffer> mf :normal mf<CR>
+    " Will unmark all the files in the current buffer.
+    nmap <buffer> <S-TAB> mF
+    " Will remove all the marks on all files.
+    nmap <buffer> <Leader><TAB> mu
+
+    " Open in in buffers the selected files in visual mode
+    vmap <buffer> <CR> :normal mf<CR>me
+endfunction
 
 """""""""""""""""""""""""""""
 " Session management remaps "
