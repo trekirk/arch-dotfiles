@@ -567,11 +567,14 @@ nnoremap <Leader>sp :Obsession<CR>
 " nnoremap <Leader>s :<C-u>FZF<CR>
 " Search and switch buffers
 nnoremap <silent> <Leader>b :Buffers<CR>
-nnoremap <silent> <Leader>db :BD<CR>
+" Delete selected buffers
+nnoremap <silent> <Leader>B :BD<CR>
+" Saves and deletes all opened buffers
+nnoremap <silent> <Leader>D :wa<CR>:bufdo bd<CR>
 " Find files by name under the current directory
 nnoremap <silent> <Leader>e :Files<CR>
 " Find files by name under the home directory
-nnoremap <silent> <Leader>h :Files ~/<CR>
+nnoremap <silent> <Leader>~ :Files ~/<CR>
 " Search content in the current file
 nnoremap <silent> <Leader>/ :BLines<CR>
 " Search content in the current file and in files under the current directory
