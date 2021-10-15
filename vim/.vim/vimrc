@@ -243,9 +243,11 @@ let g:airline#extensions#ale#enabled=1
 """""""""""""""""""""
 " Snippets settings "
 """""""""""""""""""""
-let g:UltiSnipsExpandTrigger = '<nop>'
-let g:UltiSnipsJumpForwardTrigger = '<c-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+let g:UltiSnipsExpandTrigger="<NUL>"
+" let g:UltiSnipsExpandTrigger="<c-j>"  " In case the 'NUL' option causes
+" issues
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
 
 nnoremap <leader>se :UltiSnipsEdit!<cr>
