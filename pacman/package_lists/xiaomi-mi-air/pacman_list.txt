@@ -102,6 +102,7 @@ pcmanfm
 pkgconf
 pkgfile
 powerline
+powertop
 pulseaudio
 python-gobject
 python-pillow
