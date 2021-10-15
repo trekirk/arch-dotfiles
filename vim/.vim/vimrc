@@ -475,6 +475,12 @@ set expandtab
 "
 " Useful mappings
 
+" :D - Smile, because you can't kill them all.
+command D smile
+
+" :S - Update current buffer to take effect any changes made to your .vimrc.
+command S source ~/.vim/vimrc
+
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 map Y y$
@@ -486,22 +492,9 @@ nnoremap ZA :wqa<CR>
 " To escape insert mode quickly without leaving the home row
 inoremap jk <Esc>
 
-" Leader key remappings
-let mapleader=" "
-
-" This will save the file as sudo, avoiding editing it with sudo, thus
-" loading the vimrc present in 'root'
-noremap <Leader>W :w !sudo tee "%" > /dev/null
-
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
-" next search
-nnoremap <Leader>l :nohl<CR><C-L>
-
-" This mapping will make you fly through your buffers!!
-" nnoremap <Leader>b :ls<CR>:b<Space>
-
-"Remove all trailing whitespace by pressing leader nd space
-nnoremap <Leader><Space> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+" Center view on next search.
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 " Toggle spell check.
 map <F5> :setlocal spell!<CR>
@@ -509,6 +502,32 @@ map <F5> :setlocal spell!<CR>
 " Prevent x from overriding what's in the clipboard.
 noremap x "_x
 noremap X "_x
+
+" Do not lose selection after indentation.
+vnoremap <silent> < <gv
+vnoremap <silent> > >gv
+
+""""""""""""""""""""""""""""""""
+" Leader key global remappings "
+""""""""""""""""""""""""""""""""
+let mapleader=" "
+
+" Make sure spacebar does not have any mapping beforehand.
+nnoremap <silent> <space> <nop>
+
+" This will save the file as sudo, avoiding editing it with sudo, thus
+" loading the vimrc present in 'root'
+noremap <Leader>W :w !sudo tee "%" > /dev/null
+
+" Map <Leader>H (redraw screen) to also turn off search highlighting until the
+" next search
+nnoremap <Leader>H :nohl<CR><C-L>
+
+" This mapping will make you fly through your buffers!!
+" nnoremap <Leader>b :ls<CR>:b<Space>
+
+"Remove all trailing whitespace by pressing leader and space
+nnoremap <Leader><Space> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 """""""""""""""
 " Vim windows "
