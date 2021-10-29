@@ -1,25 +1,67 @@
 # Path to your oh-my-bash installation.
 export OSH=/home/trekirk/.oh-my-bash
 
-if [ "$TERM" = "linux" ]; then
-    echo -en "\e]P0232323" #black
-    echo -en "\e]P82B2B2B" #darkgrey
-    echo -en "\e]P1D75F5F" #darkred
-    echo -en "\e]P9E33636" #red
-    echo -en "\e]P287AF5F" #darkgreen
-    echo -en "\e]PA98E34D" #green
-    echo -en "\e]P3D7AF87" #brown
-    echo -en "\e]PBFFD75F" #yellow
-    echo -en "\e]P48787AF" #darkblue
-    echo -en "\e]PC7373C9" #blue
-    echo -en "\e]P5BD53A5" #darkmagenta
-    echo -en "\e]PDD633B2" #magenta
-    echo -en "\e]P65FAFAF" #darkcyan
-    echo -en "\e]PE44C9C9" #cyan
-    echo -en "\e]P7E5E5E5" #lightgrey
-    echo -en "\e]PFFFFFFF" #white
-    clear #for background artifacting
-fi
+# if [ "$TERM" = "linux" ]; then
+#     echo -en "\e]P0232323" #black
+#     echo -en "\e]P82B2B2B" #darkgrey
+#     echo -en "\e]P1D75F5F" #darkred
+#     echo -en "\e]P9E33636" #red
+#     echo -en "\e]P287AF5F" #darkgreen
+#     echo -en "\e]PA98E34D" #green
+#     echo -en "\e]P3D7AF87" #brown
+#     echo -en "\e]PBFFD75F" #yellow
+#     echo -en "\e]P48787AF" #darkblue
+#     echo -en "\e]PC7373C9" #blue
+#     echo -en "\e]P5BD53A5" #darkmagenta
+#     echo -en "\e]PDD633B2" #magenta
+#     echo -en "\e]P65FAFAF" #darkcyan
+#     echo -en "\e]PE44C9C9" #cyan
+#     echo -en "\e]P7E5E5E5" #lightgrey
+#     echo -en "\e]PFFFFFFF" #white
+#     clear #for background artifacting
+# fi
+
+# # Dracula theme for TTY
+# if [ "$TERM" = "linux" ]; then
+# 	printf %b '\e[40m' '\e[8]' # set default background to color 0 'dracula-bg'
+# 	printf %b '\e[37m' '\e[8]' # set default foreground to color 7 'dracula-fg'
+# 	printf %b '\e]P0282a36'    # redefine 'black'          as 'dracula-bg'
+# 	printf %b '\e]P86272a4'    # redefine 'bright-black'   as 'dracula-comment'
+# 	printf %b '\e]P1ff5555'    # redefine 'red'            as 'dracula-red'
+# 	printf %b '\e]P9ff7777'    # redefine 'bright-red'     as '#ff7777'
+# 	printf %b '\e]P250fa7b'    # redefine 'green'          as 'dracula-green'
+# 	printf %b '\e]PA70fa9b'    # redefine 'bright-green'   as '#70fa9b'
+# 	printf %b '\e]P3f1fa8c'    # redefine 'brown'          as 'dracula-yellow'
+# 	printf %b '\e]PBffb86c'    # redefine 'bright-brown'   as 'dracula-orange'
+# 	printf %b '\e]P4bd93f9'    # redefine 'blue'           as 'dracula-purple'
+# 	printf %b '\e]PCcfa9ff'    # redefine 'bright-blue'    as '#cfa9ff'
+# 	printf %b '\e]P5ff79c6'    # redefine 'magenta'        as 'dracula-pink'
+# 	printf %b '\e]PDff88e8'    # redefine 'bright-magenta' as '#ff88e8'
+# 	printf %b '\e]P68be9fd'    # redefine 'cyan'           as 'dracula-cyan'
+# 	printf %b '\e]PE97e2ff'    # redefine 'bright-cyan'    as '#97e2ff'
+# 	printf %b '\e]P7f8f8f2'    # redefine 'white'          as 'dracula-fg'
+# 	printf %b '\e]PFffffff'    # redefine 'bright-white'   as '#ffffff'
+# 	clear
+# fi
+
+# Gruvbox theme for TTY
+PREREQ=""
+prereqs()
+{
+     echo "$PREREQ"
+}
+ 
+case $1 in
+prereqs)
+     prereqs
+     exit 0
+     ;;
+esac
+ 
+# Gruvbox Dark
+echo "40,204,152,215,69,177,104,168,146,251,184,250,131,211,142,235
+40,36,151,153,133,98,157,153,131,73,187,189,165,134,192,219
+40,29,26,33,136,134,106,132,116,52,38,47,152,155,124,178" | setvtrgb -
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
