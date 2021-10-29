@@ -42,6 +42,28 @@ snippet todoin "Todonotes inline" wA
 \todo[inline]{$1} $0
 endsnippet
 
+# Changes
+
+snippet add "Added" w
+\added[id=$1, comment=$2]{$3} $0
+endsnippet
+
+snippet del "Deleted" w
+\deleted[id=$1, comment=$2]{$3} $0
+endsnippet
+
+snippet repl "Replaced" w
+\replaced[id=$1, comment=$2]{$3}{$4} $0
+endsnippet
+
+snippet highl "Highlight" w
+\highlight[id=$1, comment=$2]{$3} $0
+endsnippet
+
+snippet comm "Commentary" w
+\comment[id=$1]{$2} $0
+endsnippet
+
 # Subscripts
 snippet '([A-Za-z])(\d)' "auto subscript" wrA
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
