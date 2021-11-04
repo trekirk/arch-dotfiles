@@ -90,9 +90,9 @@ myBorderWidth   = 2
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#dddddd"
+myNormalBorderColor  = "#ebdbb2"
 -- myFocusedBorderColor = "#ff79c6" (pink dracula)
-myFocusedBorderColor = "#FF5555"
+myFocusedBorderColor = "#cc241d"
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -510,13 +510,13 @@ myBar = "xmobar $HOME/.config/xmobar/xmobarrc"
 
 -- Custom PP, configure it as you like. It determines what is being written in the bar.
 myPP h = xmobarPP { ppOutput = hPutStrLn h
-                , ppCurrent = xmobarColor "#F8F8F2" "#6272a4" . wrap " " " "
-                , ppVisible = xmobarColor "#F8F8F2" "#6272a4"  -- Visible but not current workspace (Xinerama)
-                , ppHidden = xmobarColor "#FF79C6" "" . wrap "*" " "   -- Hidden workspaces in xmobar
-                , ppHiddenNoWindows = xmobarColor "#8BE9FD" "" . wrap " " " "        -- Hidden workspaces (no windows)
-                , ppTitle = xmobarColor "#50fa7b" "" . shorten 30     -- Title of active window in xmobar
-                , ppSep =  "<fc=#6272a4> | </fc>"          -- Separators in xmobar
-                , ppUrgent = xmobarColor "#FFB86C" "" . wrap "!" "!"  -- Urgent workspace
+                , ppCurrent = xmobarColor "#ebdbb2" "#928374" . wrap " " " "
+                , ppVisible = xmobarColor "#ebdbb2" "#928374"  -- Visible but not current workspace (Xinerama)
+                , ppHidden = xmobarColor "#d3869b" "" . wrap "*" " "   -- Hidden workspaces in xmobar
+                , ppHiddenNoWindows = xmobarColor "#689d6a" "" . wrap " " " "        -- Hidden workspaces (no windows)
+                , ppTitle = xmobarColor "#98971a" "" . shorten 30     -- Title of active window in xmobar
+                , ppSep =  "<fc=#928374> | </fc>"          -- Separators in xmobar
+                , ppUrgent = xmobarColor "#d65d0e" "" . wrap "!" "!"  -- Urgent workspace
                 , ppExtras  = [windowCount]                           -- # of windows current workspace
                 , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]
                 }

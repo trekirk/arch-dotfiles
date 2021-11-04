@@ -23,13 +23,36 @@
 -- #FF79C6
  
 
+-- Gruvbox color palette
+-- Background
+-- #1d2021
+-- Foreground
+-- #ebdbb2
+-- Selection
+-- #3c3836
+-- Comment
+-- #928374
+-- Red
+-- #cc241d
+-- Orange
+-- #d65d0e
+-- Yellow
+-- #d79921
+-- Green
+-- #98971a
+-- Purple
+-- #b16286
+-- Cyan
+-- #689d6a
+-- Pink
+-- #d3869b
 Config { 
 
    -- appearance
      font =         "xft:Font Awesome 5 Free Solid:size=10,Font Awesome 5 Brands Regular:size=10, Droid Sans Mono:size=9:bold:antialias=true"
    , additionalFonts = ["xft:JoyPixels:size=9"]
-   , bgColor =      "#44475A"
-   , fgColor =      "#F8F8F2"
+   , bgColor =      "#3c3836"
+   , fgColor =      "#ebdbb2"
    , position =     Top
    , border =       BottomB
    , borderColor =  "#646464"
@@ -38,7 +61,7 @@ Config {
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
    -- , template = " %StdinReader% | %battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ <action=pavucontrol>%alsa:default:Master%</action> | %bright% | %date% || %kbd% "
-   , template = " <icon=archlinux.xpm/> <fc=#6272A4>|</fc> %StdinReader% }{ <action=nm-connection-editor>%dynnetwork%</action> <fc=#6272A4>|</fc> <action=pavucontrol>%default:Master%</action> <fc=#6272A4>|</fc> %bright% <fc=#6272A4>|</fc> %battery% <fc=#6272A4>|</fc> %date% <fc=#6272A4>||</fc> %kbd% "
+   , template = " <icon=archlinux.xpm/> <fc=#928374>|</fc> %StdinReader% }{ <action=nm-connection-editor>%dynnetwork%</action> <fc=#928374>|</fc> <action=pavucontrol>%default:Master%</action> <fc=#928374>|</fc> %bright% <fc=#928374>|</fc> %battery% <fc=#928374>|</fc> %date% <fc=#928374>||</fc> %kbd% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -75,27 +98,27 @@ Config {
         , Run Network "wlan0" [ "--template" , "\xf1eb <tx>kB/s|<rx>kB/s"
                              , "--Low"      , "1000"       -- units: B/s
                              , "--High"     , "5000"       -- units: B/s
-                             , "--low"      , "#50FA7B"
-                             , "--normal"   , "#FFB86C"
-                             , "--high"     , "#FF5555"
+                             , "--low"      , "#98971a"
+                             , "--normal"   , "#d65d0e"
+                             , "--high"     , "#cc241d"
                              ] 10
 
         -- network activity monitor (dynamic interface resolution)
         , Run Network "enp0s20f0u1u1" [ "--template" , "\xf796 <tx>kB/s|<rx>kB/s"
                              , "--Low"      , "1000"       -- units: B/s
                              , "--High"     , "5000"       -- units: B/s
-                             , "--low"      , "#50FA7B"
-                             , "--normal"   , "#FFB86C"
-                             , "--high"     , "#FF5555"
+                             , "--low"      , "#98971a"
+                             , "--normal"   , "#d65d0e"
+                             , "--high"     , "#cc241d"
                              ] 10
                              
         -- network activity monitor (dynamic interface resolution)
         , Run DynNetwork     [ "--template" , "\xf6ff <tx>kB/s|<rx>kB/s"
                              , "--Low"      , "1000"       -- units: B/s
                              , "--High"     , "5000"       -- units: B/s
-                             , "--low"      , "#50FA7B"
-                             , "--normal"   , "#FFB86C"
-                             , "--high"     , "#FF5555"
+                             , "--low"      , "#98971a"
+                             , "--normal"   , "#d65d0e"
+                             , "--high"     , "#cc241d"
                              ] 10
 
         -- cpu activity monitor
@@ -131,9 +154,9 @@ Config {
                              -- This flags set the thresholds for the colors
                              , "-L"      , "20"        -- units: %
                              , "-H"      , "80"        -- units: %
-                             , "--low"      , "#FF5555"
-                             , "--normal"   , "#FFB86C"
-                             , "--high"     , "#50FA7B"
+                             , "--low"      , "#cc241d"
+                             , "--normal"   , "#d65d0e"
+                             , "--high"     , "#98971a"
 
                              , "--" -- battery specific options
                                        -- Here you have to redefine the flags to be interpreted by the --lows, etc. options
@@ -142,13 +165,13 @@ Config {
                                        -- discharging status
                                        , "-o", "<left>% (<timeleft>)"
                                        -- AC "on" status
-                                       , "-O", "\xf0e7 <fc=#FFB86C>Charging</fc>"
+                                       , "-O", "\xf0e7 <fc=#d65d0e>Charging</fc>"
                                        -- charged status
-                                       , "-i", "\xf0e7 <fc=#50FA7B>Charged</fc>"
+                                       , "-i", "\xf0e7 <fc=#98971a>Charged</fc>"
                                        -- The icon change depending on the status of the battery
-                                       , "--lows", "<fc=#F8F8F2>\xf243</fc> "
-                                       , "--mediums", "<fc=#F8F8F2>\xf242</fc> "
-                                       , "--highs", "<fc=#F8F8F2>\xf240</fc> "
+                                       , "--lows", "<fc=#ebdbb2>\xf243</fc> "
+                                       , "--mediums", "<fc=#ebdbb2>\xf242</fc> "
+                                       , "--highs", "<fc=#ebdbb2>\xf240</fc> "
                              ] 50
 
         -- time and date indicator 
@@ -157,12 +180,12 @@ Config {
 
         -- keyboard layout indicator
         , Run Kbd            [ ("es(dvorak)" , "<fc=#00008B>DV</fc>")
-                             , ("es"         , "\xf0ac <fc=#FF5555>ES</fc>")
+                             , ("es"         , "\xf0ac <fc=#cc241d>ES</fc>")
                              ]
 
  
         -- brightness indicator
-        , Run Brightness     [ "--template", "\xf185 <fc=#FFB86C><bar></fc>", 
+        , Run Brightness     [ "--template", "\xf185 <fc=#d65d0e><bar></fc>", 
                                "--" -- brightness specific options
                                        , "-D", "intel_backlight" 
                              ] 1
@@ -176,9 +199,9 @@ Config {
                                          , "--onc", "white"
                                          , "--off", "\xf6a9 MUTE"
                                          , "--offc", "#dc322f"
-                                         , "--lows", "<fc=#F8F8F2>\xf026</fc> <fc=#FF5555><volume>%</fc>"
-                                         , "--mediums", "<fc=#F8F8F2>\xf027</fc> <fc=#FFB86C><volume>%</fc>"
-                                         , "--highs", "<fc=#F8F8F2>\xf028</fc> <fc=#50FA7B><volume>%</fc>"
+                                         , "--lows", "<fc=#ebdbb2>\xf026</fc> <fc=#cc241d><volume>%</fc>"
+                                         , "--mediums", "<fc=#ebdbb2>\xf027</fc> <fc=#d65d0e><volume>%</fc>"
+                                         , "--highs", "<fc=#ebdbb2>\xf028</fc> <fc=#98971a><volume>%</fc>"
                                         ] 5
         -- alternative volume controls using alsactl
         , Run Alsa "default" "Master"   ["--template", "<status>"
@@ -189,9 +212,9 @@ Config {
                                          , "--onc", "white"
                                          , "--off", "\xf6a9 MUTE"
                                          , "--offc", "#dc322f"
-                                         , "--lows", "<fc=#F8F8F2>\xf026</fc> <fc=#FF5555><volume>%</fc>"
-                                         , "--mediums", "<fc=#F8F8F2>\xf027</fc> <fc=#FFB86C><volume>%</fc>"
-                                         , "--highs", "<fc=#F8F8F2>\xf028</fc> <fc=#50FA7B><volume>%</fc>"
+                                         , "--lows", "<fc=#ebdbb2>\xf026</fc> <fc=#cc241d><volume>%</fc>"
+                                         , "--mediums", "<fc=#ebdbb2>\xf027</fc> <fc=#d65d0e><volume>%</fc>"
+                                         , "--highs", "<fc=#ebdbb2>\xf028</fc> <fc=#98971a><volume>%</fc>"
                                         ]
         ]
            }

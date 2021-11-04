@@ -102,7 +102,6 @@ pcmanfm
 pkgconf
 pkgfile
 powerline
-powertop
 pulseaudio
 python-gobject
 python-pillow
@@ -119,6 +118,7 @@ rxvt-unicode
 scrot
 sed
 sox
+sqlitebrowser
 stack
 stow
 sudo
@@ -149,6 +149,7 @@ thunar
 thunderbird
 tigervnc
 tinyxml
+tmux
 tor
 torbrowser-launcher
 ttf-dejavu
