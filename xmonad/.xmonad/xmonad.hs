@@ -92,7 +92,7 @@ myBorderWidth   = 2
 --
 myNormalBorderColor  = "#ebdbb2"
 -- myFocusedBorderColor = "#ff79c6" (pink dracula)
-myFocusedBorderColor = "#cc241d"
+myFocusedBorderColor = "#fb4934"
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -513,10 +513,10 @@ myPP h = xmobarPP { ppOutput = hPutStrLn h
                 , ppCurrent = xmobarColor "#ebdbb2" "#928374" . wrap " " " "
                 , ppVisible = xmobarColor "#ebdbb2" "#928374"  -- Visible but not current workspace (Xinerama)
                 , ppHidden = xmobarColor "#d3869b" "" . wrap "*" " "   -- Hidden workspaces in xmobar
-                , ppHiddenNoWindows = xmobarColor "#689d6a" "" . wrap " " " "        -- Hidden workspaces (no windows)
-                , ppTitle = xmobarColor "#98971a" "" . shorten 30     -- Title of active window in xmobar
+                , ppHiddenNoWindows = xmobarColor "#8ec07c" "" . wrap " " " "        -- Hidden workspaces (no windows)
+                , ppTitle = xmobarColor "#b8bb26" "" . shorten 30     -- Title of active window in xmobar
                 , ppSep =  "<fc=#928374> | </fc>"          -- Separators in xmobar
-                , ppUrgent = xmobarColor "#d65d0e" "" . wrap "!" "!"  -- Urgent workspace
+                , ppUrgent = xmobarColor "#fe8019" "" . wrap "!" "!"  -- Urgent workspace
                 , ppExtras  = [windowCount]                           -- # of windows current workspace
                 , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]
                 }
