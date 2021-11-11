@@ -1,5 +1,13 @@
 # Important! the "A" in the header of the snippet implies that the snippet triggers automatically, remove it to make it manual
 
+snippet EDO "Documentclass (article) by default" b
+\documentclass[${2:<+options+>}]{${1:article}}
+
+\begin{document}
+${0:${VISUAL}}
+\end{document}
+endsnippet
+
 # Math environment
 snippet mk "Math" wA
 $${1}$`!p
