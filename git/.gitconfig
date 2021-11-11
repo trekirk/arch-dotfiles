@@ -3,3 +3,8 @@
 	name = Juanjo Gamboa
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
+[credential "https://git.overleaf.com"]
+  username = jgamboa@ing.uc3m.es
+  helper = store
