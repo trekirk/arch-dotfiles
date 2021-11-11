@@ -73,6 +73,9 @@ Plug 'tpope/vim-commentary'
 " Netrw buff by tpope
 Plug 'tpope/vim-vinegar'
 
+" Best target support
+Plug 'wellle/targets.vim'
+
 " Buffing visual mode search using '*'
 Plug 'bronson/vim-visual-star-search'
 
@@ -592,7 +595,7 @@ function! NetrwMapping()
     " Will remove all the marks on all files.
     nmap <buffer> <Leader><TAB> mu
 
-    " Open in in buffers the selected files in visual mode
+    " Open in buffers the selected files in visual mode
     vmap <buffer> <CR> :normal mf<CR>me
 endfunction
 
