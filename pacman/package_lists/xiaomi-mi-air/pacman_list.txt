@@ -43,6 +43,7 @@ grep
 groff
 grub
 gvfs
+gvfs-mtp
 gvim
 gzip
 haskell-language-server
@@ -146,6 +147,8 @@ texlive-science
 texstudio
 the_silver_searcher
 thunar
+thunar-archive-plugin
+thunar-volman
 thunderbird
 tigervnc
 tinyxml
