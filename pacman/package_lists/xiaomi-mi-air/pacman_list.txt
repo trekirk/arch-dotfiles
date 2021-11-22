@@ -111,6 +111,7 @@ python-pycryptodome
 python-pylint
 python2-pip
 qalculate-gtk
+qt5ct
 qtcreator
 remmina
 rofimoji
