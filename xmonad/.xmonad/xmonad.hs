@@ -262,9 +262,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
 
     -- Screen capture
-    , ((0, xK_Print), spawn "scrot -m -e 'mv $f ~/Pictures/'")
+    , ((0, xK_Print), spawn "scrot -m -e 'mv $f ~/Pictures/screenshots/'")
     -- Screen capture + display using ImgMagick
-    , ((shiftMask, xK_Print), spawn "scrot -m -e 'mv $f ~/Pictures/;display -size 1024x768 ~/Pictures/$f'")
+    , ((shiftMask, xK_Print), spawn "scrot -m -e 'mv $f ~/Pictures/screenshots/;display -size 1920x1080 ~/Pictures/screenshots/$f'")
 
     -- Toggle the status bar gap
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
