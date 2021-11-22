@@ -18,6 +18,7 @@ ccls
 cmake
 code
 dhcpcd
+dia
 discord
 dmenu
 docker
@@ -52,6 +53,7 @@ haskell-language-server
 htop
 imagemagick
 inetutils
+inkscape
 iwd
 java-runtime-common
 jdk11-openjdk
@@ -62,6 +64,7 @@ jupyterlab
 kdenlive
 kitty
 libnet
+librecad
 libreoffice-fresh
 libtool
 libunrar
