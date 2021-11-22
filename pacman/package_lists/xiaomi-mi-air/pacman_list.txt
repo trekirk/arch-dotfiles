@@ -1,5 +1,7 @@
 alsa-tools
 alsa-utils
+ardour
+audacity
 autoconf
 automake
 autorandr
