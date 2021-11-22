@@ -16,4 +16,5 @@ ttf-oswald
 urxvt-resize-font-git
 xscreensaver-arch-logo
 yay
+zoom
 zotero
