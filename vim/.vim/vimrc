@@ -595,6 +595,9 @@ function! NetrwMapping()
     " Will remove all the marks on all files.
     nmap <buffer> <Leader><TAB> mu
 
+    " Open all marked files in normal mode
+    nmap <buffer> <leader><CR> me
+
     " Open in buffers the selected files in visual mode
     vmap <buffer> <CR> :normal mf<CR>me
 endfunction
