@@ -685,6 +685,10 @@ nnoremap <silent> <Leader>ag :Ag<CR>
 " Mapping to open a diff against HEAD in a new tab for the file under cursor in fugitive window (:Git)
 augroup custom_fugitive_mappings
     au!
+    " Tpope's simpler solution (commented because pride)
+    " au User FugitiveIndex nmap <buffer> dt :Gtabedit <Plug><cfile><Bar>Gvdiffsplit!<CR>
+
+    " Solution above would make GStatusGetFilenameUnderCursor obsolete
     au User FugitiveIndex nnoremap <buffer> dt :call Gvdifftab(GStatusGetFilenameUnderCursor())<cr>
 augroup END
 
