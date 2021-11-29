@@ -176,7 +176,7 @@ endfunction
 command! Gdifftab call Gdifftab(expand("%"))
 function! Gdifftab(filename)
     exe 'tabedit ' . a:filename
-    Gdiffspliti!
+    Gdiffsplit!
 endfunction
 
 """"""""""""""""
