@@ -586,6 +586,18 @@ noremap <C-Down> <C-W>j<C-W>_
 noremap <C-Up> <C-W>k<C-W>_
 noremap <C-Right> <C-W>l<C-W><bar>
 
+""""""""""""
+" Vim tabs "
+""""""""""""
+nnoremap <Leader>th  :tabfirst<CR>
+nnoremap <Leader>tk  :tabnext<CR>
+nnoremap <Leader>tj  :tabprev<CR>
+nnoremap <Leader>tl  :tablast<CR>
+nnoremap <Leader>tt  :tabedit<Space>
+nnoremap <Leader>tm  :tabm<Space>
+nnoremap <Leader>td  :tabclose<CR>
+nnoremap <Leader>tn  :tabnew<CR>
+
 """""""""
 " Netrw "
 """""""""
