@@ -285,28 +285,6 @@ let g:UltiSnipsRemoveSelectModeMappings = 0
 nnoremap <leader>se :UltiSnipsEdit!<cr>
 
 """"""""""""""""""
-" Pydocstring settings "
-""""""""""""""""""
-" Basic usage
-
-"     Move your cursor on a def or class keyword line,
-"     type :Pydocstring and
-"     watch a docstring template magically appear below the current line
-
-" To change default keymapping
-nmap <silent> <C-_> <Plug>(pydocstring)
-
-" New mapping
-nnoremap <leader>pd :Pydocstring<cr>
-
-" Pydocstring depends on shiftwidth if smarttab is set, otherwise softtabstop. For the latter, you need to set like set softtabstop=4.
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 smarttab expandtab
-" Or
-" autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-
-" You can set built-in formatter(Sphinx, Numpy, Google).
-let g:pydocstring_formatter = 'numpy'
-""""""""""""""""""
 " CtrlP settings "
 """"""""""""""""""
 let g:ctrlp_show_hidden = 1
@@ -841,3 +819,27 @@ map <leader>lct :VimtexCompile<CR>
 " Single shot compilation
 map <leader>lco :VimtexCompileSS<CR>
 map <leader>lcl :VimtexClean<CR>
+
+
+""""""""""""""""""
+" Pydocstring settings "
+""""""""""""""""""
+" Basic usage
+
+"     Move your cursor on a def or class keyword line,
+"     type :Pydocstring and
+"     watch a docstring template magically appear below the current line
+
+" To change default keymapping
+nmap <silent> <C-_> <Plug>(pydocstring)
+
+" New mapping
+nnoremap <leader>pd :Pydocstring<cr>
+
+" Pydocstring depends on shiftwidth if smarttab is set, otherwise softtabstop. For the latter, you need to set like set softtabstop=4.
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 smarttab expandtab
+" Or
+" autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
+" You can set built-in formatter(Sphinx, Numpy, Google).
+let g:pydocstring_formatter = 'numpy'
