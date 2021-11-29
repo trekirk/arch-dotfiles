@@ -141,7 +141,6 @@ call plug#end()
 """"""""""""""""""""""""""""
 " Vinegar (netrw) settings "
 """"""""""""""""""""""""""""
-
 " Change remove command in netrw to allow removing non-empty directories using 'D'
 let g:netrw_localrmdir='rm -r'
 
@@ -149,10 +148,40 @@ let g:netrw_localrmdir='rm -r'
 autocmd FileType netrw setl bufhidden=wipe
 let g:netrw_fastbrowse = 0
 
+"""""""""""""""""""""""""""
+" Fugitive (git) settings "
+"""""""""""""""""""""""""""
+" Get the full path of the file under cursor in fugitive's :Git window
+function! GStatusGetFilenameUnderCursor()
+    return substitute(@%, '\.git/index$', '', '') . matchstr(getline('.'), '^[A-Z?] \zs.*')
+endfunction
+
+" " Verbose version
+" function! GStatusGetFilenameUnderCursor()
+"     let git_path = substitute(@%, '\.git/index$', '', '')
+"     echo git_path
+"     let file_path = git_path . matchstr(getline('.'), '^[A-Z?] \zs.*')
+"     echo file_path
+"     return file_path
+" endfunction
+
+" Command to open vertical git diff in tab
+command! Gvdifftab call Gvdifftab(expand("%"))
+function! Gvdifftab(filename)
+    exe 'tabedit ' . a:filename
+    Gvdiffsplit!
+endfunction
+
+" Command to open horizontal git diff in tab
+command! Gdifftab call Gdifftab(expand("%"))
+function! Gdifftab(filename)
+    exe 'tabedit ' . a:filename
+    Gdiffspliti!
+endfunction
+
 """"""""""""""""
 " CoC settings "
 """"""""""""""""
-
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
@@ -662,6 +691,13 @@ nnoremap <silent> <Leader>ag :Ag<CR>
 """"""""""""""
 " Git remaps "
 """"""""""""""
+
+" Mapping to open a diff against HEAD in a new tab for the file under cursor in fugitive window (:Git)
+augroup custom_fugitive_mappings
+    au!
+    au User FugitiveIndex nnoremap <buffer> dt :call Gvdifftab(GStatusGetFilenameUnderCursor())<cr>
+augroup END
+
 " Basic Git tools
 nnoremap <Leader>gb :GBranches<CR>
 nnoremap <Leader>gt :GTags<CR>
@@ -671,7 +707,8 @@ nnoremap <Leader>gc :Git commit<CR>
 " Git graph
 nnoremap <Leader>gg :GV<CR>
 " Diff management
-nnoremap <Leader>gd :Gvdiffsplit!<CR>
+nnoremap <Leader>gds :Gvdiffsplit!<CR>
+nnoremap <Leader>gdt :Gvdifftab<CR>
 nnoremap <Leader>dh :diffget //2<CR>
 nnoremap <Leader>dl :diffget //3<CR>
 vnoremap <Leader>dp :diffput<CR>
