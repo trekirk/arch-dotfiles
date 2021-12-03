@@ -9,6 +9,7 @@ nerd-fonts-complete
 otf-powerline-symbols-git
 powerline-fonts-git
 python-catkin_tools
+python2-pip
 ros-noetic-audio-common
 ros-noetic-ros-base
 spotify
