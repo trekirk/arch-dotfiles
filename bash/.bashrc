@@ -50,16 +50,16 @@ if [ "$TERM" = "linux" ]; then
     PREREQ=""
     prereqs()
     {
-         echo "$PREREQ"
+        echo "$PREREQ"
     }
-     
-    case $1 in
+
+case $1 in
     prereqs)
-         prereqs
-         exit 0
-         ;;
-    esac
-     
+        prereqs
+        exit 0
+        ;;
+esac
+
     # Gruvbox Dark
     echo "40,204,152,215,69,177,104,168,146,251,184,250,131,211,142,235
     40,36,151,153,133,98,157,153,131,73,187,189,165,134,192,219
@@ -112,9 +112,9 @@ OSH_THEME="agnoster"
 # Example format: completions=(ssh git bundler gem pip pip3)
 # Add wisely, as too many completions slow down shell startup.
 completions=(
-  git
-  composer
-  ssh
+    git
+    composer
+    ssh
 )
 
 # Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
@@ -122,7 +122,7 @@ completions=(
 # Example format: aliases=(vagrant composer git-avh)
 # Add wisely, as too many aliases slow down shell startup.
 aliases=(
-  general
+    general
 )
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-bash/plugins/*)
@@ -130,8 +130,8 @@ aliases=(
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  bashmarks
+    git
+    bashmarks
 )
 
 
@@ -185,7 +185,7 @@ source $OSH/oh-my-bash.sh
 
 ## Load bash aliases file if exists
 if [ -f ~/.bash_aliases ]; then
-. ~/.bash_aliases
+    . ~/.bash_aliases
 fi
 
 ## If you feel playful <3
@@ -273,13 +273,13 @@ alias cd..='cd ..'
 
 # Combines cd & ls
 cl() {
-	local dir="$1"
-	local dir="${dir:=$HOME}"
-	if [[ -d "$dir" ]]; then
-		cd "$dir" >/dev/null; ls
-	else
-		echo "bash: cl: $dir: Directory not found"
-	fi
+    local dir="$1"
+    local dir="${dir:=$HOME}"
+    if [[ -d "$dir" ]]; then
+        cd "$dir" >/dev/null; ls
+    else
+        echo "bash: cl: $dir: Directory not found"
+    fi
 }
 
 ##########
