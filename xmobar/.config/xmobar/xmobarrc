@@ -54,6 +54,7 @@ Config {
    , bgColor =      "#3c3836"
    , fgColor =      "#ebdbb2"
    , position =     Top
+   -- , position =     TopP 0 20  -- For tray
    , border =       BottomB
    , borderColor =  "#646464"
    , iconRoot = "/home/trekirk/.xmonad/xpm/"  -- default: "."

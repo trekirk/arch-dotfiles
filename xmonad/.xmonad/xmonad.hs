@@ -112,7 +112,7 @@ myFileManager :: String
 myFileManager   = "thunar"
 
 myTextEditor :: String
-myTextEditor    = myTerminal ++ " vim"
+myTextEditor    = myTerminal ++ " tmux"
 
 -- NOTE: from 0.9.1 on numlock mask is set automatically. The numlockMask
 -- setting should be removed from configs.
@@ -162,8 +162,9 @@ myProjects =
             }
   , Project { projectName      = "\xf121"
             , projectDirectory = "~/"
-            , projectStartHook = Just $ do sequence_ [sendMessage $ JumpToLayout "fibb"  -- Change to fibb layout
-                                                    , spawn myTextEditor]  -- Spawn Vim
+            , projectStartHook = Just $ do sequence_ [sendMessage $ SetStruts [] [minBound .. maxBound]  -- Hide bar
+                                                    , sendMessage $ JumpToLayout "monocle"  -- Change to monocle layout
+                                                    , spawn myTextEditor ]  -- Spawn tmux
             }
   , Project { projectName      = "\xf187"
             , projectDirectory = "~/"
@@ -543,6 +544,8 @@ myLogHook h = dynamicLogWithPP $ myPP h
 myStartupHook = do
         spawnOnce "setxkbmap -layout es"
         --spawnOnce "light-locker --no-lock-on-lid --no-late-locking &" -- This is now in the Xsession file on /etc/lightdm
+        -- Set up an icon tray
+        -- spawnOnce "stalonetray &"
         spawnOnce "~/.fehbg &"
         spawnOnce "autorandr --change"
         -- spawnOnce "xscreensaver -no-splash &"
