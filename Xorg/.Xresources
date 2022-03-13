@@ -12,6 +12,7 @@ Xft.hintstyle: hintfull
 Xft.lcdfilter: lcdfilter
 
 !  Set the dpi
+!Xft.dpi: 105
 Xft.dpi: 127
 
 XTerm*renderFont: true
