@@ -213,7 +213,7 @@ let g:coc_global_extensions = [
       \'coc-markdownlint',
       \'coc-pyright',
       \'coc-snippets',
-      \'coc-vimtex',
+      \'coc-vimtex@1.0.4',
       \]
 
 " Syntax highlighting settings
