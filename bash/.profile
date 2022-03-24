@@ -29,4 +29,6 @@ fi
 
 # Change or add the path to your project to enable linting
 export PYTHONPATH="$PYTHONPATH:$ROS_WORKSPACE/src/federated_toolbox/src"
+export PYTHONPATH="$PYTHONPATH:$ROS_WORKSPACE/src/acoustic_touch_localisation/src"
+
 

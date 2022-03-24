@@ -13,10 +13,12 @@ bbswitch
 biber
 binutils
 bison
+blender
 cabal-install
 ccls
 cmake
 code
+cronie
 dhcpcd
 dia
 discord
@@ -31,6 +33,7 @@ findutils
 firefox
 flake8
 flex
+freecad
 gawk
 gcc
 gdb
@@ -81,6 +84,7 @@ m4
 make
 man-db
 mc
+mesa-utils
 mpg123
 nano
 neofetch
@@ -126,6 +130,7 @@ sed
 sox
 sqlitebrowser
 stack
+stalonetray
 stow
 sudo
 sweethome3d
