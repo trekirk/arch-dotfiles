@@ -125,6 +125,7 @@ Plug 'dense-analysis/ale'
 
 " LaTeX support
 Plug 'lervag/vimtex'
+Plug 'peterbjorgensen/sved'
 
 " Markdown support
 Plug 'godlygeek/tabular', {'for': ['markdown', 'pandoc']}
@@ -213,7 +214,7 @@ let g:coc_global_extensions = [
       \'coc-markdownlint',
       \'coc-pyright',
       \'coc-snippets',
-      \'coc-vimtex',
+      \'coc-vimtex@1.0.4',
       \]
 
 " Syntax highlighting settings
@@ -283,6 +284,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
 
 nnoremap <leader>se :UltiSnipsEdit!<cr>
+
+""""""""""""""""""""""""""""
+" VimTeX and SVED settings "
+""""""""""""""""""""""""""""
 
 """"""""""""""""""
 " CtrlP settings "
@@ -550,6 +555,7 @@ vnoremap <silent> > >gv
 " Leader key global remappings "
 """"""""""""""""""""""""""""""""
 let mapleader=" "
+let maplocalleader = " "
 
 " Make sure spacebar does not have any mapping beforehand.
 nnoremap <silent> <space> <nop>
@@ -696,8 +702,9 @@ augroup END
 nnoremap <Leader>gb :GBranches<CR>
 nnoremap <Leader>gt :GTags<CR>
 nnoremap <Leader>gs :vertical G<CR>
-nnoremap <Leader>gp :G push<CR>
 nnoremap <Leader>gc :Git commit<CR>
+nnoremap <Leader>gps :G push<CR>
+nnoremap <Leader>gpl :G pull<CR>
 " Git graph
 nnoremap <Leader>gg :GV<CR>
 " Diff management
@@ -831,11 +838,13 @@ nnoremap <silent> <Leader>cp  :<C-u>CocListResume<CR>
 """""""""""""""""
 
 " Toggle VimTeX compilation
-map <leader>lct :VimtexCompile<CR>
+map <leader>ll :VimtexCompile<CR>
 " Single shot compilation
-map <leader>lco :VimtexCompileSS<CR>
-map <leader>lcl :VimtexClean<CR>
+map <leader>ls :VimtexCompileSS<CR>
+map <leader>lc :VimtexClean<CR>
 
+" Forward search in evince supported by SVED plugin
+nmap <leader>lf :call SVED_Sync()<CR>
 
 """"""""""""""""""
 " Pydocstring settings "
