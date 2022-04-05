@@ -349,3 +349,6 @@ neofetch
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
+
+# Created by `pipx` on 2022-04-05 14:26:11
+export PATH="$PATH:/home/trekirk/.local/bin"
