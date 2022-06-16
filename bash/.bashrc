@@ -338,7 +338,8 @@ alias vim='vimx'
 # Startup #
 ###########
 
-neofetch
+# neofetch
+fortune | cowsay -f tux | lolcat
 
 ################
 # Fuzzy finder #
