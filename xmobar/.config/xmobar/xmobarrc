@@ -49,7 +49,7 @@
 Config { 
 
    -- appearance
-     font =         "xft:Font Awesome 5 Free Solid:size=10,Font Awesome 5 Brands Regular:size=10, Droid Sans Mono:size=9:bold:antialias=true"
+     font =         "xft:Droid Sans Mono:size=9:bold:antialias=true, Font Awesome 6 Free Solid:size=10,Font Awesome 6 Brands Regular:size=10"
    , additionalFonts = ["xft:JoyPixels:size=9"]
    , bgColor =      "#3c3836"
    , fgColor =      "#ebdbb2"
