@@ -40,7 +40,6 @@ gdb
 gettext
 ghc-static
 git
-gn-m85
 gnu-free-fonts
 gnuplot
 gparted
@@ -57,7 +56,6 @@ htop
 imagemagick
 inetutils
 inkscape
-iwd
 java-runtime-common
 jdk11-openjdk
 jedi-language-server
@@ -111,6 +109,7 @@ pavucontrol
 pcmanfm
 pkgconf
 pkgfile
+polkit-gnome
 powerline
 pulseaudio
 python-gobject
