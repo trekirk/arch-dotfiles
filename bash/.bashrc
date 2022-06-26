@@ -329,7 +329,7 @@ alias ros-full-rebuild='yay -Syu ros-noetic-ros-base --rebuildtree'
 #########################
 
 export HOSTNAME
-export EDITOR=vim
+export EDITOR=vimx
 alias vi='vimx'
 alias vim='vimx'
 
