@@ -33,10 +33,12 @@ set cursorline
 " set nowrap
 " set textwidth=80
 " set colorcolumn=80
-au BufRead,BufNewFile *.md setlocal textwidth=80
+" au BufRead,BufNewFile *.md setlocal textwidth=80
 " au BufRead,BufNewFile *.{md,tex} setlocal textwidth=80
-au BufRead,BufNewFile *.md setlocal colorcolumn=80
+" au BufRead,BufNewFile *.md setlocal colorcolumn=80
 " au BufRead,BufNewFile *.{md,tex} setlocal colorcolumn=80
+" To increase markdown editing speed (it was painfully slow)
+" let g:markdown_folding = 1
 
 "------------------------------------------------------------
 " Plugins {{{1
@@ -132,7 +134,7 @@ Plug 'godlygeek/tabular', {'for': ['markdown', 'pandoc']}
 Plug 'plasticboy/vim-markdown', {'for': ['markdown', 'pandoc']}
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for': ['markdown', 'pandoc', 'vim-plug']}
 Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " Initialize plugin system
 call plug#end()
@@ -211,11 +213,11 @@ let g:coc_global_extensions = [
       \'coc-jedi',
       \'coc-json',
       \'coc-lists',
-      \'coc-markdownlint',
       \'coc-pyright',
       \'coc-snippets',
       \'coc-vimtex@1.0.4',
       \]
+      " \'coc-markdownlint',
 
 " Syntax highlighting settings
 
@@ -382,6 +384,15 @@ if !exists('g:airline_symbols')
 
 " Removes the mode at the bottom, showing only the powerline
 set noshowmode
+
+"""""""""""""""""
+" Pandoc syntax "
+"""""""""""""""""
+" Map pandoc with markdown
+let g:coc_filetype_map = {'pandoc': 'markdown'}
+let g:pandoc#syntax#conceal#use = 0
+" To embed code blocks
+" let g:pandoc#syntax#codeblocks#embeds#langs = ['c']
 
 "------------------------------------------------------------
 " Must have options {{{1
