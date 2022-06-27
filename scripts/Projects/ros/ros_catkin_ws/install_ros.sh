@@ -2,14 +2,14 @@
 
 # Install bootstrap dependencies
 # These tools are used to facilitate the download and management of ROS packages and their dependencies, among other things. 
-sudo dnf install gcc-c++ python3-rosdep python3-rosinstall_generator python3-vcstool @buildsys-build
+sudo dnf -y install gcc-c++ python3-rosdep python3-rosinstall_generator python3-vcstool @buildsys-build
 sudo rosdep init
 rosdep update
 
 # Next we will want to download the source code for ROS packages so we can build them. We will use vcstool for this. 
-rosinstall_generator desktop --rosdistro noetic --deps --tar > noetic-desktop.rosinstall
+rosinstall_generator ros_base --rosdistro noetic --deps --tar > noetic-ros_base.rosinstall
 mkdir -p ./src
-vcs import --input noetic-desktop.rosinstall ./src
+vcs import --input noetic-ros_base.rosinstall ./src
 
 # Before you can build your catkin workspace you need to make sure that you have all the system dependencies on your platform.
 rosdep install --from-paths ./src --ignore-packages-from-source --rosdistro noetic -y
