@@ -308,6 +308,15 @@ fi
 # ROS #
 #######
 
+export PYTHONPATH="$PYTHONPATH:/home/trekirk/Projects/ros/ros_catkin_ws/src/catkin/python"
+export PYTHONPATH="$PYTHONPATH:/home/trekirk/Projects/ros/ros_catkin_ws/src/genmsg/src"
+export PYTHONPATH="$PYTHONPATH:/home/trekirk/Projects/ros/ros_catkin_ws/src/genpy/src"
+export PYTHONPATH="$PYTHONPATH:/home/trekirk/Projects/ros/ros_catkin_ws/src/gencpp/src"
+export PYTHONPATH="$PYTHONPATH:/home/trekirk/Projects/ros/ros_catkin_ws/src/geneus/src"
+export PYTHONPATH="$PYTHONPATH:/home/trekirk/Projects/ros/ros_catkin_ws/src/genlisp/src"
+export PYTHONPATH="$PYTHONPATH:/home/trekirk/Projects/ros/ros_catkin_ws/src/gennodejs/src"
+export PYTHONPATH="$PYTHONPATH:/home/trekirk/Projects/ros/ros_catkin_ws/src/dynamic_reconfigure/src"
+
 # Only sources the files if they exist
 if [ -f /opt/ros/noetic/setup.bash ]; then
     source '/opt/ros/noetic/setup.bash' > /dev/null
@@ -357,3 +366,7 @@ export PATH="$PATH:/home/trekirk/.local/bin"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+
+
