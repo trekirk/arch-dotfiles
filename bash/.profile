@@ -14,8 +14,8 @@ export PATH=$PATH:/home/trekirk/.local/bin
 #######
 
 # Only sources the files if they exist
-if [ -f /opt/ros/noetic/setup.bash ]; then
-    source '/opt/ros/noetic/setup.bash' > /dev/null
+if [ -f /usr/lib64/ros/setup.bash ]; then
+    source '/usr/lib64/ros/setup.bash' > /dev/null
     # Custom acoustic touch recognition workspace
     if [ -f /home/trekirk/Projects/ros/atr_ws/devel/setup.bash ]; then
         source '/home/trekirk/Projects/ros/atr_ws/devel/setup.bash' > /dev/null
