@@ -309,17 +309,23 @@ fi
 #######
 
 # Only sources the files if they exist
+ROS_SOURCED=0
 if [ -f /usr/lib64/ros/setup.bash ]; then
     source '/usr/lib64/ros/setup.bash' > /dev/null
-    # Custom acoustic touch recognition workspace
-    if [ -f /home/trekirk/Projects/ros/atr_ws/devel/setup.bash ]; then
-        source '/home/trekirk/Projects/ros/atr_ws/devel/setup.bash' > /dev/null
-    fi
-    # Classic catkin ws
-    if [ -f /home/trekirk/Projects/ros/catkin_ws/devel/setup.bash ]; then
-        source '/home/trekirk/Projects/ros/catkin_ws/devel/setup.bash' > /dev/null
-        export ROS_WORKSPACE="$HOME/Projects/ros/catkin_ws"
-    fi
+    ROS_SOURCED=1
+elif [ -f /opt/ros/noetic/setup.bash ]; then
+    source '/opt/ros/noetic/setup.bash' > /dev/null
+    ROS_SOURCED=1
+fi
+
+# Custom acoustic touch recognition workspace
+if [ $ROS_SOURCED==1 ] && [ -f /home/trekirk/Projects/ros/atr_ws/devel/setup.bash ]; then
+    source '/home/trekirk/Projects/ros/atr_ws/devel/setup.bash' > /dev/null
+fi
+# Classic catkin ws
+if [ $ROS_SOURCED==1 ] && [ -f /home/trekirk/Projects/ros/catkin_ws/devel/setup.bash ]; then
+    source '/home/trekirk/Projects/ros/catkin_ws/devel/setup.bash' > /dev/null
+    export ROS_WORKSPACE="$HOME/Projects/ros/catkin_ws"
 fi
 
 alias ros-full-rebuild='yay -Syu ros-noetic-ros-base --rebuildtree'
