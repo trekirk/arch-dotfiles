@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+# Reinstall package
+sudo dnf -y reinstall grub2-common
+# Create grubenv
+sudo grub2-editenv create
+# Generate grub config file IN THE RIGHT LOCATION
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+# Regenerate configuration
+sudo dracut -f --regenerate-all
