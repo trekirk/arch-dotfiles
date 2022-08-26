@@ -598,6 +598,13 @@ noremap <C-K> <C-W>k
 noremap <C-L> <C-W>l
 noremap <C-H> <C-W>h
 
+" Remaps for the terminal
+tnoremap <C-J> <C-W>j
+tnoremap <C-K> <C-W>k
+tnoremap <C-L> <C-W>l
+tnoremap <C-H> <C-W>h
+tnoremap <C-N> <C-W>N
+
 " More natural movement of the hand
 nnoremap <Leader>w <C-W>
 
