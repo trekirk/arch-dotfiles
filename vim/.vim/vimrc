@@ -215,6 +215,7 @@ let g:coc_global_extensions = [
       \'coc-lists',
       \'coc-pyright',
       \'coc-snippets',
+      \'coc-clangd',
       \'coc-vimtex@1.0.4',
       \]
       " \'coc-markdownlint',
@@ -242,7 +243,7 @@ let g:ale_linter_aliases = {'pandoc': ['markdown']}
 " declare which linters you want to run
 let g:ale_linters={
 \   'python': ['flake8', 'pydocstyle', 'bandit'],
-\   'cpp': ['ccls'],
+\   'cpp': ['clangd'],
 \   'haskell': ['hlint'],
 \   'latex': ['proselint', 'lacheck', 'chktex'],
 \}

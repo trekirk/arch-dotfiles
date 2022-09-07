@@ -13,29 +13,30 @@
     "jedi.markupKindPreferred": "plaintext",
     "jedi.executable.command": "jedi-language-server",
 
+    "clangd.arguments":["--completion-style=detailed"],
     "languageserver": {
-        "ccls": {
-            "command": "ccls",
-            "filetypes": [
-                "c",
-                "cpp",
-                "objc",
-                "objcpp"
-            ],
-            "rootPatterns": [
-                ".ccls",
-                "compile_commands.json",
-                ".catkin_workspace",
-                ".vim/",
-                ".git/",
-                ".hg/"
-            ],
-            "initializationOptions": {
-                "cache": {
-                    "directory": "/tmp/ccls"
-                }
-            }
-        },
+        // "ccls": {
+        //     "command": "ccls",
+        //     "filetypes": [
+        //         "c",
+        //         "cpp",
+        //         "objc",
+        //         "objcpp"
+        //     ],
+        //     "rootPatterns": [
+        //         ".ccls",
+        //         "compile_commands.json",
+        //         ".catkin_workspace",
+        //         ".vim/",
+        //         ".git/",
+        //         ".hg/"
+        //     ],
+        //     "initializationOptions": {
+        //         "cache": {
+        //             "directory": "/tmp/ccls"
+        //         }
+        //     }
+        // },
         "haskell": {
             "command": "haskell-language-server-wrapper",
             "args": ["--lsp"],
