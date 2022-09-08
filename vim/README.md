@@ -10,6 +10,8 @@ Here's the list of the necessary dependencies to properly install my Vim setup:
 
 Language servers:
 
-* C++: ccls. If the language server is not in the package manager by default, check [this webpage](https://stackoverflow.com/questions/71810868/how-to-build-ccls-on-linux-performed-on-fedora).
+* C++: 
+  - ccls. If the language server is not in the package manager by default, check [this webpage](https://stackoverflow.com/questions/71810868/how-to-build-ccls-on-linux-performed-on-fedora).
+  - clangd (preferred). Instll `clang`, `clang-devel` and `llvm-devel`
 * Haskell: haskell-language-server 
 * Python: jedi-language-server. Install using pip 
