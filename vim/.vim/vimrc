@@ -23,8 +23,9 @@ filetype indent plugin on
 syntax on
 
 " Enable folding
-set foldmethod=syntax
-set foldlevelstart=3  " A higher value implies more open folds
+" set foldmethod=syntax
+" set foldlevelstart=5  " A higher value implies more open folds
+set nofoldenable
 
 " Highlight the current line
 set cursorline
@@ -216,9 +217,10 @@ let g:coc_global_extensions = [
       \'coc-pyright',
       \'coc-snippets',
       \'coc-clangd',
-      \'coc-vimtex@1.0.4',
+      \'coc-vimtex',
       \]
       " \'coc-markdownlint',
+      " \'coc-vimtex@1.0.4',
 
 " Syntax highlighting settings
 
@@ -291,7 +293,16 @@ nnoremap <leader>se :UltiSnipsEdit!<cr>
 """"""""""""""""""""""""""""
 " VimTeX and SVED settings "
 """"""""""""""""""""""""""""
+" Latex specification
 
+au BufNewFile,BufRead *.tex
+    \ set nocursorline |
+    \ set nornu |
+    \ set number |
+    \ let g:loaded_matchparen=1 |
+
+let g:vimtex_fold_manual = 1
+" let g:vimtex_enabled = 0
 """"""""""""""""""
 " CtrlP settings "
 """"""""""""""""""
