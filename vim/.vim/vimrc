@@ -327,6 +327,8 @@ au BufNewFile,BufRead *.tex
     \ let b:ale_enabled = 0 |
     \ let g:loaded_matchparen=1 |
 
+" Make sure the tabs are converted to spaces
+autocmd Filetype tex setlocal expandtab
 " let g:vimtex_fold_manual = 1
 " let g:vimtex_enabled = 0
 """"""""""""""""""
