@@ -339,6 +339,14 @@ export EDITOR=vimx
 alias vi='vimx'
 alias vim='vimx'
 
+###########
+# Vi mode #
+###########
+
+set -o vi
+# Exit with jk instead of escape
+bind '"jk":vi-movement-mode'
+bind -r "\e"
 
 ###########
 # Startup #
@@ -363,7 +371,5 @@ export PATH="$PATH:/home/trekirk/.local/bin"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-
 
 
