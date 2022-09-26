@@ -602,6 +602,9 @@ map <F5> :setlocal spell!<CR>
 noremap x "_x
 noremap X "_x
 
+" Prevent pasting in visual mode from overriding what's in the register.
+xnoremap <leader>p "_P
+
 " Do not lose selection after indentation.
 vnoremap <silent> < <gv
 vnoremap <silent> > >gv
@@ -869,6 +872,9 @@ nmap <Leader>qf  <Plug>(coc-fix-current)
 nmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
+" IMPORTANT: in vim C-i == TAB, so after installin CoC, to have the jump-in functionality you
+" have ro remap it
+nnoremap <C-l> <C-i>
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
