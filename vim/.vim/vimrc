@@ -122,6 +122,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'Konfekt/FastFold'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
+Plug 'ekalinin/Dockerfile.vim'
 
 " Development plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
