@@ -372,4 +372,6 @@ export PATH="$PATH:/home/trekirk/.local/bin"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+alias ssh-milow002='ssh -X user@10.100.128.153'
+alias ssh-milow006='ssh -X user@10.100.128.134'
 
