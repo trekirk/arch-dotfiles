@@ -5,3 +5,8 @@ plugged
 session
 *.swo
 *.swp
+*.swm
+*.swn
+
+# Font related files
+*.uuid
