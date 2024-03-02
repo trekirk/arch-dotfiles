@@ -210,9 +210,13 @@ alias openports='ss --all --numeric --processes --ipv4 --ipv6'
 alias pgg='ps -Af | grep'           # requires an argument
 alias ..='cd ..'
 alias list-fonts='fc-list'
-alias vpn-uc3m='nmcli connection up UC3M_CON_CA'
-alias vpn-uc3m-down='nmcli connection down UC3M_CON_CA'
 alias journalctl-simple='journalctl -p5 -n 300 --no-pager'
+# # Deprecated VPN commands
+# alias vpn-uc3m='nmcli connection up UC3M_CON_CA'
+# alias vpn-uc3m-down='nmcli connection down UC3M_CON_CA'
+# Aliases to better control the GlobalProtect VPN service
+alias vpn-uc3m='sudo systemctl start gpd.service' 
+alias vpn-uc3m-down='sudo systemctl stop gpd.service' 
 
 ## pacman & yay
 alias pacsyu='sudo pacman -Syyu'
