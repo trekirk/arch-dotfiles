@@ -1,0 +1,45 @@
+########################
+# ROS running commands #
+########################
+
+# Only sources the files if they exist
+ROS_SOURCED=0
+if [ -f /usr/lib64/ros/setup.bash ]; then
+    source '/usr/lib64/ros/setup.bash' > /dev/null
+    ROS_SOURCED=1
+elif [ -f /opt/ros/noetic/setup.bash ]; then
+    source '/opt/ros/noetic/setup.bash' > /dev/null
+    ROS_SOURCED=1
+fi
+
+# ROS messages workspace
+if [ $ROS_SOURCED==1 ] && [ -f /home/trekirk/Projects/ros/msgs_ws/devel/setup.bash ]; then
+    source '/home/trekirk/Projects/ros/msgs_ws/devel/setup.bash' > /dev/null
+fi
+# Perception suite workspace
+if [ $ROS_SOURCED==1 ] && [ -f /home/trekirk/Projects/ros/perception_ws/devel/setup.bash ]; then
+    source '/home/trekirk/Projects/ros/perception_ws/devel/setup.bash' > /dev/null
+fi
+# Custom acoustic touch recognition workspace
+if [ $ROS_SOURCED==1 ] && [ -f /home/trekirk/Projects/ros/atr_ws/devel/setup.bash ]; then
+    source '/home/trekirk/Projects/ros/atr_ws/devel/setup.bash' > /dev/null
+fi
+# Classic catkin ws
+if [ $ROS_SOURCED==1 ] && [ -f /home/trekirk/Projects/ros/perception_ws/devel/setup.bash ]; then
+    source '/home/trekirk/Projects/ros/perception_ws/devel/setup.bash' > /dev/null
+    export ROS_WORKSPACE="$HOME/Projects/ros/perception_ws"
+fi
+
+# Change or add the path to your project to enable linting
+export PYTHONPATH="$PYTHONPATH:$ROS_WORKSPACE/src/federated_toolbox/src"
+export PYTHONPATH="$PYTHONPATH:$ROS_WORKSPACE/src/acoustic_touch_localisation/src"
+
+# Get the IP address of the default network interface
+# This assumes you're using Linux and the 'ip' command is available
+get_ip_address() {
+    ip addr show $(ip route | awk '/default/ {print $5}') | awk '/inet / {print $2}' | awk -F '/' '{print $1}'
+}
+
+# Set ROS_IP dynamically based on the current IP address
+export ROS_IP=$(get_ip_address)
+
